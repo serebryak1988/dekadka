@@ -1,6 +1,6 @@
 let table = document.querySelector('.demotable');
 document.querySelector('.summaryTab').addEventListener('click', function () {
-    prazdn(6);
+    //prazdn(6);
     countHour();
     countWord();
     // y()
