@@ -1,0 +1,3947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+<div class="summaryTabDIV">
+    <button class="onloadTab header">Загрузить</button> 
+    <button class="summaryTab header">Посчитать</button> 
+    <button class="storageTab header">Сохранить</button>
+    <button class="clearTab header">Очистить</button>   
+    <input class="printTab header" type="button" value="Печать" onclick="print()"></input>   
+</div>
+    <div class="wraper">
+        <!-- <p>Табель</p> -->
+        <table class="demotable one boss">
+            <tr class="header">
+                <td rowspan="2" class="row0">ФИО</td>
+                <td colspan="31">Дни месяца</td>
+                <td rowspan="2">Дни</td>
+                <td rowspan="2">Часы</td>
+                <td rowspan="2">Ночные</td>
+                <td rowspan="2">Командировочные</td>
+                <td rowspan="2">Сверхурочные</td>
+                <td rowspan="2">Праздничные</td>
+                <td rowspan="2">Прогулы</td>
+                <td rowspan="2">Больничные</td>
+                <td colspan="3" rowspan="1">Отпуск</td>
+                <td rowspan="2">Примечания (свой счет)</td>
+            </tr>
+            <tr class="header">
+                <td class="dayWeek1" onclick="arrPraz.push('1')">1</td>
+                <td class="dayWeek2">2</td>
+                <td class="dayWeek3">3</td>
+                <td class="dayWeek4">4</td>
+                <td class="dayWeek5">5</td>
+                <td class="dayWeek6">6</td>
+                <td class="dayWeek7">7</td>
+                <td class="dayWeek8">8</td>
+                <td class="dayWeek9">9</td>
+                <td class="dayWeek10">10</td>
+                <td class="dayWeek11">11</td>
+                <td class="dayWeek12">12</td>
+                <td class="dayWeek13">13</td>
+                <td class="dayWeek14">14</td>
+                <td class="dayWeek15">15</td>
+                <td class="dayWeek16">16</td>
+                <td class="dayWeek17">17</td>
+                <td class="dayWeek18">18</td>
+                <td class="dayWeek19">19</td>
+                <td class="dayWeek20">20</td>
+                <td class="dayWeek21">21</td>
+                <td class="dayWeek22">22</td>
+                <td class="dayWeek23">23</td>
+                <td class="dayWeek24">24</td>
+                <td class="dayWeek25">25</td>
+                <td class="dayWeek26">26</td>
+                <td class="dayWeek27">27</td>
+                <td class="dayWeek28">28</td>
+                <td class="dayWeek29">29</td>
+                <td class="dayWeek30">30</td>
+                <td class="dayWeek31">31</td>
+                <td>О</td>
+                <td>У</td>
+                <td>Д</td>
+
+            </tr>
+        </table>
+<table class="demotable one">
+            <tr class="header">
+                <td rowspan="3">Категория персонала</td>
+                <td rowspan="3">Дата</td>
+                <td rowspan="3">Число по списку за отчетные сутки</td>
+                <td rowspan="3">Среднесписочная численность</td>
+                <td rowspan="3">В т. ч. женщины</td>
+                <td colspan="11">Использование рабочего времени</td>
+                <td rowspan="3">Дополнительные дни отдыха за переработку</td>
+                <td rowspan="3">Итого чел.дн. выходов и невыходов</td>
+                <td colspan="13" rowspan="2">Отработано всего чел. час</td>
+            </tr>
+            <tr class="header">
+
+                <td rowspan="2">На работе</td>
+                <td colspan="10">Невыходы по причинам</td>
+
+            </tr>
+
+            <tr class="header">
+
+                <td>Очередные отпуска</td>
+                <td>Отпуска в связи с родами</td>
+                <td>По болезни</td>
+                <td>Отпуска учащимся</td>
+                <td>Прочие неявки разреш. зак</td>
+                <td>С разреш. админ</td>
+                <td>Прогулы</td>
+                <td>Отпуска до года ребенку</td>
+                <td>Праздн. и выход</td>
+                <td>Целодн. простои</td>
+                <td>По 1 </td>
+                <td>По 2 </td>
+                <td>По 3 </td>
+                <td>По 4 </td>
+                <td>По 5 </td>
+                <td>По 6 </td>
+                <td>По 7 </td>
+                <td>По 8 </td>
+                <td>По 9 </td>
+                <td>По 10 </td>
+                <td>По 11 </td>
+                <td>По 12 </td>
+                <td>Итого</td>
+            </tr>
+
+            <tr class="colDek1">
+                <td rowspan="10">Рабочие</td>
+                <td>1</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek2">
+                <td>2</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek3">
+                <td>3</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek4">
+                <td>4</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek5">
+                <td>5</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek6">
+                <td>6</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek7">
+                <td>7</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek8">
+                <td>8</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek9">
+                <td>9</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek10">
+                <td>10</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="headRAB1">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+            <tr class="colDek11">
+                <td rowspan="10">ИТР и служащие</td>
+                <td>1</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek12">
+                <td>2</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1">
+                    </td>
+                    <td class="rowDek2"></td>
+                    <td class="rowDek3"></td>
+                    <td class="rowDek4"></td>
+                    <td class="rowDek5"></td>
+                    <td class="rowDek6"></td>
+                    <td class="rowDek7"></td>
+                    <td class="rowDek8"></td>
+                    <td class="rowDek9 decITR"></td>
+                    <td class="rowDek10"></td>
+                    <td class="rowDek11"></td>
+                    <td class="rowDek12"></td>
+                    <td class="rowDek13"></td>
+                    <td class="rowDek14"></td>
+                    <td class="rowDek15"></td>
+                    <td class="rowDek16"></td>
+                    <td class="rowDek17"></td>
+                    <td class="rowDek18"></td>
+                    <td class="rowDek19"></td>
+                    <td class="rowDek20"></td>
+                    <td class="rowDek21"></td>
+                    <td class="rowDek22"></td>
+                    <td class="rowDek23"></td>
+                    <td class="rowDek24"></td>
+                    <td class="rowDek25"></td>
+                    <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek13">
+                <td>3</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek14">
+                <td>4</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek15">
+                <td>5</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek16">
+                <td>6</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek17">
+                <td>7</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek18">
+                <td>8</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek19">
+                <td>9</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek20">
+                <td>10</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="headITR1">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+            <tr class="colDek21">
+                <td rowspan="10">Специалисты</td>
+                <td>1</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek22">
+                <td>2</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek23">
+                <td>3</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek24">
+                <td>4</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek25">
+                <td>5</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek26">
+                <td>6</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek27">
+                <td>7</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek28">
+                <td>8</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+
+            </tr>
+            <tr class="colDek29">
+                <td>9</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek30">
+                <td>10</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="headSPEC1">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+        </table> 
+        <!-- <p>Вторая декадка</p> -->
+        <table class="demotable one">
+            <tr class="header">
+                <td rowspan="3">Категория персонала</td>
+                <td rowspan="3">Дата</td>
+                <td rowspan="3">Число по списку за отчетные сутки</td>
+                <td rowspan="3">Среднесписочная численность</td>
+                <td rowspan="3">В т. ч. женщины</td>
+                <td colspan="11">Использование рабочего времени</td>
+                <td rowspan="3">Дополнительные дни отдыха за переработку</td>
+                <td rowspan="3">Итого чел.дн. выходов и невыходов</td>
+                <td colspan="13" rowspan="2">Отработано всего чел. час</td>
+            </tr>
+            <tr class="header">
+
+                <td rowspan="2">На работе</td>
+                <td colspan="10">Невыходы по причинам</td>
+
+            </tr>
+
+            <tr class="header">
+
+                <td>Очередные отпуска</td>
+                <td>Отпуска в связи с родами</td>
+                <td>По болезни</td>
+                <td>Отпуска учащимся</td>
+                <td>Прочие неявки разреш. зак</td>
+                <td>С разреш. админ</td>
+                <td>Прогулы</td>
+                <td>Отпуска до года ребенку</td>
+                <td>Праздн. и выход</td>
+                <td>Целодн. простои</td>
+                <td>По 1 </td>
+                <td>По 2 </td>
+                <td>По 3 </td>
+                <td>По 4 </td>
+                <td>По 5 </td>
+                <td>По 6 </td>
+                <td>По 7 </td>
+                <td>По 8 </td>
+                <td>По 9 </td>
+                <td>По 10 </td>
+                <td>По 11 </td>
+                <td>По 12 </td>
+                <td>Итого</td>
+            </tr>
+
+            <tr class="colDek31">
+                <td rowspan="10">Рабочие</td>
+                <td>11</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek32">
+                <td>12</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek33">
+                <td>13</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek34">
+                <td>14</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek35">
+                <td>15</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek36">
+                <td>16</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek37">
+                <td>17</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek38">
+                <td>18</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek39">
+                <td>19</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek40">
+                <td>20</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="headRAB2">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+            <tr class="colDek41">
+                <td rowspan="10">ИТР и служащие</td>
+                <td>11</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek42">
+                <td>12</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek43">
+                <td>13</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek44">
+                <td>14</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek45">
+                <td>15</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek46">
+                <td>16</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek47">
+                <td>17</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek48">
+                <td>18</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek49">
+                <td>19</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek50">
+                <td>20</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="headITR2">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+            <tr class="colDek51">
+                <td rowspan="10">Специалисты</td>
+                <td>11</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek52">
+                <td>12</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek53">
+                <td>13</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek54">
+                <td>14</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek55">
+                <td>15</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek56">
+                <td>16</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek57">
+                <td>17</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek58">
+                <td>18</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek59">
+                <td>19</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek60">
+                <td>20</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
+            </tr>
+
+            <tr class="headSPEC2">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+        </table>
+        <!-- <p>Третья декадка</p> -->
+        <table class="demotable one">
+            <tr class="header">
+                <td rowspan="3">Категория персонала</td>
+                <td rowspan="3">Дата</td>
+                <td rowspan="3">Число по списку за отчетные сутки</td>
+                <td rowspan="3">Среднесписочная численность</td>
+                <td rowspan="3">В т. ч. женщины</td>
+                <td colspan="11">Использование рабочего времени</td>
+                <td rowspan="3">Дополнительные дни отдыха за переработку</td>
+                <td rowspan="3">Итого чел.дн. выходов и невыходов</td>
+                <td colspan="14" rowspan="2">Отработано всего чел. час</td>
+            </tr>
+            <tr class="header">
+
+                <td rowspan="2">На работе</td>
+                <td colspan="10">Невыходы по причинам</td>
+
+            </tr>
+
+            <tr class="header">
+
+                <td>Очередные отпуска</td>
+                <td>Отпуска в связи с родами</td>
+                <td>По болезни</td>
+                <td>Отпуска учащимся</td>
+                <td>Прочие неявки разреш. зак</td>
+                <td>С разреш. админ</td>
+                <td>Прогулы</td>
+                <td>Отпуска до года ребенку</td>
+                <td>Праздн. и выход</td>
+                <td>Целодн. простои</td>
+                <td>По 1 </td>
+                <td>По 2 </td>
+                <td>По 3 </td>
+                <td>По 4 </td>
+                <td>По 5 </td>
+                <td>По 6 </td>
+                <td>По 7 </td>
+                <td>По 8 </td>
+                <td>По 9 </td>
+                <td>По 10 </td>
+                <td>По 11 </td>
+                <td>По 12 </td>
+                <td></td>
+                <td>Итого</td>
+            </tr>
+
+            <tr class="colDek61">
+                <td rowspan="11">Рабочие</td>
+                <td>21</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek62">
+                <td>22</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek63">
+                <td>23</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek64">
+                <td>24</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek65">
+                <td>25</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek66">
+                <td>26</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek67">
+                <td>27</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek68">
+                <td>28</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek69">
+                <td>29</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek70">
+                <td>30</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek71">
+                <td>31</td>
+                <td></td>
+                <td class="sredChisRab"></td>
+                <td class="femRab"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decRab"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="headRAB3">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header null"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+            <tr class="colDek72">
+                <td rowspan="11">ИТР и служащие</td>
+                <td>21</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek73">
+                <td>22</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek74">
+                <td>23</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek75">
+                <td>24</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek76">
+                <td>25</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek77">
+                <td>26</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek78">
+                <td>27</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek79">
+                <td>28</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek80">
+                <td>29</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek81">
+                <td>30</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR" ></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek82">
+                <td>31</td>
+                <td></td>
+                <td class="sredChisITR"></td>
+                <td class="femITR"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="headITR3">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header null"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+            <tr class="colDek83">
+                <td rowspan="11">Специалисты</td>
+                <td>21</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek84">
+                <td>22</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek85">
+                <td>23</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek86">
+                <td>24</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek87">
+                <td>25</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek88">
+                <td>26</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek89">
+                <td>27</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek90">
+                <td>28</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek91">
+                <td>29</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek92">
+                <td>30</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+            <tr class="colDek93">
+                <td>31</td>
+                <td></td>
+                <td class="sredChisSPEC"></td>
+                <td class="femSPEC"></td>
+                <td class="rowDek1"></td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decSPEC"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="null"></td>
+                <td class="rowDek26"></td>
+            </tr>
+
+            <tr class="headSPEC3">
+                <td class="header headDEK1">Итого</td>
+                <td class="header headDEK2"></td>
+                <td class="header headDEK3"></td>
+                <td class="header headDEK4"></td>
+                <td class="header headDEK5"></td>
+                <td class="header headDEK6"></td>
+                <td class="header headDEK7"></td>
+                <td class="header headDEK8"></td>
+                <td class="header headDEK9"></td>
+                <td class="header headDEK10"></td>
+                <td class="header headDEK11"></td>
+                <td class="header headDEK12"></td>
+                <td class="header headDEK13"></td>
+                <td class="header headDEK14"></td>
+                <td class="header headDEK15"></td>
+                <td class="header headDEK16"></td>
+                <td class="header headDEK17"></td>
+                <td class="header headDEK18"></td>
+                <td class="header headDEK19"></td>
+                <td class="header headDEK20"></td>
+                <td class="header headDEK21"></td>
+                <td class="header headDEK22"></td>
+                <td class="header headDEK23"></td>
+                <td class="header headDEK24"></td>
+                <td class="header headDEK25"></td>
+                <td class="header headDEK26"></td>
+                <td class="header headDEK27"></td>
+                <td class="header headDEK28"></td>
+                <td class="header headDEK29"></td>
+                <td class="header headDEK30"></td>
+                <td class="header null"></td>
+                <td class="header headDEK31"></td>
+            </tr>
+        </table>
+    </div>
+
+<!-- <p>Итог</p> -->
+<table class="demotable one">
+<tr class="header">
+    <td rowspan="3">Категория персонала</td>
+    <td rowspan="3">Дата</td>
+    <td rowspan="3">Число по списку за отчетные сутки</td>
+    <td rowspan="3">Среднесписочная численность</td>
+    <td rowspan="3">В т. ч. женщины</td>
+    <td colspan="11">Использование рабочего времени</td>
+    <td rowspan="3">Дополнительные дни отдыха за переработку</td>
+    <td rowspan="3">Итого чел.дн. выходов и невыходов</td>
+    <td colspan="13" rowspan="2">Отработано всего чел. час</td>
+</tr>
+<tr class="header">
+
+    <td rowspan="2">На работе</td>
+    <td colspan="10">Невыходы по причинам</td>
+
+</tr>
+
+<tr class="header">
+
+    <td>Очередные отпуска</td>
+    <td>Отпуска в связи с родами</td>
+    <td>По болезни</td>
+    <td>Отпуска учащимся</td>
+    <td>Прочие неявки разреш. зак</td>
+    <td>С разреш. админ</td>
+    <td>Прогулы</td>
+    <td>Отпуска до года ребенку</td>
+    <td>Праздн. и выход</td>
+    <td>Целодн. простои</td>
+    <td>По 8 </td>
+    <td>По 7 </td>
+    <td>По 6 </td>
+    <td>По 4 </td>
+    <td>По 10 </td>
+    <td>По 12 </td>
+    <td>Итого</td>
+</tr>
+    
+        <tr class="colITOG1" >
+            <td rowspan="3">Первая декада</td>
+            <td>рабоч.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+        <tr class="colITOG2">
+            
+            <td>руковод.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+        <tr class="colITOG3">
+            <td>спец.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+    
+        <tr class="colITOG4" >
+            <td rowspan="3">Вторая декада</td>
+            <td>рабоч.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+        <tr class="colITOG5">
+            
+            <td>руковод.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+        <tr class="colITOG6">
+            <td>спец.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr> 
+        <tr class="colITOG7" >
+            <td rowspan="3">Третья декада</td>
+            <td>рабоч.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+        <tr class="colITOG8">
+            
+            <td>руковод.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+        <tr class="colITOG9">
+            <td>спец.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr> 
+        <tr class="colITOG10" >
+            <td rowspan="3">Итого</td>
+            <td>рабоч.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+        <tr class="colITOG11">
+            
+            <td>руковод.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr>
+        <tr class="colITOG12">
+            <td>спец.</td>
+            <td class="rowITOG1">0</td>
+            <td class="rowITOG2">0</td>
+            <td class="rowITOG3">0</td>
+            <td class="rowITOG4">0</td>
+            <td class="rowITOG5">0</td>
+            <td class="rowITOG6">0</td>
+            <td class="rowITOG7">0</td>
+            <td class="rowITOG8">0</td>
+            <td class="rowITOG9">0</td>
+            <td class="rowITOG10">0</td>
+            <td class="rowITOG11">0</td>
+            <td class="rowITOG12">0</td>
+            <td class="rowITOG13">0</td>
+            <td class="rowITOG14">0</td>
+            <td class="rowITOG15">0</td>
+            <td class="rowITOG16">0</td>
+            <td class="rowITOG17">0</td>
+            <td class="rowITOG18">0</td>
+            <td class="rowITOG19">0</td>
+            <td class="rowITOG20">0</td>
+            <td class="rowITOG21">0</td>
+            <td class="rowITOG22">0</td>
+            <td class="rowITOG23">0</td>
+        </tr> 
+        <tr>
+            <td>Количетво дней в месяце</td>
+            <td class="colvoDAY" contenteditable="true"></td>
+        </tr>
+      <tr> 
+          <td rowspan="3">Средняя численность (СП)</td>
+          <td>рабоч.</td>
+          <td class="spRAB">0</td>
+      </tr>
+      <tr> 
+        
+        <td>руковод</td>
+        <td class="spITR">0</td>
+    </tr>
+    <tr> 
+        
+        <td>спец.</td>
+        <td class="spSPEC">0</td>
+    </tr>
+    <tr> 
+        <td rowspan="3">Среднесписочная (СР)</td>
+        <td>рабоч.</td>
+        <td class="srRAB">0</td>
+    </tr>
+    <tr> 
+        
+        <td>руковод.</td>
+        <td class="srITR">0</td>
+    </tr>
+    <tr> 
+        
+        <td>спец.</td>
+        <td class="spSPEC">0</td>
+    </tr>
+     
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

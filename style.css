@@ -1,0 +1,111 @@
+.summaryTabDIV {
+    display: flex;	
+  justify-content: space-evenly;
+}
+.summaryTab, .storageTab, .onloadTab, .clearTab, .printTab{
+   font-size: 20px;
+   border-radius: 30px;
+   padding: 15px;
+   border: 2px groove #e1d188;
+   
+}
+.summaryTab:hover, .storageTab:hover, .onloadTab:hover, .clearTab:hover, .printTab:hover {
+    background-color: #eee6a3;  
+    color: black;
+    border: 2px groove black;
+ }
+.demotable {
+    margin: 20px;
+    border: 3px groove #eee6a3;
+    border-collapse: collapse; /* По периметру ячеек только одна линия */
+    text-align: center;
+}
+
+.demotable td,
+.demotable th {
+    border: 2px groove #e1d188;
+}
+
+.header {
+    color: aliceblue;
+    background-color: black;
+}
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5,
+.row6,
+.row7,
+.row8,
+.row9,
+.row10,
+.row11,
+.row12,
+.row13,
+.row14,
+.row15,
+.row16,
+.row17,
+.row18,
+.row19,
+.row20,
+.row21,
+.row22,
+.row23,
+.row24,
+.row25,
+.row26,
+.row27,
+.row28,
+.row29,
+.row30,
+.row31,
+.row40,
+.row41,
+.row42 {
+    height: 20px;
+    width: 20px;
+}
+.row0 {
+    width: 200px;
+}
+
+/* .color0{
+    background-color: yellowgreen;
+}
+
+.color1{
+    background-color: orange;
+}
+
+.color2{
+    background-color: yellow;
+}
+
+.color3{
+    background-color: rgb(140, 140, 221);
+}
+
+.color4{
+    background-color: rgb(199, 136, 199)
+} */
+
+.colorGrey {
+    background-color: #e1d188;
+}
+
+.dekRabWork1 {
+    background-color: brown;
+}
+
+td{
+    min-width: 20px;
+}
+
+.null {
+    max-width: 1px;
+}
+
+
