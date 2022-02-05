@@ -1,5 +1,5 @@
 let table = document.querySelector('.demotable');
-let arrPraz=[1,2];
+// let arrPraz=[1,2];
 document.querySelector('.summaryTab').addEventListener('click', function () {
 //     prazdn(arrPraz[0], arrPraz[1]);
    countHour();
