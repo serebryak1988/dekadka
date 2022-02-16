@@ -2856,15 +2856,15 @@ document.querySelector('.headSPEC3').querySelector('.headDEK5').innerHTML = SPEC
 
 
 //---------------------------------------------------------------------------Итоговый подсчет среднесписочной численности-----------------------------------------------------------------------------
-// document.querySelector('.headRAB1').querySelector('.headDEK4').innerHTML = CATRAB.length * 10;
-// document.querySelector('.headRAB2').querySelector('.headDEK4').innerHTML = CATRAB.length * 10;
-// document.querySelector('.headRAB3').querySelector('.headDEK4').innerHTML = CATRAB.length * 11;
-// document.querySelector('.headITR1').querySelector('.headDEK4').innerHTML = CATITR.length * 10;
-// document.querySelector('.headITR2').querySelector('.headDEK4').innerHTML = CATITR.length * 10;
-// document.querySelector('.headITR3').querySelector('.headDEK4').innerHTML = CATITR.length * 11;
-// document.querySelector('.headSPEC1').querySelector('.headDEK4').innerHTML = CATSPEC.length * 10;
-// document.querySelector('.headSPEC2').querySelector('.headDEK4').innerHTML = CATSPEC.length * 10;
-// document.querySelector('.headSPEC3').querySelector('.headDEK4').innerHTML = CATSPEC.length * 11;
+document.querySelector('.headRAB1').querySelector('.headDEK4').innerHTML = CATRAB.length * 10;
+document.querySelector('.headRAB2').querySelector('.headDEK4').innerHTML = CATRAB.length * 10;
+document.querySelector('.headRAB3').querySelector('.headDEK4').innerHTML = CATRAB.length * 11;
+document.querySelector('.headITR1').querySelector('.headDEK4').innerHTML = CATITR.length * 10;
+document.querySelector('.headITR2').querySelector('.headDEK4').innerHTML = CATITR.length * 10;
+document.querySelector('.headITR3').querySelector('.headDEK4').innerHTML = CATITR.length * 11;
+document.querySelector('.headSPEC1').querySelector('.headDEK4').innerHTML = CATSPEC.length * 10;
+document.querySelector('.headSPEC2').querySelector('.headDEK4').innerHTML = CATSPEC.length * 10;
+document.querySelector('.headSPEC3').querySelector('.headDEK4').innerHTML = CATSPEC.length * 11;
 
 //---------------------------------------------------------------------------Итоговый подсчет декретниц-----------------------------------------------------------------------------
 document.querySelector('.headRAB1').querySelector('.headDEK14').innerHTML = DECRAB.length * 10;
