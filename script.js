@@ -580,6 +580,14 @@ let persons = [
         sex: 'male',
         mode: '2', decret: false,
     },
+     {
+        abr: 'Rudnik',
+        firstname: 'Рудник Игорь',
+        category: 'Wopker',
+        prof: 'Аппаратчик ОСВ',
+        sex: 'male',
+        mode: '1', decret: false,
+    },
     {
         abr: 'Serebryakov',
         firstname: 'Cеребряков Дмитрий',
