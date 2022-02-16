@@ -299,6 +299,14 @@ let persons = [
         sex: 'female',
         mode: '2', decret: false,
     },
+     {
+        abr: 'Berlin',
+        firstname: 'Берлин Юрий',
+        category: 'Wopker',
+        prof: 'Слесарь',
+        sex: 'male',
+        mode: '0', decret: false,
+    },
     {
         abr: 'Verbitskaya',
         firstname: 'Вербитская Юлия',
@@ -362,7 +370,7 @@ let persons = [
         category: 'Wopker',
         prof: 'Слесарь',
         sex: 'male',
-        mode: '2', decret: false,
+        mode: '0', decret: false,
     },
     {
         abr: 'Danilenko',
@@ -450,7 +458,7 @@ let persons = [
         category: 'Wopker',
         prof: 'Слесарь',
         sex: 'male',
-        mode: '4', decret: false,
+        mode: '0', decret: false,
     },
     {
         abr: 'Kulinenkov',
