@@ -1038,20 +1038,20 @@ function prazdn(x=0,y=0) {
 
 //Среднесписочная численность
 
-// let SREDCHISRAB = document.querySelectorAll('.sredChisRab');
-// for (let www of SREDCHISRAB) {
-//     www.innerHTML = CATRAB.length;
-// }
+let SREDCHISRAB = document.querySelectorAll('.sredChisRab');
+for (let www of SREDCHISRAB) {
+    www.innerHTML = CATRAB.length;
+}
 
-// let SREDCHISITR = document.querySelectorAll('.sredChisITR');
-// for (let www of SREDCHISITR) {
-//     www.innerHTML = CATITR.length;
-// }
+let SREDCHISITR = document.querySelectorAll('.sredChisITR');
+for (let www of SREDCHISITR) {
+    www.innerHTML = CATITR.length;
+}
 
-// let SREDCHISSPEC = document.querySelectorAll('.sredChisSPEC');
-// for (let www of SREDCHISSPEC) {
-//     www.innerHTML = CATSPEC.length;
-// }
+let SREDCHISSPEC = document.querySelectorAll('.sredChisSPEC');
+for (let www of SREDCHISSPEC) {
+    www.innerHTML = CATSPEC.length;
+}
 
 
 //Подсчет женщин
