@@ -291,14 +291,7 @@ let persons = [
         sex: 'female',
         mode: '0', decret: true,
     },
-    {
-        abr: 'Basov',
-        firstname: 'Басов К',
-        category: 'Wopker',
-        prof: 'Слесарь',
-        sex: 'male',
-        mode: '0', decret: false,
-    },
+   
     {
         abr: 'Barsukova',
         firstname: 'Барсукова Наталья',
@@ -306,6 +299,13 @@ let persons = [
         prof: 'Аппаратчик ОСВ',
         sex: 'female',
         mode: '2', decret: false,
+    }, {
+        abr: 'Basov',
+        firstname: 'Басов К',
+        category: 'Wopker',
+        prof: 'Слесарь',
+        sex: 'male',
+        mode: '0', decret: false,
     },
    
      {
