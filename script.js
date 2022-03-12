@@ -613,6 +613,14 @@ let persons = [
         sex: 'male',
         mode: '4', decret: false,
     },
+   {
+        abr: 'Trebushevsky',
+        firstname: 'Требушевский Денис',
+        category: 'Wopker',
+        prof: 'Слесарь',
+        sex: 'male',
+        mode: '0', decret: false,
+    },
     {
         abr: 'Kharibin',
         firstname: 'Харибин Андрей',
@@ -620,6 +628,14 @@ let persons = [
         prof: 'Мастер',
         sex: 'male',
         mode: '4', decret: false,
+    },
+   {
+        abr: 'Tsimbalov',
+        firstname: 'Цымбалов Д',
+        category: 'Wopker',
+        prof: 'Аппаратчик приготовления химикатов',
+        sex: 'male',
+        mode: '3', decret: false,
     },
     {
         abr: 'Chuprakov',
