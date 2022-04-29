@@ -477,6 +477,15 @@ let persons = [
         sex: 'female',
         mode: '2', decret: false,
     },
+   
+   {
+        abr: 'Lazovik',
+        firstname: 'Лазовик Екатерина (итр)',
+        category: 'ITR',
+        prof: 'Мастер',
+        sex: 'female',
+        mode: '2', decret: false,
+    },
     {
         abr: 'Mazurov',
         firstname: 'Мазуров Вячеслав',
@@ -603,7 +612,7 @@ let persons = [
         category: 'Wopker',
         prof: 'Слесарь',
         sex: 'male',
-        mode: '0', decret: false,
+        mode: '1', decret: false,
     },
     {
         abr: 'Kharibin',
@@ -636,6 +645,14 @@ let persons = [
         prof: 'Аппаратчик ОСВ',
         sex: 'male',
         mode: '3', decret: false,
+    },
+    {
+        abr: 'Yaskov',
+        firstname: 'Яськов Виталий',
+        category: 'Wopker',
+        prof: 'Слесарь',
+        sex: 'male',
+        mode: '0', decret: false,
     },
 ];
 
