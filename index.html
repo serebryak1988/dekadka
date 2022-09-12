@@ -11,17 +11,822 @@
 
 <body>
 
-    
-<div class="summaryTabDIV">
-    <button class="onloadTab header">Загрузить</button> 
-    <button class="summaryTab header">Посчитать</button> 
-    <button class="storageTab header">Сохранить</button>
-    <button class="clearTab header">Очистить</button>   
-    <input class="printTab header" type="button" value="Печать" onclick="print()"></input>   
-</div>
+
+    <div class="summaryTabDIV">
+        <button class="nastroy header">Настройки</button>
+        <button class="onloadTab header">Загрузить</button>
+        <button class="summaryTab header">Посчитать</button>
+        <button class="storageTab header">Сохранить</button>
+        <button class="clearTab header">Очистить</button>
+        <input class="printTab header" type="button" value="Печать" onclick="print()"></input>
+        <input class="poktab header" type="button" value="Табель"></input>
+        <input class="pokDec1 header" type="button" value="Декадка №1"></input>
+        <input class="pokDec2 header" type="button" value="Декадка №2"></input>
+        <input class="pokDec3 header" type="button" value="Декадка №3"></input>
+        <input class="pokPer1 header" type="button" value="Переработка смены №1"></input>
+        <input class="pokPer2 header" type="button" value="Переработка смены №2"></input>
+        <input class="pokPer3 header" type="button" value="Переработка смены №3"></input>
+        <input class="pokPer4 header" type="button" value="Переработка смены №4"></input>
+
+        <select class="changeMon">
+            <option value="01" >Январь</option>
+            <option value="02" >Февраль</option>
+            <option value="03">Март</option>
+            <option value="04" >Апрель</option>
+            <option value="05">Май</option>
+            <option value="06" >Июнь</option>
+            <option value="07">Июль</option>
+            <option value="08" >Август</option>
+            <option value="09">Сентябрь</option>
+            <option value="10" >Октябрь</option>
+            <option value="11">Ноябрь</option>
+            <option value="12" >Декабрь</option>
+            
+        </select>
+
+        <select class="changeYear">
+            <option value="2022" >2022</option>
+            <option value="2023" >2023</option>
+            <option value="2024">2024</option>
+            <option value="2025" >2025</option>
+            <option value="2026">2026</option>
+            
+        </select>
+        
+        <button class="changeDat">Установить период расчета</button>
+    </div>
+
+
+
     <div class="wraper">
-         <p>Табель</p>
-        <table class="demotable one boss">
+        <table class="asd">
+            <button class="nastroyPraz header">Настройки праздников</button>
+            <tr class="trNastr">
+                <td><button class="saveNastr">Сохранить</button></td>
+                
+                
+            </tr>
+            <tr class="trNastr">
+                <td>№</td>
+                <td>ABR</td>
+                <td>Фамилия и имя</td>
+                <td>Категория</td>
+                <td>Профессия</td>
+                <td>Пол</td>
+                <td>Смена</td>
+                <td>Декрет</td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT1"></td>
+                <td contenteditable="true" class="nastrABR1"></td>
+                <td contenteditable="true" class="nastrFIRSTNAME1"></td>
+                <td contenteditable="true"class="nastrCATEGORY1"></td>
+                <td contenteditable="true"class="nastrPROF1"></td>
+                <td contenteditable="true"class="nastrSEX1"></td>
+                <td contenteditable="true"class="nastrMODE1"></td>
+                <td contenteditable="true"class="nastrDECRET1"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT2"></td>
+                <td contenteditable="true"class="nastrABR2"></td>
+                <td contenteditable="true" class="nastrFIRSTNAME2"></td>
+                <td contenteditable="true"class="nastrCATEGORY2"></td>
+                <td contenteditable="true"class="nastrPROF2"></td>
+                <td contenteditable="true"class="nastrSEX2"></td>
+                <td contenteditable="true"class="nastrMODE2"></td>
+                <td contenteditable="true"class="nastrDECRET2"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT3"></td>
+                <td contenteditable="true"class="nastrABR3"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME3"></td>
+                <td contenteditable="true"class="nastrCATEGORY3"></td>
+                <td contenteditable="true"class="nastrPROF3"></td>
+                <td contenteditable="true"class="nastrSEX3"></td>
+                <td contenteditable="true"class="nastrMODE3"></td>
+                <td contenteditable="true"class="nastrDECRET3"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT4"></td>
+                <td contenteditable="true"class="nastrABR4"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME4"></td>
+                <td contenteditable="true"class="nastrCATEGORY4"></td>
+                <td contenteditable="true"class="nastrPROF4"></td>
+                <td contenteditable="true"class="nastrSEX4"></td>
+                <td contenteditable="true"class="nastrMODE4"></td>
+                <td contenteditable="true"class="nastrDECRET4"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT5"></td>
+                <td contenteditable="true"class="nastrABR5"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME5"></td>
+                <td contenteditable="true"class="nastrCATEGORY5"></td>
+                <td contenteditable="true"class="nastrPROF5"></td>
+                <td contenteditable="true"class="nastrSEX5"></td>
+                <td contenteditable="true"class="nastrMODE5"></td>
+                <td contenteditable="true"class="nastrDECRET5"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT6"></td>
+                <td contenteditable="true"class="nastrABR6"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME6"></td>
+                <td contenteditable="true"class="nastrCATEGORY6"></td>
+                <td contenteditable="true"class="nastrPROF6"></td>
+                <td contenteditable="true"class="nastrSEX6"></td>
+                <td contenteditable="true"class="nastrMODE6"></td>
+                <td contenteditable="true"class="nastrDECRET6"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT7"></td>
+                <td contenteditable="true"class="nastrABR7"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME7"></td>
+                <td contenteditable="true"class="nastrCATEGORY7"></td>
+                <td contenteditable="true"class="nastrPROF7"></td>
+                <td contenteditable="true"class="nastrSEX7"></td>
+                <td contenteditable="true"class="nastrMODE7"></td>
+                <td contenteditable="true"class="nastrDECRET7"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT8"></td>
+                <td contenteditable="true"class="nastrABR8"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME8"></td>
+                <td contenteditable="true"class="nastrCATEGORY8"></td>
+                <td contenteditable="true"class="nastrPROF8"></td>
+                <td contenteditable="true"class="nastrSEX8"></td>
+                <td contenteditable="true"class="nastrMODE8"></td>
+                <td contenteditable="true"class="nastrDECRET8"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT9"></td>
+                <td contenteditable="true"class="nastrABR9"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME9"></td>
+                <td contenteditable="true"class="nastrCATEGORY9"></td>
+                <td contenteditable="true"class="nastrPROF9"></td>
+                <td contenteditable="true"class="nastrSEX9"></td>
+                <td contenteditable="true"class="nastrMODE9"></td>
+                <td contenteditable="true"class="nastrDECRET9"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT10"></td>
+                <td contenteditable="true"class="nastrABR10"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME10"></td>
+                <td contenteditable="true"class="nastrCATEGORY10"></td>
+                <td contenteditable="true"class="nastrPROF10"></td>
+                <td contenteditable="true"class="nastrSEX10"></td>
+                <td contenteditable="true"class="nastrMODE10"></td>
+                <td contenteditable="true"class="nastrDECRET10"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT11"></td>
+                <td contenteditable="true"class="nastrABR11"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME11"></td>
+                <td contenteditable="true"class="nastrCATEGORY11"></td>
+                <td contenteditable="true"class="nastrPROF11"></td>
+                <td contenteditable="true"class="nastrSEX11"></td>
+                <td contenteditable="true"class="nastrMODE11"></td>
+                <td contenteditable="true"class="nastrDECRET11"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT12"></td>
+                <td contenteditable="true"class="nastrABR12"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME12"></td>
+                <td contenteditable="true"class="nastrCATEGORY12"></td>
+                <td contenteditable="true"class="nastrPROF12"></td>
+                <td contenteditable="true"class="nastrSEX12"></td>
+                <td contenteditable="true"class="nastrMODE12"></td>
+                <td contenteditable="true"class="nastrDECRET12"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT13"></td>
+                <td contenteditable="true"class="nastrABR13"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME13"></td>
+                <td contenteditable="true"class="nastrCATEGORY13"></td>
+                <td contenteditable="true"class="nastrPROF13"></td>
+                <td contenteditable="true"class="nastrSEX13"></td>
+                <td contenteditable="true"class="nastrMODE13"></td>
+                <td contenteditable="true"class="nastrDECRET13"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT14"></td>
+                <td contenteditable="true"class="nastrABR14"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME14"></td>
+                <td contenteditable="true"class="nastrCATEGORY14"></td>
+                <td contenteditable="true"class="nastrPROF14"></td>
+                <td contenteditable="true"class="nastrSEX14"></td>
+                <td contenteditable="true"class="nastrMODE14"></td>
+                <td contenteditable="true"class="nastrDECRET14"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT15"></td>
+                <td contenteditable="true"class="nastrABR15"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME15"></td>
+                <td contenteditable="true"class="nastrCATEGORY15"></td>
+                <td contenteditable="true"class="nastrPROF15"></td>
+                <td contenteditable="true"class="nastrSEX15"></td>
+                <td contenteditable="true"class="nastrMODE15"></td>
+                <td contenteditable="true"class="nastrDECRET15"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT16"></td>
+                <td contenteditable="true"class="nastrABR16"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME16"></td>
+                <td contenteditable="true"class="nastrCATEGORY16"></td>
+                <td contenteditable="true"class="nastrPROF16"></td>
+                <td contenteditable="true"class="nastrSEX16"></td>
+                <td contenteditable="true"class="nastrMODE16"></td>
+                <td contenteditable="true"class="nastrDECRET16"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT17"></td>
+                <td contenteditable="true"class="nastrABR17"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME17"></td>
+                <td contenteditable="true"class="nastrCATEGORY17"></td>
+                <td contenteditable="true"class="nastrPROF17"></td>
+                <td contenteditable="true"class="nastrSEX17"></td>
+                <td contenteditable="true"class="nastrMODE17"></td>
+                <td contenteditable="true"class="nastrDECRET17"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT18"></td>
+                <td contenteditable="true"class="nastrABR18"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME18"></td>
+                <td contenteditable="true"class="nastrCATEGORY18"></td>
+                <td contenteditable="true"class="nastrPROF18"></td>
+                <td contenteditable="true"class="nastrSEX18"></td>
+                <td contenteditable="true"class="nastrMODE18"></td>
+                <td contenteditable="true"class="nastrDECRET18"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT19"></td>
+                <td contenteditable="true"class="nastrABR19"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME19"></td>
+                <td contenteditable="true"class="nastrCATEGORY19"></td>
+                <td contenteditable="true"class="nastrPROF19"></td>
+                <td contenteditable="true"class="nastrSEX19"></td>
+                <td contenteditable="true"class="nastrMODE19"></td>
+                <td contenteditable="true"class="nastrDECRET19"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT20"></td>
+                <td contenteditable="true"class="nastrABR20"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME20"></td>
+                <td contenteditable="true"class="nastrCATEGORY20"></td>
+                <td contenteditable="true"class="nastrPROF20"></td>
+                <td contenteditable="true"class="nastrSEX20"></td>
+                <td contenteditable="true"class="nastrMODE20"></td>
+                <td contenteditable="true"class="nastrDECRET20"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT21"></td>
+                <td contenteditable="true"class="nastrABR21"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME21"></td>
+                <td contenteditable="true"class="nastrCATEGORY21"></td>
+                <td contenteditable="true"class="nastrPROF21"></td>
+                <td contenteditable="true"class="nastrSEX21"></td>
+                <td contenteditable="true"class="nastrMODE21"></td>
+                <td contenteditable="true"class="nastrDECRET21"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT22"></td>
+                <td contenteditable="true"class="nastrABR22"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME22"></td>
+                <td contenteditable="true"class="nastrCATEGORY22"></td>
+                <td contenteditable="true"class="nastrPROF22"></td>
+                <td contenteditable="true"class="nastrSEX22"></td>
+                <td contenteditable="true"class="nastrMODE22"></td>
+                <td contenteditable="true"class="nastrDECRET22"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT23"></td>
+                <td contenteditable="true"class="nastrABR23"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME23"></td>
+                <td contenteditable="true"class="nastrCATEGORY23"></td>
+                <td contenteditable="true"class="nastrPROF23"></td>
+                <td contenteditable="true"class="nastrSEX23"></td>
+                <td contenteditable="true"class="nastrMODE23"></td>
+                <td contenteditable="true"class="nastrDECRET23"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT24"></td>
+                <td contenteditable="true"class="nastrABR24"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME24"></td>
+                <td contenteditable="true"class="nastrCATEGORY24"></td>
+                <td contenteditable="true"class="nastrPROF24"></td>
+                <td contenteditable="true"class="nastrSEX24"></td>
+                <td contenteditable="true"class="nastrMODE24"></td>
+                <td contenteditable="true"class="nastrDECRET24"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT25"></td>
+                <td contenteditable="true"class="nastrABR25"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME25"></td>
+                <td contenteditable="true"class="nastrCATEGORY25"></td>
+                <td contenteditable="true"class="nastrPROF25"></td>
+                <td contenteditable="true"class="nastrSEX25"></td>
+                <td contenteditable="true"class="nastrMODE25"></td>
+                <td contenteditable="true"class="nastrDECRET25"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT26"></td>
+                <td contenteditable="true"class="nastrABR26"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME26"></td>
+                <td contenteditable="true"class="nastrCATEGORY26"></td>
+                <td contenteditable="true"class="nastrPROF26"></td>
+                <td contenteditable="true"class="nastrSEX26"></td>
+                <td contenteditable="true"class="nastrMODE26"></td>
+                <td contenteditable="true"class="nastrDECRET26"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT27"></td>
+                <td contenteditable="true"class="nastrABR27"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME27"></td>
+                <td contenteditable="true"class="nastrCATEGORY27"></td>
+                <td contenteditable="true"class="nastrPROF27"></td>
+                <td contenteditable="true"class="nastrSEX27"></td>
+                <td contenteditable="true"class="nastrMODE27"></td>
+                <td contenteditable="true"class="nastrDECRET27"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT28"></td>
+                <td contenteditable="true"class="nastrABR28"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME28"></td>
+                <td contenteditable="true"class="nastrCATEGORY28"></td>
+                <td contenteditable="true"class="nastrPROF28"></td>
+                <td contenteditable="true"class="nastrSEX28"></td>
+                <td contenteditable="true"class="nastrMODE28"></td>
+                <td contenteditable="true"class="nastrDECRET28"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT29"></td>
+                <td contenteditable="true"class="nastrABR29"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME29"></td>
+                <td contenteditable="true"class="nastrCATEGORY29"></td>
+                <td contenteditable="true"class="nastrPROF29"></td>
+                <td contenteditable="true"class="nastrSEX29"></td>
+                <td contenteditable="true"class="nastrMODE29"></td>
+                <td contenteditable="true"class="nastrDECRET29"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT30"></td>
+                <td contenteditable="true"class="nastrABR30"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME30"></td>
+                <td contenteditable="true"class="nastrCATEGORY30"></td>
+                <td contenteditable="true"class="nastrPROF30"></td>
+                <td contenteditable="true"class="nastrSEX30"></td>
+                <td contenteditable="true"class="nastrMODE30"></td>
+                <td contenteditable="true"class="nastrDECRET30"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT31"></td>
+                <td contenteditable="true"class="nastrABR31"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME31"></td>
+                <td contenteditable="true"class="nastrCATEGORY31"></td>
+                <td contenteditable="true"class="nastrPROF31"></td>
+                <td contenteditable="true"class="nastrSEX31"></td>
+                <td contenteditable="true"class="nastrMODE31"></td>
+                <td contenteditable="true"class="nastrDECRET31"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT32"></td>
+                <td contenteditable="true"class="nastrABR32"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME32"></td>
+                <td contenteditable="true"class="nastrCATEGORY32"></td>
+                <td contenteditable="true"class="nastrPROF32"></td>
+                <td contenteditable="true"class="nastrSEX32"></td>
+                <td contenteditable="true"class="nastrMODE32"></td>
+                <td contenteditable="true"class="nastrDECRET32"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT33"></td>
+                <td contenteditable="true"class="nastrABR33"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME33"></td>
+                <td contenteditable="true"class="nastrCATEGORY33"></td>
+                <td contenteditable="true"class="nastrPROF33"></td>
+                <td contenteditable="true"class="nastrSEX33"></td>
+                <td contenteditable="true"class="nastrMODE33"></td>
+                <td contenteditable="true"class="nastrDECRET33"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT34"></td>
+                <td contenteditable="true"class="nastrABR34"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME34"></td>
+                <td contenteditable="true"class="nastrCATEGORY34"></td>
+                <td contenteditable="true"class="nastrPROF34"></td>
+                <td contenteditable="true"class="nastrSEX34"></td>
+                <td contenteditable="true"class="nastrMODE34"></td>
+                <td contenteditable="true"class="nastrDECRET34"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT35"></td>
+                <td contenteditable="true"class="nastrABR35"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME35"></td>
+                <td contenteditable="true"class="nastrCATEGORY35"></td>
+                <td contenteditable="true"class="nastrPROF35"></td>
+                <td contenteditable="true"class="nastrSEX35"></td>
+                <td contenteditable="true"class="nastrMODE35"></td>
+                <td contenteditable="true"class="nastrDECRET35"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT36"></td>
+                <td contenteditable="true"class="nastrABR36"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME36"></td>
+                <td contenteditable="true"class="nastrCATEGORY36"></td>
+                <td contenteditable="true"class="nastrPROF36"></td>
+                <td contenteditable="true"class="nastrSEX36"></td>
+                <td contenteditable="true"class="nastrMODE36"></td>
+                <td contenteditable="true"class="nastrDECRET36"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT37"></td>
+                <td contenteditable="true"class="nastrABR37"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME37"></td>
+                <td contenteditable="true"class="nastrCATEGORY37"></td>
+                <td contenteditable="true"class="nastrPROF37"></td>
+                <td contenteditable="true"class="nastrSEX37"></td>
+                <td contenteditable="true"class="nastrMODE37"></td>
+                <td contenteditable="true"class="nastrDECRET37"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT38"></td>
+                <td contenteditable="true"class="nastrABR38"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME38"></td>
+                <td contenteditable="true"class="nastrCATEGORY38"></td>
+                <td contenteditable="true"class="nastrPROF38"></td>
+                <td contenteditable="true"class="nastrSEX38"></td>
+                <td contenteditable="true"class="nastrMODE38"></td>
+                <td contenteditable="true"class="nastrDECRET38"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT39"></td>
+                <td contenteditable="true"class="nastrABR39"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME39"></td>
+                <td contenteditable="true"class="nastrCATEGORY39"></td>
+                <td contenteditable="true"class="nastrPROF39"></td>
+                <td contenteditable="true"class="nastrSEX39"></td>
+                <td contenteditable="true"class="nastrMODE39"></td>
+                <td contenteditable="true"class="nastrDECRET39"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT40"></td>
+                <td contenteditable="true"class="nastrABR40"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME40"></td>
+                <td contenteditable="true"class="nastrCATEGORY40"></td>
+                <td contenteditable="true"class="nastrPROF40"></td>
+                <td contenteditable="true"class="nastrSEX40"></td>
+                <td contenteditable="true"class="nastrMODE40"></td>
+                <td contenteditable="true"class="nastrDECRET40"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT41"></td>
+                <td contenteditable="true"class="nastrABR41"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME41"></td>
+                <td contenteditable="true"class="nastrCATEGORY41"></td>
+                <td contenteditable="true"class="nastrPROF41"></td>
+                <td contenteditable="true"class="nastrSEX41"></td>
+                <td contenteditable="true"class="nastrMODE41"></td>
+                <td contenteditable="true"class="nastrDECRET41"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT42"></td>
+                <td contenteditable="true"class="nastrABR42"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME42"></td>
+                <td contenteditable="true"class="nastrCATEGORY42"></td>
+                <td contenteditable="true"class="nastrPROF42"></td>
+                <td contenteditable="true"class="nastrSEX42"></td>
+                <td contenteditable="true"class="nastrMODE42"></td>
+                <td contenteditable="true"class="nastrDECRET42"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT43"></td>
+                <td contenteditable="true"class="nastrABR43"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME43"></td>
+                <td contenteditable="true"class="nastrCATEGORY43"></td>
+                <td contenteditable="true"class="nastrPROF43"></td>
+                <td contenteditable="true"class="nastrSEX43"></td>
+                <td contenteditable="true"class="nastrMODE43"></td>
+                <td contenteditable="true"class="nastrDECRET43"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT44"></td>
+                <td contenteditable="true"class="nastrABR44"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME44"></td>
+                <td contenteditable="true"class="nastrCATEGORY44"></td>
+                <td contenteditable="true"class="nastrPROF44"></td>
+                <td contenteditable="true"class="nastrSEX44"></td>
+                <td contenteditable="true"class="nastrMODE44"></td>
+                <td contenteditable="true"class="nastrDECRET44"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT45"></td>
+                <td contenteditable="true"class="nastrABR45"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME45"></td>
+                <td contenteditable="true"class="nastrCATEGORY45"></td>
+                <td contenteditable="true"class="nastrPROF45"></td>
+                <td contenteditable="true"class="nastrSEX45"></td>
+                <td contenteditable="true"class="nastrMODE45"></td>
+                <td contenteditable="true"class="nastrDECRET45"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT46"></td>
+                <td contenteditable="true"class="nastrABR46"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME46"></td>
+                <td contenteditable="true"class="nastrCATEGORY46"></td>
+                <td contenteditable="true"class="nastrPROF46"></td>
+                <td contenteditable="true"class="nastrSEX46"></td>
+                <td contenteditable="true"class="nastrMODE46"></td>
+                <td contenteditable="true"class="nastrDECRET46"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT47"></td>
+                <td contenteditable="true"class="nastrABR47"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME47"></td>
+                <td contenteditable="true"class="nastrCATEGORY47"></td>
+                <td contenteditable="true"class="nastrPROF47"></td>
+                <td contenteditable="true"class="nastrSEX47"></td>
+                <td contenteditable="true"class="nastrMODE47"></td>
+                <td contenteditable="true"class="nastrDECRET47"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT48"></td>
+                <td contenteditable="true"class="nastrABR48"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME48"></td>
+                <td contenteditable="true"class="nastrCATEGORY48"></td>
+                <td contenteditable="true"class="nastrPROF48"></td>
+                <td contenteditable="true"class="nastrSEX48"></td>
+                <td contenteditable="true"class="nastrMODE48"></td>
+                <td contenteditable="true"class="nastrDECRET48"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT49"></td>
+                <td contenteditable="true"class="nastrABR49"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME49"></td>
+                <td contenteditable="true"class="nastrCATEGORY49"></td>
+                <td contenteditable="true"class="nastrPROF49"></td>
+                <td contenteditable="true"class="nastrSEX49"></td>
+                <td contenteditable="true"class="nastrMODE49"></td>
+                <td contenteditable="true"class="nastrDECRET49"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT50"></td>
+                <td contenteditable="true"class="nastrABR50"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME50"></td>
+                <td contenteditable="true"class="nastrCATEGORY50"></td>
+                <td contenteditable="true"class="nastrPROF50"></td>
+                <td contenteditable="true"class="nastrSEX50"></td></td>
+                <td contenteditable="true"class="nastrMODE50"></td>
+                <td contenteditable="true"class="nastrDECRET50"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT51"></td>
+                <td contenteditable="true"class="nastrABR51"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME51"></td>
+                <td contenteditable="true"class="nastrCATEGORY51"></td>
+                <td contenteditable="true"class="nastrPROF51"></td>
+                <td contenteditable="true"class="nastrSEX51"></td>
+                <td contenteditable="true"class="nastrMODE51"></td>
+                <td contenteditable="true"class="nastrDECRET51"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT52"></td>
+                <td contenteditable="true"class="nastrABR52"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME52"></td>
+                <td contenteditable="true"class="nastrCATEGORY52"></td>
+                <td contenteditable="true"class="nastrPROF52"></td>
+                <td contenteditable="true"class="nastrSEX52"></td>
+                <td contenteditable="true"class="nastrMODE52"></td>
+                <td contenteditable="true"class="nastrDECRET52"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT53"></td>
+                <td contenteditable="true"class="nastrABR53"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME53"></td>
+                <td contenteditable="true"class="nastrCATEGORY53"></td>
+                <td contenteditable="true"class="nastrPROF53"></td>
+                <td contenteditable="true"class="nastrSEX53"></td>
+                <td contenteditable="true"class="nastrMODE53"></td>
+                <td contenteditable="true"class="nastrDECRET53"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT54"></td>
+                <td contenteditable="true"class="nastrABR54"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME54"></td>
+                <td contenteditable="true"class="nastrCATEGORY54"></td>
+                <td contenteditable="true"class="nastrPROF54"></td>
+                <td contenteditable="true"class="nastrSEX54"></td>
+                <td contenteditable="true"class="nastrMODE54"></td>
+                <td contenteditable="true"class="nastrDECRET54"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT55"></td>
+                <td contenteditable="true"class="nastrABR55"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME55"></td>
+                <td contenteditable="true"class="nastrCATEGORY55"></td>
+                <td contenteditable="true"class="nastrPROF55"></td>
+                <td contenteditable="true"class="nastrSEX55"></td>
+                <td contenteditable="true"class="nastrMODE55"></td>
+                <td contenteditable="true"class="nastrDECRET55"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT56"></td>
+                <td contenteditable="true"class="nastrABR56"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME56"></td>
+                <td contenteditable="true"class="nastrCATEGORY56"></td>
+                <td contenteditable="true"class="nastrPROF56"></td>
+                <td contenteditable="true"class="nastrSEX56"></td>
+                <td contenteditable="true"class="nastrMODE56"></td>
+                <td contenteditable="true"class="nastrDECRET56"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT57"></td>
+                <td contenteditable="true"class="nastrABR57"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME57"></td>
+                <td contenteditable="true"class="nastrCATEGORY57"></td>
+                <td contenteditable="true"class="nastrPROF57"></td>
+                <td contenteditable="true"class="nastrSEX57"></td>
+                <td contenteditable="true"class="nastrMODE57"></td>
+                <td contenteditable="true"class="nastrDECRET57"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT58"></td>
+                <td contenteditable="true"class="nastrABR58"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME58"></td>
+                <td contenteditable="true"class="nastrCATEGORY58"></td>
+                <td contenteditable="true"class="nastrPROF58"></td>
+                <td contenteditable="true"class="nastrSEX58"></td>
+                <td contenteditable="true"class="nastrMODE58"></td>
+                <td contenteditable="true"class="nastrDECRET58"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT59"></td>
+                <td contenteditable="true"class="nastrABR59"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME59"></td>
+                <td contenteditable="true"class="nastrCATEGORY59"></td>
+                <td contenteditable="true"class="nastrPROF59"></td>
+                <td contenteditable="true"class="nastrSEX59"></td>
+                <td contenteditable="true"class="nastrMODE59"></td>
+                <td contenteditable="true"class="nastrDECRET59"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNT60"></td>
+                <td contenteditable="true"class="nastrABR60"></td>
+                <td contenteditable="true"class="nastrFIRSTNAME60"></td>
+                <td contenteditable="true"class="nastrCATEGORY60"></td>
+                <td contenteditable="true"class="nastrPROF60"></td>
+                <td contenteditable="true"class="nastrSEX60"></td>
+                <td contenteditable="true"class="nastrMODE60"></td>
+                <td contenteditable="true"class="nastrDECRET60"></td>
+            </tr>
+        </table>
+
+        <table class="asdPraz">
+            <tr class="trNastrPraz">
+                <td><button class="saveNastrPraz">Сохранить</button></td>
+                
+                
+            </tr>
+            <tr class="trNastrPraz">
+                <td>№</td>
+                <td>Дата</td>
+               
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPraz1"></td>
+                <td contenteditable="true" class="nastrDatPraz1"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPraz2"></td>
+                <td contenteditable="true"class="nastrDatPraz2"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPraz3"></td>
+                <td contenteditable="true"class="nastrDatPraz3"></td>
+            </tr>  
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPraz4"></td>
+                <td contenteditable="true"class="nastrDatPraz4"></td>
+                
+            </tr>
+           
+        </table>
+
+        <table class="asdPlan">
+            <tr class="trNastrPlan">
+                <td><button class="saveNastrPlan">Сохранить</button></td>
+                
+                
+            </tr>
+            <tr class="trNastrPlan">
+                <td>Дата</td>
+                <td>Смена №1</td>
+                <td>Смена №2</td>
+                <td>Смена №3</td>
+                <td>Смена №4</td>
+               
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan1"></td>
+                <td contenteditable="true" class="nastrSm1Plan1"></td>
+                <td contenteditable="true" class="nastrSm2Plan1"></td>
+                <td contenteditable="true" class="nastrSm3Plan1"></td>
+                <td contenteditable="true" class="nastrSm4Plan1"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan2"></td>
+                <td contenteditable="true" class="nastrSm1Plan2"></td>
+                <td contenteditable="true" class="nastrSm2Plan2"></td>
+                <td contenteditable="true" class="nastrSm3Plan2"></td>
+                <td contenteditable="true" class="nastrSm4Plan2"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan3"></td>
+                <td contenteditable="true" class="nastrSm1Plan3"></td>
+                <td contenteditable="true" class="nastrSm2Plan3"></td>
+                <td contenteditable="true" class="nastrSm3Plan3"></td>
+                <td contenteditable="true" class="nastrSm4Plan3"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan4"></td>
+                <td contenteditable="true" class="nastrSm1Plan4"></td>
+                <td contenteditable="true" class="nastrSm2Plan4"></td>
+                <td contenteditable="true" class="nastrSm3Plan4"></td>
+                <td contenteditable="true" class="nastrSm4Plan4"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan5"></td>
+                <td contenteditable="true" class="nastrSm1Plan5"></td>
+                <td contenteditable="true" class="nastrSm2Plan5"></td>
+                <td contenteditable="true" class="nastrSm3Plan5"></td>
+                <td contenteditable="true" class="nastrSm4Plan5"></td>
+                
+            </tr>
+          
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan6"></td>
+                <td contenteditable="true" class="nastrSm1Plan6"></td>
+                <td contenteditable="true" class="nastrSm2Plan6"></td>
+                <td contenteditable="true" class="nastrSm3Plan6"></td>
+                <td contenteditable="true" class="nastrSm4Plan6"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan7"></td>
+                <td contenteditable="true" class="nastrSm1Plan7"></td>
+                <td contenteditable="true" class="nastrSm2Plan7"></td>
+                <td contenteditable="true" class="nastrSm3Plan7"></td>
+                <td contenteditable="true" class="nastrSm4Plan7"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan8"></td>
+                <td contenteditable="true" class="nastrSm1Plan8"></td>
+                <td contenteditable="true" class="nastrSm2Plan8"></td>
+                <td contenteditable="true" class="nastrSm3Plan8"></td>
+                <td contenteditable="true" class="nastrSm4Plan8"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan9"></td>
+                <td contenteditable="true" class="nastrSm1Plan9"></td>
+                <td contenteditable="true" class="nastrSm2Plan9"></td>
+                <td contenteditable="true" class="nastrSm3Plan9"></td>
+                <td contenteditable="true" class="nastrSm4Plan9"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan10"></td>
+                <td contenteditable="true" class="nastrSm1Plan10"></td>
+                <td contenteditable="true" class="nastrSm2Plan10"></td>
+                <td contenteditable="true" class="nastrSm3Plan10"></td>
+                <td contenteditable="true" class="nastrSm4Plan10"></td>
+                
+            </tr>
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan11"></td>
+                <td contenteditable="true" class="nastrSm1Plan11"></td>
+                <td contenteditable="true" class="nastrSm2Plan11"></td>
+                <td contenteditable="true" class="nastrSm3Plan11"></td>
+                <td contenteditable="true" class="nastrSm4Plan11"></td>
+                
+            </tr>
+
+            <tr>
+                <td contenteditable="true"class="nastrCOUNTPlan12"></td>
+                <td contenteditable="true" class="nastrSm1Plan12"></td>
+                <td contenteditable="true" class="nastrSm2Plan12"></td>
+                <td contenteditable="true" class="nastrSm3Plan12"></td>
+                <td contenteditable="true" class="nastrSm4Plan12"></td>
+                
+            </tr>
+           
+        </table>
+
+        <table class="demotable oneT boss">
             <tr class="header">
                 <td rowspan="2" class="row0">ФИО</td>
                 <td colspan="31">Дни месяца</td>
@@ -37,7 +842,7 @@
                 <td rowspan="2">Примечания (свой счет)</td>
             </tr>
             <tr class="header">
-                <td class="dayWeek1" onclick="arrPraz.push('1')">1</td>
+                <td class="dayWeek1" >1</td>
                 <td class="dayWeek2">2</td>
                 <td class="dayWeek3">3</td>
                 <td class="dayWeek4">4</td>
@@ -74,8 +879,8 @@
 
             </tr>
         </table>
-<p>Первая декадка</p>
-<table class="demotable one">
+
+        <table class="demotable oneT wrapDec1">
             <tr class="header">
                 <td rowspan="3">Категория персонала</td>
                 <td rowspan="3">Дата</td>
@@ -124,8 +929,8 @@
             <tr class="colDek1">
                 <td rowspan="10">Рабочие</td>
                 <td>1</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab"></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -156,8 +961,8 @@
             </tr>
             <tr class="colDek2">
                 <td>2</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -188,8 +993,8 @@
             </tr>
             <tr class="colDek3">
                 <td>3</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -220,8 +1025,8 @@
             </tr>
             <tr class="colDek4">
                 <td>4</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -252,8 +1057,8 @@
             </tr>
             <tr class="colDek5">
                 <td>5</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -284,8 +1089,8 @@
             </tr>
             <tr class="colDek6">
                 <td>6</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab"></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -316,8 +1121,8 @@
             </tr>
             <tr class="colDek7">
                 <td>7</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -348,8 +1153,8 @@
             </tr>
             <tr class="colDek8">
                 <td>8</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -380,8 +1185,8 @@
             </tr>
             <tr class="colDek9">
                 <td>9</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -412,8 +1217,8 @@
             </tr>
             <tr class="colDek10">
                 <td>10</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab"contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -446,7 +1251,7 @@
                 <td class="header headDEK1">Итого</td>
                 <td class="header headDEK2"></td>
                 <td class="header headDEK3"></td>
-                <td class="header headDEK4"contenteditable="true"></td>
+                <td class="header headDEK4" contenteditable="true"></td>
                 <td class="header headDEK5"></td>
                 <td class="header headDEK6"></td>
                 <td class="header headDEK7"></td>
@@ -478,8 +1283,8 @@
             <tr class="colDek11">
                 <td rowspan="10">ИТР и служащие</td>
                 <td>1</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -510,41 +1315,41 @@
             </tr>
             <tr class="colDek12">
                 <td>2</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1">
-                    </td>
-                    <td class="rowDek2"></td>
-                    <td class="rowDek3"></td>
-                    <td class="rowDek4"></td>
-                    <td class="rowDek5"></td>
-                    <td class="rowDek6"></td>
-                    <td class="rowDek7"></td>
-                    <td class="rowDek8"></td>
-                    <td class="rowDek9 decITR"></td>
-                    <td class="rowDek10"></td>
-                    <td class="rowDek11"></td>
-                    <td class="rowDek12"></td>
-                    <td class="rowDek13"></td>
-                    <td class="rowDek14"></td>
-                    <td class="rowDek15"></td>
-                    <td class="rowDek16"></td>
-                    <td class="rowDek17"></td>
-                    <td class="rowDek18"></td>
-                    <td class="rowDek19"></td>
-                    <td class="rowDek20"></td>
-                    <td class="rowDek21"></td>
-                    <td class="rowDek22"></td>
-                    <td class="rowDek23"></td>
-                    <td class="rowDek24"></td>
-                    <td class="rowDek25"></td>
-                    <td class="rowDek26"></td>
+                </td>
+                <td class="rowDek2"></td>
+                <td class="rowDek3"></td>
+                <td class="rowDek4"></td>
+                <td class="rowDek5"></td>
+                <td class="rowDek6"></td>
+                <td class="rowDek7"></td>
+                <td class="rowDek8"></td>
+                <td class="rowDek9 decITR"></td>
+                <td class="rowDek10"></td>
+                <td class="rowDek11"></td>
+                <td class="rowDek12"></td>
+                <td class="rowDek13"></td>
+                <td class="rowDek14"></td>
+                <td class="rowDek15"></td>
+                <td class="rowDek16"></td>
+                <td class="rowDek17"></td>
+                <td class="rowDek18"></td>
+                <td class="rowDek19"></td>
+                <td class="rowDek20"></td>
+                <td class="rowDek21"></td>
+                <td class="rowDek22"></td>
+                <td class="rowDek23"></td>
+                <td class="rowDek24"></td>
+                <td class="rowDek25"></td>
+                <td class="rowDek26"></td>
             </tr>
             <tr class="colDek13">
                 <td>3</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -575,8 +1380,8 @@
             </tr>
             <tr class="colDek14">
                 <td>4</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -607,8 +1412,8 @@
             </tr>
             <tr class="colDek15">
                 <td>5</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -639,8 +1444,8 @@
             </tr>
             <tr class="colDek16">
                 <td>6</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -671,8 +1476,8 @@
             </tr>
             <tr class="colDek17">
                 <td>7</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -703,8 +1508,8 @@
             </tr>
             <tr class="colDek18">
                 <td>8</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -735,8 +1540,8 @@
             </tr>
             <tr class="colDek19">
                 <td>9</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -767,8 +1572,8 @@
             </tr>
             <tr class="colDek20">
                 <td>10</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr"contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -833,8 +1638,8 @@
             <tr class="colDek21">
                 <td rowspan="10">Специалисты</td>
                 <td>1</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -865,8 +1670,8 @@
             </tr>
             <tr class="colDek22">
                 <td>2</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -897,8 +1702,8 @@
             </tr>
             <tr class="colDek23">
                 <td>3</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -929,8 +1734,8 @@
             </tr>
             <tr class="colDek24">
                 <td>4</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -961,8 +1766,8 @@
             </tr>
             <tr class="colDek25">
                 <td>5</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -993,8 +1798,8 @@
             </tr>
             <tr class="colDek26">
                 <td>6</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1025,8 +1830,8 @@
             </tr>
             <tr class="colDek27">
                 <td>7</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1057,8 +1862,8 @@
             </tr>
             <tr class="colDek28">
                 <td>8</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1090,8 +1895,8 @@
             </tr>
             <tr class="colDek29">
                 <td>9</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec"contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1122,8 +1927,8 @@
             </tr>
             <tr class="colDek30">
                 <td>10</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1150,7 +1955,7 @@
                 <td class="rowDek23"></td>
                 <td class="rowDek24"></td>
                 <td class="rowDek25"></td>
-                <td class="rowDek26"></td>
+                <td class="rowDek26" ></td>
             </tr>
             <tr class="headSPEC1">
                 <td class="header headDEK1">Итого</td>
@@ -1185,9 +1990,9 @@
                 <td class="header headDEK30"></td>
                 <td class="header headDEK31"></td>
             </tr>
-        </table> 
-        <p>Вторая декадка</p>
-        <table class="demotable one">
+        </table>
+
+        <table class="demotable oneT wrapDec2">
             <tr class="header">
                 <td rowspan="3">Категория персонала</td>
                 <td rowspan="3">Дата</td>
@@ -1236,8 +2041,8 @@
             <tr class="colDek31">
                 <td rowspan="10">Рабочие</td>
                 <td>11</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"> </td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1268,8 +2073,8 @@
             </tr>
             <tr class="colDek32">
                 <td>12</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1300,8 +2105,8 @@
             </tr>
             <tr class="colDek33">
                 <td>13</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1332,8 +2137,8 @@
             </tr>
             <tr class="colDek34">
                 <td>14</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1364,8 +2169,8 @@
             </tr>
             <tr class="colDek35">
                 <td>15</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1396,8 +2201,8 @@
             </tr>
             <tr class="colDek36">
                 <td>16</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1428,8 +2233,8 @@
             </tr>
             <tr class="colDek37">
                 <td>17</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1460,8 +2265,8 @@
             </tr>
             <tr class="colDek38">
                 <td>18</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1492,8 +2297,8 @@
             </tr>
             <tr class="colDek39">
                 <td>19</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1524,8 +2329,8 @@
             </tr>
             <tr class="colDek40">
                 <td>20</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1590,8 +2395,8 @@
             <tr class="colDek41">
                 <td rowspan="10">ИТР и служащие</td>
                 <td>11</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1622,8 +2427,8 @@
             </tr>
             <tr class="colDek42">
                 <td>12</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR"></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1654,8 +2459,8 @@
             </tr>
             <tr class="colDek43">
                 <td>13</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1686,8 +2491,8 @@
             </tr>
             <tr class="colDek44">
                 <td>14</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1718,8 +2523,8 @@
             </tr>
             <tr class="colDek45">
                 <td>15</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1750,8 +2555,8 @@
             </tr>
             <tr class="colDek46">
                 <td>16</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1782,8 +2587,8 @@
             </tr>
             <tr class="colDek47">
                 <td>17</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1814,8 +2619,8 @@
             </tr>
             <tr class="colDek48">
                 <td>18</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1846,8 +2651,8 @@
             </tr>
             <tr class="colDek49">
                 <td>19</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1878,8 +2683,8 @@
             </tr>
             <tr class="colDek50">
                 <td>20</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1944,8 +2749,8 @@
             <tr class="colDek51">
                 <td rowspan="10">Специалисты</td>
                 <td>11</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC"></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -1976,8 +2781,8 @@
             </tr>
             <tr class="colDek52">
                 <td>12</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2008,8 +2813,8 @@
             </tr>
             <tr class="colDek53">
                 <td>13</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2040,8 +2845,8 @@
             </tr>
             <tr class="colDek54">
                 <td>14</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2072,8 +2877,8 @@
             </tr>
             <tr class="colDek55">
                 <td>15</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC"></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2104,8 +2909,8 @@
             </tr>
             <tr class="colDek56">
                 <td>16</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2136,8 +2941,8 @@
             </tr>
             <tr class="colDek57">
                 <td>17</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"> </td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2168,8 +2973,8 @@
             </tr>
             <tr class="colDek58">
                 <td>18</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2200,8 +3005,8 @@
             </tr>
             <tr class="colDek59">
                 <td>19</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC"></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2232,8 +3037,8 @@
             </tr>
             <tr class="colDek60">
                 <td>20</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2297,8 +3102,8 @@
                 <td class="header headDEK31"></td>
             </tr>
         </table>
-        <p>Третья декадка</p> 
-        <table class="demotable one">
+
+        <table class="demotable oneT wrapDec3">
             <tr class="header">
                 <td rowspan="3">Категория персонала</td>
                 <td rowspan="3">Дата</td>
@@ -2348,8 +3153,8 @@
             <tr class="colDek61">
                 <td rowspan="11">Рабочие</td>
                 <td>21</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2381,8 +3186,8 @@
             </tr>
             <tr class="colDek62">
                 <td>22</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2414,8 +3219,8 @@
             </tr>
             <tr class="colDek63">
                 <td>23</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2447,8 +3252,8 @@
             </tr>
             <tr class="colDek64">
                 <td>24</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2480,8 +3285,8 @@
             </tr>
             <tr class="colDek65">
                 <td>25</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2513,8 +3318,8 @@
             </tr>
             <tr class="colDek66">
                 <td>26</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2546,8 +3351,8 @@
             </tr>
             <tr class="colDek67">
                 <td>27</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2579,8 +3384,8 @@
             </tr>
             <tr class="colDek68">
                 <td>28</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2612,8 +3417,8 @@
             </tr>
             <tr class="colDek69">
                 <td>29</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2645,8 +3450,8 @@
             </tr>
             <tr class="colDek70">
                 <td>30</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2678,8 +3483,8 @@
             </tr>
             <tr class="colDek71">
                 <td>31</td>
-                <td></td>
-                <td class="sredChisRab"contenteditable="true"></td>
+                <td class="OTCHrab" contenteditable="true"></td>
+                <td class="sredChisRab" ></td>
                 <td class="femRab"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2746,8 +3551,8 @@
             <tr class="colDek72">
                 <td rowspan="11">ИТР и служащие</td>
                 <td>21</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2779,8 +3584,8 @@
             </tr>
             <tr class="colDek73">
                 <td>22</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2812,8 +3617,8 @@
             </tr>
             <tr class="colDek74">
                 <td>23</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2845,8 +3650,8 @@
             </tr>
             <tr class="colDek75">
                 <td>24</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2878,8 +3683,8 @@
             </tr>
             <tr class="colDek76">
                 <td>25</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2911,8 +3716,8 @@
             </tr>
             <tr class="colDek77">
                 <td>26</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2944,8 +3749,8 @@
             </tr>
             <tr class="colDek78">
                 <td>27</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -2977,8 +3782,8 @@
             </tr>
             <tr class="colDek79">
                 <td>28</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3010,8 +3815,8 @@
             </tr>
             <tr class="colDek80">
                 <td>29</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3043,8 +3848,8 @@
             </tr>
             <tr class="colDek81">
                 <td>30</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR" ></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3054,7 +3859,7 @@
                 <td class="rowDek6"></td>
                 <td class="rowDek7"></td>
                 <td class="rowDek8"></td>
-                <td class="rowDek9 decITR" ></td>
+                <td class="rowDek9 decITR"></td>
                 <td class="rowDek10"></td>
                 <td class="rowDek11"></td>
                 <td class="rowDek12"></td>
@@ -3076,8 +3881,8 @@
             </tr>
             <tr class="colDek82">
                 <td>31</td>
-                <td></td>
-                <td class="sredChisITR"contenteditable="true"></td>
+                <td class="OTCHitr" contenteditable="true"></td>
+                <td class="sredChisITR"></td>
                 <td class="femITR"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3144,8 +3949,8 @@
             <tr class="colDek83">
                 <td rowspan="11">Специалисты</td>
                 <td>21</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3177,8 +3982,8 @@
             </tr>
             <tr class="colDek84">
                 <td>22</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3210,8 +4015,8 @@
             </tr>
             <tr class="colDek85">
                 <td>23</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3243,8 +4048,8 @@
             </tr>
             <tr class="colDek86">
                 <td>24</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3276,8 +4081,8 @@
             </tr>
             <tr class="colDek87">
                 <td>25</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3309,8 +4114,8 @@
             </tr>
             <tr class="colDek88">
                 <td>26</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC"></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3342,8 +4147,8 @@
             </tr>
             <tr class="colDek89">
                 <td>27</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3375,8 +4180,8 @@
             </tr>
             <tr class="colDek90">
                 <td>28</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3408,8 +4213,8 @@
             </tr>
             <tr class="colDek91">
                 <td>29</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3441,8 +4246,8 @@
             </tr>
             <tr class="colDek92">
                 <td>30</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3474,8 +4279,8 @@
             </tr>
             <tr class="colDek93">
                 <td>31</td>
-                <td></td>
-                <td class="sredChisSPEC"contenteditable="true"></td>
+                <td class="OTCHspec" contenteditable="true"></td>
+                <td class="sredChisSPEC" ></td>
                 <td class="femSPEC"></td>
                 <td class="rowDek1"></td>
                 <td class="rowDek2"></td>
@@ -3541,406 +4346,55 @@
                 <td class="header headDEK31"></td>
             </tr>
         </table>
+
+
+        <table class="wrapPer1">
+            <tr class="pererabTR">
+                <td >ФИО</td>
+                <td >ПЛАН</td>
+                <td >ИНДИВИДУАЛЬНАЯ НОРМА</td>
+                <td >ФАКТ</td>
+                <td >+/-</td>
+                <td >ПЕРЕРАБОТКА</td>
+            </tr>
+        </table>
+
+        <table class="wrapPer2">
+            <tr class="pererabTR">
+                <td >ФИО</td>
+                <td >ПЛАН</td>
+                <td >ИНДИВИДУАЛЬНАЯ НОРМА</td>
+                <td >ФАКТ</td>
+                <td >+/-</td>
+                <td >ПЕРЕРАБОТКА</td>
+            </tr>
+        </table>
+
+        <table class="wrapPer3">
+            <tr class="pererabTR">
+                <td >ФИО</td>
+                <td >ПЛАН</td>
+                <td >ИНДИВИДУАЛЬНАЯ НОРМА</td>
+                <td >ФАКТ</td>
+                <td >+/-</td>
+                <td >ПЕРЕРАБОТКА</td>
+            </tr>
+        </table>
+
+        <table class="wrapPer4">
+            <tr class="pererabTR">
+                <td >ФИО</td>
+                <td >ПЛАН</td>
+                <td >ИНДИВИДУАЛЬНАЯ НОРМА</td>
+                <td >ФАКТ</td>
+                <td >+/-</td>
+                <td >ПЕРЕРАБОТКА</td>
+            </tr>
+        </table>
     </div>
 
-<!-- <p>Итог</p> -->
-<table class="demotable one">
-<tr class="header">
-    <td rowspan="3">Категория персонала</td>
-    <td rowspan="3">Дата</td>
-    <td rowspan="3">Число по списку за отчетные сутки</td>
-    <td rowspan="3">Среднесписочная численность</td>
-    <td rowspan="3">В т. ч. женщины</td>
-    <td colspan="11">Использование рабочего времени</td>
-    <td rowspan="3">Дополнительные дни отдыха за переработку</td>
-    <td rowspan="3">Итого чел.дн. выходов и невыходов</td>
-    <td colspan="13" rowspan="2">Отработано всего чел. час</td>
-</tr>
-<tr class="header">
-
-    <td rowspan="2">На работе</td>
-    <td colspan="10">Невыходы по причинам</td>
-
-</tr>
-
-<tr class="header">
-
-    <td>Очередные отпуска</td>
-    <td>Отпуска в связи с родами</td>
-    <td>По болезни</td>
-    <td>Отпуска учащимся</td>
-    <td>Прочие неявки разреш. зак</td>
-    <td>С разреш. админ</td>
-    <td>Прогулы</td>
-    <td>Отпуска до года ребенку</td>
-    <td>Праздн. и выход</td>
-    <td>Целодн. простои</td>
-    <td>По 8 </td>
-    <td>По 7 </td>
-    <td>По 6 </td>
-    <td>По 4 </td>
-    <td>По 10 </td>
-    <td>По 12 </td>
-    <td>Итого</td>
-</tr>
     
-        <tr class="colITOG1" >
-            <td rowspan="3">Первая декада</td>
-            <td>рабоч.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
-        <tr class="colITOG2">
-            
-            <td>руковод.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
-        <tr class="colITOG3">
-            <td>спец.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
     
-        <tr class="colITOG4" >
-            <td rowspan="3">Вторая декада</td>
-            <td>рабоч.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
-        <tr class="colITOG5">
-            
-            <td>руковод.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
-        <tr class="colITOG6">
-            <td>спец.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr> 
-        <tr class="colITOG7" >
-            <td rowspan="3">Третья декада</td>
-            <td>рабоч.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
-        <tr class="colITOG8">
-            
-            <td>руковод.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
-        <tr class="colITOG9">
-            <td>спец.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr> 
-        <tr class="colITOG10" >
-            <td rowspan="3">Итого</td>
-            <td>рабоч.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
-        <tr class="colITOG11">
-            
-            <td>руковод.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr>
-        <tr class="colITOG12">
-            <td>спец.</td>
-            <td class="rowITOG1">0</td>
-            <td class="rowITOG2">0</td>
-            <td class="rowITOG3">0</td>
-            <td class="rowITOG4">0</td>
-            <td class="rowITOG5">0</td>
-            <td class="rowITOG6">0</td>
-            <td class="rowITOG7">0</td>
-            <td class="rowITOG8">0</td>
-            <td class="rowITOG9">0</td>
-            <td class="rowITOG10">0</td>
-            <td class="rowITOG11">0</td>
-            <td class="rowITOG12">0</td>
-            <td class="rowITOG13">0</td>
-            <td class="rowITOG14">0</td>
-            <td class="rowITOG15">0</td>
-            <td class="rowITOG16">0</td>
-            <td class="rowITOG17">0</td>
-            <td class="rowITOG18">0</td>
-            <td class="rowITOG19">0</td>
-            <td class="rowITOG20">0</td>
-            <td class="rowITOG21">0</td>
-            <td class="rowITOG22">0</td>
-            <td class="rowITOG23">0</td>
-        </tr> 
-        <tr>
-            <td>Количетво дней в месяце</td>
-            <td class="colvoDAY" contenteditable="true"></td>
-        </tr>
-      <tr> 
-          <td rowspan="3">Средняя численность (СП)</td>
-          <td>рабоч.</td>
-          <td class="spRAB">0</td>
-      </tr>
-      <tr> 
-        
-        <td>руковод</td>
-        <td class="spITR">0</td>
-    </tr>
-    <tr> 
-        
-        <td>спец.</td>
-        <td class="spSPEC">0</td>
-    </tr>
-    <tr> 
-        <td rowspan="3">Среднесписочная (СР)</td>
-        <td>рабоч.</td>
-        <td class="srRAB">0</td>
-    </tr>
-    <tr> 
-        
-        <td>руковод.</td>
-        <td class="srITR">0</td>
-    </tr>
-    <tr> 
-        
-        <td>спец.</td>
-        <td class="spSPEC">0</td>
-    </tr>
-     
-    </table>
 
     <script src="script.js"></script>
 </body>
