@@ -2,8 +2,8 @@
     display: flex;	
   justify-content: space-evenly;
 }
-.summaryTab, .storageTab, .onloadTab, .clearTab, .printTab{
-   font-size: 20px;
+.summaryTab, .storageTab, .onloadTab, .clearTab, .printTab, .poktab , .pokDec1 , .pokDec2, .pokDec3, .nastroy, .pokPer1, .pokPer2, .pokPer3, .pokPer4{
+   font-size: 10px;
    border-radius: 30px;
    padding: 15px;
    border: 2px groove #e1d188;
@@ -14,7 +14,7 @@
     color: black;
     border: 2px groove black;
  }
-.demotable {
+.demotable, .asd, .asdPRraz, .asdPlan, .wrapPer1, .wrapPer2, .wrapPer3, .wrapPer4{
     margin: 20px;
     border: 3px groove #eee6a3;
     border-collapse: collapse; /* По периметру ячеек только одна линия */
@@ -25,6 +25,25 @@
 .demotable th {
     border: 2px groove #e1d188;
 }
+.asd td, .asdPraz td, .asdPlan td{
+    border: 2px groove #e1d188;
+    min-width: 215px;
+height: 40px;
+}
+
+ .wrapPer1 td, .wrapPer2 td, .wrapPer3 td, .wrapPer4 td {
+    border: 2px groove #e1d188;
+    min-width: 288px;
+height: 40px;
+}
+
+.trNastr, .trNastrPraz, .trNastrPlan, .pererabTR{
+    color: aliceblue;
+    background-color: black;
+}
+
+
+
 
 .header {
     color: aliceblue;
@@ -75,19 +94,15 @@
 /* .color0{
     background-color: yellowgreen;
 }
-
 .color1{
     background-color: orange;
 }
-
 .color2{
     background-color: yellow;
 }
-
 .color3{
     background-color: rgb(140, 140, 221);
 }
-
 .color4{
     background-color: rgb(199, 136, 199)
 } */
@@ -108,4 +123,15 @@ td{
     max-width: 1px;
 }
 
+.boss, .wrapDec1, .wrapDec2,  .wrapDec3,  .asd, .asdPraz, .asdPlan,.nastroyPraz, .wrapPer1, .wrapPer2, .wrapPer3, .wrapPer4{
+    display: none;
+}
 
+.vkl{
+    display: block;
+}
+
+
+.VD{background-color: blue;}
+.ND{background-color: grey;}
+.PD{background-color: red;}
