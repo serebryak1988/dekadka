@@ -23,6 +23,31 @@ document.querySelector('.summaryTab').addEventListener('click', function () {
     ObPod2();
     ObPod3();
     inOTP1();
+    inOTP2();let table = document.querySelector('.demotable');
+let wrapPer1 = document.querySelector('.wrapPer1');
+let wrapPer2 = document.querySelector('.wrapPer2');
+let wrapPer3 = document.querySelector('.wrapPer3');
+let wrapPer4 = document.querySelector('.wrapPer4');
+
+document.querySelector('.summaryTab').addEventListener('click', function () {
+
+    countHour();
+    countNightHour();
+    countWord();
+    countPrazHour();
+    countProeb();
+    minusPlan();
+    countPraznMinus();
+    inWork1();
+    inWork2();
+    inWork3();
+    inWork1FEM();
+    inWork2FEM();
+    inWork3FEM();
+    ObPod1();
+    ObPod2();
+    ObPod3();
+    inOTP1();
     inOTP2();
     inOTP3();
     inBOL1();
@@ -78,7 +103,19 @@ for (let i = 1; i <= 60; i++) {
 //     }
 // }
 
-// let dd==toLocaleDateString()
+
+    for (let i = 1; i <= 12; i++) {
+        localStorage.setItem("nastrCOUNTPlan" + i, "120/140")
+        localStorage.setItem("nastrSm1Plan" + i, "120/140")
+        localStorage.setItem("nastrSm2Plan" + i, "120/140")
+        localStorage.setItem("nastrSm3Plan" + i, "120/140")
+        localStorage.setItem("nastrSm4Plan" + i, "120/140")
+
+    }
+
+
+
+
 let rr=new Date()
 
 let parolNastr=rr.toLocaleDateString().slice(0,-5).replace(".", "")+")"
