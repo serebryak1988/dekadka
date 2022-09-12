@@ -1,12 +1,27 @@
 let table = document.querySelector('.demotable');
-// let arrPraz=[1,2];
+let wrapPer1 = document.querySelector('.wrapPer1');
+let wrapPer2 = document.querySelector('.wrapPer2');
+let wrapPer3 = document.querySelector('.wrapPer3');
+let wrapPer4 = document.querySelector('.wrapPer4');
+
 document.querySelector('.summaryTab').addEventListener('click', function () {
-//     prazdn(arrPraz[0], arrPraz[1]);
-   countHour();
+
+    countHour();
+    countNightHour();
     countWord();
+    countPrazHour();
+    countProeb();
+    minusPlan();
+    countPraznMinus();
     inWork1();
     inWork2();
     inWork3();
+    inWork1FEM();
+    inWork2FEM();
+    inWork3FEM();
+    ObPod1();
+    ObPod2();
+    ObPod3();
     inOTP1();
     inOTP2();
     inOTP3();
@@ -28,635 +43,131 @@ document.querySelector('.summaryTab').addEventListener('click', function () {
     inHOUER1();
     inHOUER2();
     inHOUER3();
-    inHOURRAB1();
-    inHOURRAB2();
-    inHOURRAB3();
-    inHOURITR1();
-    inHOURITR2();
-    inHOURITR3();
-    inHOURSPEC1();
-    inHOURSPEC2();
-    inHOURSPEC3();
 
-    inHOURSUTRAB();
-    inHOURSUTITR();
-    inHOURSUTSPEC();
-
-    inOTPRAB1();
-    inOTPRAB2();
-    inOTPRAB3();
-    inOTPITR1();
-    inOTPITR2();
-    inOTPITR3();
-    inOTPSPEC1();
-    inOTPSPEC2();
-    inOTPSPEC3();
-    inWORKRAB1();
-    inWORKRAB2();
-    inWORKRAB3();
-    inWORKITR1();
-    inWORKITR2();
-    inWORKITR3();
-    inWORKSPEC1();
-    inWORKSPEC2();
-    inWORKSPEC3();
-    inBOLRAB1();
-    inBOLRAB2();
-    inBOLRAB3();
-    inBOLITR1();
-    inBOLITR2();
-    inBOLITR3();
-    inBOLSPEC1();
-    inBOLSPEC2();
-    inBOLSPEC3();
-    inPROCHRAB1();
-    inPROCHRAB2();
-    inPROCHRAB3();
-    inPROCHITR1();
-    inPROCHITR2();
-    inPROCHITR3();
-    inPROCHSPEC1();
-    inPROCHSPEC2();
-    inPROCHSPEC3();
-    inRAZRRAB1();
-    inRAZRRAB2();
-    inRAZRRAB3();
-    inRAZRITR1();
-    inRAZRITR2();
-    inRAZRITR3();
-    inRAZRSPEC1();
-    inRAZRSPEC2();
-    inRAZRSPEC3();
-    inPROGRAB1();
-    inPROGRAB2();
-    inPROGRAB3();
-    inPROGITR1();
-    inPROGITR2();
-    inPROGITR3();
-    inPROGSPEC1();
-    inPROGSPEC2();
-    inPROGSPEC3();
-    inVIHRAB1();
-    inVIHRAB2();
-    inVIHRAB3();
-    inVIHITR1();
-    inVIHITR2();
-    inVIHITR3();
-    inVIHSPEC1();
-    inVIHSPEC2();
-    inVIHSPEC3();
-    inItogTabInWorkRAB1();
-    inItogTabInWorkRAB2();
-    inItogTabInWorkRAB3();
-    inItogTabInWorkRAB();
-    inItogTabInWorkITR1();
-    inItogTabInWorkITR2();
-    inItogTabInWorkITR3();
-    inItogTabInWorkITR();
-    inItogTabInWorkSPEC1();
-    inItogTabInWorkSPEC2();
-    inItogTabInWorkSPEC3();
-    inItogTabInWorkSPEC();
-
-    inItogTabInOTPRAB1();
-    inItogTabInOTPRAB2();
-    inItogTabInOTPRAB3();
-    inItogTabInOTPRAB();
-    inItogTabInOTPITR1();
-    inItogTabInOTPITR2();
-    inItogTabInOTPITR3();
-    inItogTabInOTPITR();
-    inItogTabInOTPSPEC1();
-    inItogTabInOTPSPEC2();
-    inItogTabInOTPSPEC3();
-    inItogTabInOTPSPEC();
-
-    inItogTabInBOLRAB1();
-    inItogTabInBOLRAB2();
-    inItogTabInBOLRAB3();
-    inItogTabInBOLRAB();
-    inItogTabInBOLITR1();
-    inItogTabInBOLITR2();
-    inItogTabInBOLITR3();
-    inItogTabInBOLITR();
-    inItogTabInBOLSPEC1();
-    inItogTabInBOLSPEC2();
-    inItogTabInBOLSPEC3();
-    inItogTabInBOLSPEC();
-
-    inItogTabInPROCHRAB1();
-    inItogTabInPROCHRAB2();
-    inItogTabInPROCHRAB3();
-    inItogTabInPROCHRAB();
-    inItogTabInPROCHITR1();
-    inItogTabInPROCHITR2();
-    inItogTabInPROCHITR3();
-    inItogTabInPROCHITR();
-    inItogTabInPROCHSPEC1();
-    inItogTabInPROCHSPEC2();
-    inItogTabInPROCHSPEC3();
-    inItogTabInPROCHSPEC();
-
-    inItogTabInRAZRRAB1();
-    inItogTabInRAZRRAB2();
-    inItogTabInRAZRRAB3();
-    inItogTabInRAZRRAB();
-    inItogTabInRAZRITR1();
-    inItogTabInRAZRITR2();
-    inItogTabInRAZRITR3();
-    inItogTabInRAZRITR();
-    inItogTabInRAZRSPEC1();
-    inItogTabInRAZRSPEC2();
-    inItogTabInRAZRSPEC3();
-    inItogTabInRAZRSPEC();
-
-    inItogTabInPROGRAB1();
-    inItogTabInPROGRAB2();
-    inItogTabInPROGRAB3();
-    inItogTabInPROGRAB();
-    inItogTabInPROGITR1();
-    inItogTabInPROGITR2();
-    inItogTabInPROGITR3();
-    inItogTabInPROGITR();
-    inItogTabInPROGSPEC1();
-    inItogTabInPROGSPEC2();
-    inItogTabInPROGSPEC3();
-    inItogTabInPROGSPEC();
-
-    inItogTabInVIHRAB1();
-    inItogTabInVIHRAB2();
-    inItogTabInVIHRAB3();
-    inItogTabInVIHRAB();
-    inItogTabInVIHITR1();
-    inItogTabInVIHITR2();
-    inItogTabInVIHITR3();
-    inItogTabInVIHITR();
-    inItogTabInVIHSPEC1();
-    inItogTabInVIHSPEC2();
-    inItogTabInVIHSPEC3();
-    inItogTabInVIHSPEC();
-
-    inItogTabInHOUR8RAB1();
-    inItogTabInHOUR8RAB2();
-    inItogTabInHOUR8RAB3();
-    inItogTabInHOUR8RAB();
-    inItogTabInHOUR8ITR1();
-    inItogTabInHOUR8ITR2();
-    inItogTabInHOUR8ITR3();
-    inItogTabInHOUR8ITR();
-    inItogTabInHOUR8SPEC1();
-    inItogTabInHOUR8SPEC2();
-    inItogTabInHOUR8SPEC3();
-    inItogTabInHOUR8SPEC();
-
-    inItogTabInHOUR7RAB1();
-    inItogTabInHOUR7RAB2();
-    inItogTabInHOUR7RAB3();
-    inItogTabInHOUR7RAB();
-    inItogTabInHOUR7ITR1();
-    inItogTabInHOUR7ITR2();
-    inItogTabInHOUR7ITR3();
-    inItogTabInHOUR7ITR();
-    inItogTabInHOUR7SPEC1();
-    inItogTabInHOUR7SPEC2();
-    inItogTabInHOUR7SPEC3();
-    inItogTabInHOUR7SPEC();
-
-    inItogTabInHOUR6RAB1();
-    inItogTabInHOUR6RAB2();
-    inItogTabInHOUR6RAB3();
-    inItogTabInHOUR6RAB();
-    inItogTabInHOUR6ITR1();
-    inItogTabInHOUR6ITR2();
-    inItogTabInHOUR6ITR3();
-    inItogTabInHOUR6ITR();
-    inItogTabInHOUR6SPEC1();
-    inItogTabInHOUR6SPEC2();
-    inItogTabInHOUR6SPEC3();
-    inItogTabInHOUR6SPEC();
-
-    inItogTabInHOUR4RAB1();
-    inItogTabInHOUR4RAB2();
-    inItogTabInHOUR4RAB3();
-    inItogTabInHOUR4RAB();
-    inItogTabInHOUR4ITR1();
-    inItogTabInHOUR4ITR2();
-    inItogTabInHOUR4ITR3();
-    inItogTabInHOUR4ITR();
-    inItogTabInHOUR4SPEC1();
-    inItogTabInHOUR4SPEC2();
-    inItogTabInHOUR4SPEC3();
-    inItogTabInHOUR4SPEC();
-
-    inItogTabInHOUR10RAB1();
-    inItogTabInHOUR10RAB2();
-    inItogTabInHOUR10RAB3();
-    inItogTabInHOUR10RAB();
-    inItogTabInHOUR10ITR1();
-    inItogTabInHOUR10ITR2();
-    inItogTabInHOUR10ITR3();
-    inItogTabInHOUR10ITR();
-    inItogTabInHOUR10SPEC1();
-    inItogTabInHOUR10SPEC2();
-    inItogTabInHOUR10SPEC3();
-    inItogTabInHOUR10SPEC();
-
-    inItogTabInHOUR12RAB1();
-    inItogTabInHOUR12RAB2();
-    inItogTabInHOUR12RAB3();
-    inItogTabInHOUR12RAB();
-    inItogTabInHOUR12ITR1();
-    inItogTabInHOUR12ITR2();
-    inItogTabInHOUR12ITR3();
-    inItogTabInHOUR12ITR();
-    inItogTabInHOUR12SPEC1();
-    inItogTabInHOUR12SPEC2();
-    inItogTabInHOUR12SPEC3();
-    inItogTabInHOUR12SPEC();
-
-    inItogTabInHOURALL();
-
-    inItogTabInSP();
 })
 //=======================================================================================Объекты рабочих===========================================================================================
+let persons = [];
 
 
 
-let persons = [
-    {
-        abr: 'Asmakovec',
-        firstname: 'Асмаковец Виктория',
-        category: 'ITR',
-        prof: 'Мастер',
-        sex: 'female',
-        mode: '0', decret: true,
-    },
-   
-    {
-        abr: 'Barsukova',
-        firstname: 'Барсукова Наталья',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'female',
-        mode: '2', decret: false,
-    }, {
-        abr: 'Basov',
-        firstname: 'Басов К',
-        category: 'Wopker',
-        prof: 'Слесарь',
-        sex: 'male',
-        mode: '0', decret: false,
-    },
-   
-     {
-        abr: 'Berlin',
-        firstname: 'Берлин Юрий',
-        category: 'Wopker',
-        prof: 'Слесарь',
-        sex: 'male',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Verbitskaya',
-        firstname: 'Вербитская Юлия',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'female',
-        mode: '4', decret: false,
-    },
-    {
-        abr: 'Vishnikova',
-        firstname: 'Вышникова Людмила',
-        category: 'Wopker',
-        prof: 'Кладовщик',
-        sex: 'female',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Gorbachev',
-        firstname: 'Горбачев Кирилл',
-        category: 'Wopker',
-        prof: 'Оператор по обезвоживанию осадка',
-        sex: 'male',
-        mode: '4', decret: false,
-    },
-    {
-        abr: 'Gorbovec',
-        firstname: 'Горбовец Владимир',
-        category: 'ITR',
-        prof: 'Мастер по обслуживанию оборудования',
-        sex: 'male',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Gorshunova',
-        firstname: 'Горшунова Ирина',
-        category: 'Wopker',
-        prof: 'Оператор ДПУ',
-        sex: 'female',
-        mode: '3', decret: false,
-    },
-    {
-        abr: 'Gremenkov',
-        firstname: 'Гременков Эдуард',
-        category: 'ITR',
-        prof: 'Мастер',
-        sex: 'male',
-        mode: '3', decret: false,
-    },
-    {
-        abr: 'Grozny',
-        firstname: 'Грозный Эдуард',
-        category: 'Wopker',
-        prof: 'Оператор по обезвоживанию осадка',
-        sex: 'male',
-        mode: '3', decret: false,
-    },
 
-    {
-        abr: 'Gutcev',
-        firstname: 'Гуцев Артёв',
-        category: 'Wopker',
-        prof: 'Слесарь',
-        sex: 'male',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Danilenko',
-        firstname: 'Даниленко Максим',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'Doroschenko',
-        firstname: 'Дорощенко Дмитрий',
-        category: 'Wopker',
-        prof: 'Аппаратчик приготовления химикатов',
-        sex: 'male',
-        mode: '2', decret: false,
-    },
-    {
-        abr: 'Drobishevskaya',
-        firstname: 'Дробышевская Олеся',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'female',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'Gitnik',
-        firstname: 'Житник Денис',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '2', decret: false,
-    },
-    {
-        abr: 'Gurov',
-        firstname: 'Журов Дмитрий',
-        category: 'Wopker',
-        prof: 'Оператор по обезвоживанию осадка',
-        sex: 'male',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Zayceva',
-        firstname: 'Зайцева Валерия',
-        category: 'SPEC',
-        prof: 'Инженер-микробиолог',
-        sex: 'female',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Ivanov',
-        firstname: 'Иванов Виктор',
-        category: 'Wopker',
-        prof: 'Аппаратчик приготовления химикатов',
-        sex: 'male',
-        mode: '3', decret: false,
-    },
-    {
-        abr: 'Ivanova',
-        firstname: 'Иванова Зинаида',
-        category: 'Wopker',
-        prof: 'Урорщица',
-        sex: 'female',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Kavalyova',
-        firstname: 'Кавалёва Карина',
-        category: 'SPEC',
-        prof: 'Инженер-технолог',
-        sex: 'female',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Kazakova',
-        firstname: 'Казакова Татьяна',
-        category: 'Wopker',
-        prof: 'Оператор ДПУ',
-        sex: 'female',
-        mode: '0', decret: true,
-    },
-    {
-        abr: 'Kulinenkov',
-        firstname: 'Кулиненков Виктор',
-        category: 'Wopker',
-        prof: 'Аппаратчик приготовления химикатов',
-        sex: 'male',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'Lazovik',
-        firstname: 'Лазовик Екатерина',
-        category: 'Wopker',
-        prof: 'Оператор ДПУ',
-        sex: 'female',
-        mode: '2', decret: false,
-    },
-   
-   {
-        abr: 'Lazovik',
-        firstname: 'Лазовик Екатерина (итр)',
-        category: 'ITR',
-        prof: 'Мастер',
-        sex: 'female',
-        mode: '2', decret: false,
-    },
-    {
-        abr: 'Mazurov',
-        firstname: 'Мазуров Вячеслав',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '4', decret: false,
-    },
-    {
-        abr: 'Metelyov',
-        firstname: 'Метелев Антон',
-        category: 'Wopker',
-        prof: 'Аппаратчик приготовления химикатов',
-        sex: 'male',
-        mode: '4', decret: false,
-    },
-    {
-        abr: 'Mileshkina',
-        firstname: 'Милешкина Анна',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'female',
-        mode: '3', decret: false,
-    },
-    {
-        abr: 'Mislivchik',
-        firstname: 'Мысливчик Павел',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'Murashkin',
-        firstname: 'Мурашкин Александр',
-        category: 'Wopker',
-        prof: 'Оператор по обезвоживанию осадка',
-        sex: 'male',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'Nidodirov',
-        firstname: 'Нидодиров Кирилл',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '2', decret: false,
-    },
-    {
-        abr: 'Mirzoaliev',
-        firstname: 'Мирзоалиев Вячеслав',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '3', decret: false,
-    },
-    {
-        abr: 'Privalova',
-        firstname: 'Привалова Татьяна',
-        category: 'Wopker',
-        prof: 'Урорщица',
-        sex: 'female',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Prihodko',
-        firstname: 'Приходько Дмитрий',
-        category: 'Wopker',
-        prof: 'Оператор ДПУ',
-        sex: 'male',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'PrihodkoM',
-        firstname: 'Приходько Михаил',
-        category: 'Wopker',
-        prof: 'Оператор по обезвоживанию осадка',
-        sex: 'male',
-        mode: '2', decret: false,
-    },
-    {
-        abr: 'Protchenko',
-        firstname: 'Протченко Михаил',
-        category: 'ITR',
-        prof: 'Начальник участка',
-        sex: 'male',
-        mode: '0', decret: false,
-    },
-    {
-        abr: 'Romanov',
-        firstname: 'Романов Вячеслав',
-        category: 'ITR',
-        prof: 'Мастер',
-        sex: 'male',
-        mode: '2', decret: false,
-    },
-     {
-        abr: 'Rudnikov',
-        firstname: 'Рудников Игорь',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'Serebryakov',
-        firstname: 'Cеребряков Дмитрий',
-        category: 'ITR',
-        prof: 'Мастер',
-        sex: 'male',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'Tatarov',
-        firstname: 'Татаров Кирилл',
-        category: 'Wopker',
-        prof: 'Оператор ДПУ',
-        sex: 'male',
-        mode: '4', decret: false,
-    },
-   {
-        abr: 'Trebushevsky',
-        firstname: 'Требушевский Денис',
-        category: 'Wopker',
-        prof: 'Слесарь',
-        sex: 'male',
-        mode: '1', decret: false,
-    },
-    {
-        abr: 'Kharibin',
-        firstname: 'Харибин Андрей',
-        category: 'ITR',
-        prof: 'Мастер',
-        sex: 'male',
-        mode: '4', decret: false,
-    },
-   {
-        abr: 'Tsimbalov',
-        firstname: 'Цымбалов Д',
-        category: 'Wopker',
-        prof: 'Аппаратчик приготовления химикатов',
-        sex: 'male',
-        mode: '3', decret: false,
-    },
-    {
-        abr: 'Chuprakov',
-        firstname: 'Чупраков Александр',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '4', decret: false,
-    },
-    {
-        abr: 'Shelipaho',
-        firstname: 'Шелипахо Виктор',
-        category: 'Wopker',
-        prof: 'Аппаратчик ОСВ',
-        sex: 'male',
-        mode: '3', decret: false,
-    },
-    {
-        abr: 'Yaskov',
-        firstname: 'Яськов Виталий',
-        category: 'Wopker',
-        prof: 'Слесарь',
-        sex: 'male',
-        mode: '0', decret: false,
-    },
-];
+for (let i = 1; i <= 60; i++) {
+    let persObg = {};
+    persObg.abr = localStorage.getItem("nastrABR" + i);
+    persObg.firstname = localStorage.getItem("nastrFIRSTNAME" + i);
+    persObg.category = localStorage.getItem("nastrCATEGORY" + i);
+    persObg.prof = localStorage.getItem("nastrPROF" + i);
+    persObg.sex = localStorage.getItem("nastrSEX" + i);
+    persObg.mode = localStorage.getItem("nastrMODE" + i);
+    persObg.decret = Boolean(+localStorage.getItem("nastrDECRET" + i));
+    if (localStorage.getItem("nastrABR" + i) !== "") {
+        persons.push(persObg)
+    }
+}
 
-// =======================================================================================Разбивка на группы=================================================================================
+//=======================================================================================Праздники===========================================================================================
+// let prazdniki = [];
+
+
+
+
+// for (let i = 1; i <= 4; i++) {
+//     let prazObg = localStorage.getItem("nastrDatPraz" + i);;
+//     if (localStorage.getItem("nastrDatPraz" + i) !== "") {
+//         prazdniki.push(prazObg)
+//     }
+// }
+
+// let dd==toLocaleDateString()
+let rr=new Date()
+
+let parolNastr=rr.toLocaleDateString().slice(0,-5).replace(".", "")+")"
+let parolOCH=rr.toLocaleDateString().slice(0,-5).replace(".", "")+")"
+//=======================================================================================Планы===========================================================================================
+//1 смена
+
+let plan1SM = [];
+
+for (let i = 1; i <= 12; i++) {
+    let planObg = {};
+    planObg.data = localStorage.getItem("nastrCOUNTPlan" + i);
+    planObg.plan = localStorage.getItem("nastrSm1Plan" + i).slice(0, 3);
+    planObg.fact = localStorage.getItem("nastrSm1Plan" + i).slice(4, 7);
+    if (planObg.data == " " && planObg.plan == " " && planObg.fact == " ") {
+        planObg.data = 0;
+        planObg.plan = 0;
+        planObg.fact = 0;
+    }
+    planObg.perer = localStorage.getItem("nastrSm1Plan" + i).slice(4, 7) - localStorage.getItem("nastrSm1Plan" + i).slice(0, 3);
+    if (localStorage.getItem("nastrCOUNTPlan" + i) !== "") {
+        plan1SM.push(planObg)
+    }
+}
+console.log(plan1SM)
+
+//2 смена
+
+let plan2SM = [];
+
+for (let i = 1; i <= 12; i++) {
+    let planObg = {};
+    planObg.data = localStorage.getItem("nastrCOUNTPlan" + i);
+    planObg.plan = localStorage.getItem("nastrSm2Plan" + i).slice(0, 3);
+    planObg.fact = localStorage.getItem("nastrSm2Plan" + i).slice(4, 7);
+    if (planObg.data == " " && planObg.plan == " " && planObg.fact == " ") {
+        planObg.data = 0;
+        planObg.plan = 0;
+        planObg.fact = 0;
+    }
+    planObg.perer = localStorage.getItem("nastrSm1Plan" + i).slice(4, 7) - localStorage.getItem("nastrSm2Plan" + i).slice(0, 3);
+    if (localStorage.getItem("nastrCOUNTPlan" + i) !== "") {
+        plan2SM.push(planObg)
+    }
+}
+
+console.log(plan2SM)
+//3 смена
+
+let plan3SM = [];
+
+for (let i = 1; i <= 12; i++) {
+    let planObg = {};
+    planObg.data = localStorage.getItem("nastrCOUNTPlan" + i);
+    planObg.plan = localStorage.getItem("nastrSm3Plan" + i).slice(0, 3);
+    planObg.fact = localStorage.getItem("nastrSm3Plan" + i).slice(4, 7);
+    if (planObg.data == " " && planObg.plan == " " && planObg.fact == " ") {
+        planObg.data = 0;
+        planObg.plan = 0;
+        planObg.fact = 0;
+    }
+    planObg.perer = localStorage.getItem("nastrSm1Plan" + i).slice(4, 7) - localStorage.getItem("nastrSm3Plan" + i).slice(0, 3);
+    if (localStorage.getItem("nastrCOUNTPlan" + i) !== "") {
+        plan3SM.push(planObg)
+    }
+}
+
+console.log(plan3SM)
+//4 смена
+
+let plan4SM = [];
+
+for (let i = 1; i <= 12; i++) {
+    let planObg = {};
+    planObg.data = localStorage.getItem("nastrCOUNTPlan" + i);
+    planObg.plan = localStorage.getItem("nastrSm4Plan" + i).slice(0, 3);
+    planObg.fact = localStorage.getItem("nastrSm2Plan" + i).slice(4, 7);
+    if (planObg.data == " " && planObg.plan == " " && planObg.fact == " ") {
+        planObg.data = 0;
+        planObg.plan = 0;
+        planObg.fact = 0;
+    }
+    planObg.perer = localStorage.getItem("nastrSm4Plan" + i).slice(4, 7) - localStorage.getItem("nastrSm4Plan" + i).slice(0, 3);
+    if (localStorage.getItem("nastrCOUNTPlan" + i) !== "") {
+        plan4SM.push(planObg)
+    }
+}
+console.log(plan4SM)
+//=======================================================================================Разбивка на группы=================================================================================
 
 
 //Вывод элементов рабочих
@@ -675,6 +186,8 @@ let NAMES = persons.map(function (x) {
 let CATEGORIES = persons.map(function (x) {
     return x.category;
 });
+
+
 
 
 
@@ -736,6 +249,7 @@ let RABSEXFEM = persons.map(function (x) {
     return el != null;
 });
 
+
 let ITRSEXMAL = persons.map(function (x) {
     if (x.sex == 'male' && x.category == 'ITR') {
         return x.abr;
@@ -777,6 +291,8 @@ let DECRAB = persons.map(function (x) {
     return el != null;
 });
 
+
+
 let DECITR = persons.map(function (x) {
     if (x.decret == true && x.category == 'ITR') {
         return x.abr;
@@ -795,15 +311,16 @@ let DECSPEC = persons.map(function (x) {
 //Разривка на смены
 
 let SMENA0 = persons.map(function (x) {
-    if (x.mode == '0') {
+    if (x.mode == 'zero') {
         return x.abr;
     }
 }).filter(function (el) {
     return el != null;
 });
 
+
 let SMENA1 = persons.map(function (x) {
-    if (x.mode == '1') {
+    if (x.mode == 'one') {
         return x.abr;
     }
 }).filter(function (el) {
@@ -811,15 +328,16 @@ let SMENA1 = persons.map(function (x) {
 });
 
 let SMENA2 = persons.map(function (x) {
-    if (x.mode == '2') {
+    if (x.mode == 'two') {
         return x.abr;
     }
 }).filter(function (el) {
     return el != null;
 });
 
+
 let SMENA3 = persons.map(function (x) {
-    if (x.mode == '3') {
+    if (x.mode == 'three') {
         return x.abr;
     }
 }).filter(function (el) {
@@ -827,8 +345,51 @@ let SMENA3 = persons.map(function (x) {
 });
 
 let SMENA4 = persons.map(function (x) {
-    if (x.mode == '4') {
+    if (x.mode == 'four') {
         return x.abr;
+    }
+}).filter(function (el) {
+    return el != null;
+});
+
+//Разривка на смены (firstname)
+
+let SMENAF0 = persons.map(function (x) {
+    if (x.mode == 'zero') {
+        return x.firstname;
+    }
+}).filter(function (el) {
+    return el != null;
+});
+
+
+let SMENAF1 = persons.map(function (x) {
+    if (x.mode == 'one') {
+        return x.firstname;
+    }
+}).filter(function (el) {
+    return el != null;
+});
+
+let SMENAF2 = persons.map(function (x) {
+    if (x.mode == 'two') {
+        return x.firstname;
+    }
+}).filter(function (el) {
+    return el != null;
+});
+
+let SMENAF3 = persons.map(function (x) {
+    if (x.mode == 'three') {
+        return x.firstname;
+    }
+}).filter(function (el) {
+    return el != null;
+});
+
+let SMENAF4 = persons.map(function (x) {
+    if (x.mode == 'four') {
+        return x.firstname;
     }
 }).filter(function (el) {
     return el != null;
@@ -843,10 +404,15 @@ for (let k = 1; k <= ABR.length; k++) {
     nodet.innerHTML = FIRSTNAMES[k - 1];
     nodet.classList.add(CATEGORIES[k - 1]);
     nodet.classList.add(ABR[k - 1]);
+    nodet.classList.add(MODES[k - 1]);
+    nodet.classList.add(SEXES[k - 1]);
     nodet.classList.add("col" + k);
+
     for (let i = 1; i <= 43; i++) {
         let node = document.createElement('td');
         node.classList.add("row" + i);
+        node.classList.add(ABR[k - 1]);
+        node.id = i
         node.setAttribute("contentEditable", "true");
         table.append(nodet);
         nodet.append(node);
@@ -862,6 +428,10 @@ for (let k = 1; k <= 31; k++) {
         rowDay.push(www);
         for (yyy of rowDay) {
             yyy.classList.add('day' + k);
+            if (k <= 9) {
+                yyy.classList.add("0" + k);
+            }
+            yyy.classList.add(k);
         }
     }
 }
@@ -893,62 +463,862 @@ for (let eee of tabWORK) {
     }
 }
 
-//Добвляем id к TD
 
-let arrID=[];
-for (let k = 1; k <= ABR.length; k++) {   
-    for (let www of document.querySelectorAll('.col' + k)) {
-        arrID.push(www)    
+//===========Прописываем смены в td==========
+
+let S0 = bossTabl.querySelectorAll('.zero');
+for (let eee of S0) {
+    for (let i = 0; i < 31; i++) {
+        let t = eee.children[i]
+        t.classList.add('zero')
+
     }
 }
-for (let i=0; i<arrID.length; i++){
-   arrID[i].id="r"+ i;
+
+let S1 = bossTabl.querySelectorAll('.one');
+for (let eee of S1) {
+    for (let i = 0; i < 31; i++) {
+        let t = eee.children[i]
+        t.classList.add('one')
+
+    }
+}
+
+let S2 = bossTabl.querySelectorAll('.two');
+for (let eee of S2) {
+    for (let i = 0; i < 31; i++) {
+        let t = eee.children[i]
+        t.classList.add('two')
+
+    }
+}
+
+let S3 = bossTabl.querySelectorAll('.three');
+for (let eee of S3) {
+    for (let i = 0; i < 31; i++) {
+        let t = eee.children[i]
+        t.classList.add('three')
+
+    }
+}
+
+let S4 = bossTabl.querySelectorAll('.four');
+for (let eee of S4) {
+    for (let i = 0; i < 31; i++) {
+        let t = eee.children[i]
+        t.classList.add('four')
+
+    }
+}
+
+//==============Прописываем пол в td==========
+
+let tdFEM = bossTabl.querySelectorAll('.female');
+for (let eee of tdFEM) {
+    for (let i = 0; i < 31; i++) {
+        let t = eee.children[i]
+        t.classList.add('female')
+
+    }
 }
 
 
 
 
+//Добвляем id к TD
 
+let arrID = [];
+for (let k = 1; k <= ABR.length; k++) {
+    for (let www of document.querySelectorAll('.col' + k)) {
+        arrID.push(www)
+    }
+}
+for (let i = 0; i < arrID.length; i++) {
+    arrID[i].id = "r" + i;
+}
+
+
+//==========================================================Выбираем месяц и год======================================================
+
+let changeDat = document.querySelector(".changeDat")
+let changeMon = document.querySelector(".changeMon")
+let changeYear = document.querySelector(".changeYear")
+
+changeDat.addEventListener('click', function () {
+    localStorage.setItem("trueMOUNTH", changeMon.value)
+    localStorage.setItem("trueYEAR", changeYear.value)
+
+
+    window.location.reload()
+
+})
+let trueM = localStorage.getItem("trueMOUNTH")
+let trueY = localStorage.getItem("trueYEAR")
+changeMon.value = trueM;
+changeYear.value = trueY;
+
+//===========================================================Наодим td смен =============================================================
+//td 0 смены
+
+let arrDay0SM = [];
+for (let k = 1; k <= 31; k++) {
+    for (let www of document.querySelectorAll('.day' + k)) {
+        if (www.getAttribute("class").includes("zero"))
+            arrDay0SM.push(www)
+    }
+}
+
+
+
+//td 1 смены
+
+let arrDay1SM = [];
+for (let k = 1; k <= 31; k++) {
+    for (let www of document.querySelectorAll('.day' + k)) {
+        if (www.getAttribute("class").includes("one"))
+            arrDay1SM.push(www)
+    }
+}
+
+//td 2 смены
+
+let arrDay2SM = [];
+for (let k = 1; k <= 31; k++) {
+    for (let www of document.querySelectorAll('.day' + k)) {
+        if (www.getAttribute("class").includes("two"))
+            arrDay2SM.push(www)
+    }
+}
+
+//td 3 смены
+
+let arrDay3SM = [];
+for (let k = 1; k <= 31; k++) {
+    for (let www of document.querySelectorAll('.day' + k)) {
+        if (www.getAttribute("class").includes("three"))
+            arrDay3SM.push(www)
+    }
+}
+
+//td 4 смены
+
+let arrDay4SM = [];
+for (let k = 1; k <= 31; k++) {
+    for (let www of document.querySelectorAll('.day' + k)) {
+        if (www.getAttribute("class").includes("four"))
+            arrDay4SM.push(www)
+    }
+}
+
+let arrAllSM = [];
+for (let k = 1; k <= 31; k++) {
+    for (let www of document.querySelectorAll('.day' + k)) {
+        arrAllSM.push(www)
+
+    }
+}
+
+//==============================================Находим выходные\ночные смен========================================================
+
+
+//====================================================== Смена 0 ====================================
+
+// 1 выходной 
+
+// let arrdate0sm1v = []
+// var date0sm1v = 1661547600000;
+// for (let i = 0; i <= 100; i++) {
+//     date0sm1v += 604800000
+//     var dat = new Date(date0sm1v);
+//     let trueDat = dat.toLocaleDateString()
+//     arrdate0sm1v.push(trueDat)
+// }
+
+
+
+// // 2 выходной 
+
+// let arrdate0sm2v = []
+// var date0sm2v = 1661634000000;
+// for (let i = 0; i <= 100; i++) {
+//     date0sm2v += 604800000
+//     var dat = new Date(date0sm2v);
+//     let trueDat = dat.toLocaleDateString()
+//     arrdate0sm2v.push(trueDat)
+// }
+
+//====================================================== Смена 1 ====================================
+
+// 1 ночная 
+
+let arrdate1sm1n = []
+var date1sm1n = 1661547600000;
+for (let i = 0; i <= 100; i++) {
+    date1sm1n += 691200000
+    var dat = new Date(date1sm1n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate1sm1n.push(trueDat)
+}
+
+
+
+
+// 2 ночная  
+
+let arrdate1sm2n = []
+var date1sm2n = 1661634000000;
+for (let i = 0; i <= 100; i++) {
+    date1sm2n += 691200000
+    var dat = new Date(date1sm2n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate1sm2n.push(trueDat)
+}
+
+
+
+
+// 3 ночная 
+
+let arrdate1sm3n = []
+var date1sm3n = 1661720400000;
+for (let i = 0; i <= 100; i++) {
+    date1sm3n += 691200000
+    var dat = new Date(date1sm3n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate1sm3n.push(trueDat)
+}
+
+
+// 1 выходной 
+
+let arrdate1sm1v = []
+var date1sm1v = 1661806800000;
+for (let i = 0; i <= 100; i++) {
+    date1sm1v += 691200000
+    var dat = new Date(date1sm1v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate1sm1v.push(trueDat)
+}
+
+// 2 выходной  
+
+let arrdate1sm2v = []
+var date1sm2v = 1661202000000;
+for (let i = 0; i <= 100; i++) {
+    date1sm2v += 691200000
+    var dat = new Date(date1sm2v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate1sm2v.push(trueDat)
+}
+
+// 3 выходной  
+
+let arrdate1sm3v = []
+var date1sm3v = 1661288400000;
+for (let i = 0; i <= 100; i++) {
+    date1sm3v += 691200000
+    var dat = new Date(date1sm3v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate1sm3v.push(trueDat)
+}
+
+//====================================================== Смена 2 ====================================
+
+// 1 ночная  
+
+let arrdate2sm1n = []
+var date2sm1n = 1661893200000;
+for (let i = 0; i <= 100; i++) {
+    date2sm1n += 691200000
+    var dat = new Date(date2sm1n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate2sm1n.push(trueDat)
+}
+
+
+
+// 2 ночная  
+
+let arrdate2sm2n = []
+var date2sm2n = 1661288400000;
+for (let i = 0; i <= 100; i++) {
+    date2sm2n += 691200000
+    var dat = new Date(date2sm2n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate2sm2n.push(trueDat)
+}
+
+
+
+
+// 3 ночная 
+
+let arrdate2sm3n = []
+var date2sm3n = 1661374800000;
+for (let i = 0; i <= 100; i++) {
+    date2sm3n += 691200000
+    var dat = new Date(date2sm3n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate2sm3n.push(trueDat)
+}
+
+// 1 выходной 
+
+let arrdate2sm1v = []
+var date2sm1v = 1661461200000;
+for (let i = 0; i <= 100; i++) {
+    date2sm1v += 691200000
+    var dat = new Date(date2sm1v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate2sm1v.push(trueDat)
+}
+
+// 2 выходной  
+
+let arrdate2sm2v = []
+var date2sm2v = 1661547600000;
+for (let i = 0; i <= 100; i++) {
+    date2sm2v += 691200000
+    var dat = new Date(date2sm2v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate2sm2v.push(trueDat)
+}
+
+// 3 выходной 
+
+let arrdate2sm3v = []
+var date2sm3v = 1661634000000;
+for (let i = 0; i <= 100; i++) {
+    date2sm3v += 691200000
+    var dat = new Date(date2sm3v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate2sm3v.push(trueDat)
+}
+//==================================================== 3 смена ===============================================
+// 1 ночная  
+
+let arrdate3sm1n = []
+var date3sm1n = 1661720400000;
+for (let i = 0; i <= 100; i++) {
+    date3sm1n += 691200000
+    var dat = new Date(date3sm1n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate3sm1n.push(trueDat)
+}
+
+
+
+// 2 ночная  
+
+let arrdate3sm2n = []
+var date3sm2n = 1661806800000;
+for (let i = 0; i <= 100; i++) {
+    date3sm2n += 691200000
+    var dat = new Date(date3sm2n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate3sm2n.push(trueDat)
+}
+
+
+
+
+// 3 ночная 
+
+let arrdate3sm3n = []
+var date3sm3n = 1661893200000;
+for (let i = 0; i <= 100; i++) {
+    date3sm3n += 691200000
+    var dat = new Date(date3sm3n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate3sm3n.push(trueDat)
+}
+
+
+// 1 выходной 
+
+let arrdate3sm1v = []
+var date3sm1v = 1661288400000;
+for (let i = 0; i <= 100; i++) {
+    date3sm1v += 691200000
+    var dat = new Date(date3sm1v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate3sm1v.push(trueDat)
+}
+
+// 2 выходной  
+
+let arrdate3sm2v = []
+var date3sm2v = 1661374800000;
+for (let i = 0; i <= 100; i++) {
+    date3sm2v += 691200000
+    var dat = new Date(date3sm2v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate3sm2v.push(trueDat)
+}
+
+// 3 выходной 
+
+let arrdate3sm3v = []
+var date3sm3v = 1661461200000;
+for (let i = 0; i <= 100; i++) {
+    date3sm3v += 691200000
+    var dat = new Date(date3sm3v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate3sm3v.push(trueDat)
+}
+
+//====================================================== Смена 4 ====================================
+
+// 1 ночная  
+
+let arrdate4sm1n = []
+var date4sm1n = 1661374800000;
+for (let i = 0; i <= 100; i++) {
+    date4sm1n += 691200000
+    var dat = new Date(date4sm1n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate4sm1n.push(trueDat)
+}
+
+
+
+// 2 ночная  
+
+let arrdate4sm2n = []
+var date4sm2n = 1661461200000;
+for (let i = 0; i <= 100; i++) {
+    date4sm2n += 691200000
+    var dat = new Date(date4sm2n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate4sm2n.push(trueDat)
+}
+
+
+
+
+// 3 ночная 
+
+let arrdate4sm3n = []
+var date4sm3n = 1661547600000;
+for (let i = 0; i <= 100; i++) {
+    date4sm3n += 691200000
+    var dat = new Date(date4sm3n);
+    let trueDat = dat.toLocaleDateString()
+    arrdate4sm3n.push(trueDat)
+}
+
+// 1 выходной 
+
+let arrdate4sm1v = []
+var date4sm1v = 1661634000000;
+for (let i = 0; i <= 100; i++) {
+    date4sm1v += 691200000
+    var dat = new Date(date4sm1v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate4sm1v.push(trueDat)
+}
+
+// 2 выходной  
+
+let arrdate4sm2v = []
+var date4sm2v = 1661720400000;
+for (let i = 0; i <= 100; i++) {
+    date4sm2v += 691200000
+    var dat = new Date(date4sm2v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate4sm2v.push(trueDat)
+}
+
+// 3 выходной 
+
+let arrdate4sm3v = []
+var date4sm3v = 1661806800000;
+for (let i = 0; i <= 100; i++) {
+    date4sm3v += 691200000
+    var dat = new Date(date4sm3v);
+    let trueDat = dat.toLocaleDateString()
+    arrdate4sm3v.push(trueDat)
+}
+
+
+//=======================================================Даем классы td в соответствии статуса дня=====================
+//=================================================================Смена 0=========================================
+
+
+for (let i = 1; i <= 31; i++) {
+    document.querySelector('.dayWeek' + i).addEventListener('click', function () {
+        for (let k = 0; k < arrDay0SM.length; k++) {
+            if (arrDay0SM[k].getAttribute("id") == i) {
+                console.log(arrDay0SM[k])
+                localStorage.setItem(arrDay0SM[k] + "vihodDay", "VD")
+
+                arrDay0SM[k].classList.toggle(localStorage.getItem(arrDay0SM[k] + "vihodDay"))
+            }
+
+        }
+    })
+}
+
+
+for (let i = 1; i <= 31; i++) {
+
+    document.querySelector('.dayWeek' + i).addEventListener('dblclick', function () {
+        prazdn = 0
+        let sum = 0
+        for (let k = 0; k < arrAllSM.length; k++) {
+            // console.log(ABR)
+            if (arrAllSM[k].getAttribute("id") == i) {
+
+                localStorage.setItem(arrAllSM[k] + "prDay", "PD")
+                arrAllSM[k].classList.toggle(localStorage.getItem(arrAllSM[k] + "prDay"))
+                sum++
+                localStorage.setItem(arrAllSM[k] + "prazdnik", sum / ABR.length)
+            }
+        }
+
+    })
+
+}
+
+let prazdniki = function () {
+    for (let k = 0; k < arrAllSM.length; k++) {
+        return localStorage.getItem(arrAllSM[k] + "prazdnik")
+    }
+}
+console.log(prazdniki())
+
+
+// for (let i = 1; i <= 31; i++) {
+//     document.querySelector('.dayWeek' + i).addEventListener('contextmenu', function () {
+//         for (let k = 0; k < arrDay0SM.length; k++) {
+//             if (arrDay0SM[k].getAttribute("id") == i) {
+//                 arrDay0SM[k].classList.toggle("PD")
+
+//             }
+//         }
+//     })
+// }
+
+// for (let k = 0; k < arrDay0SM.length; k++) {
+//     for (let i = 0; i < arrdate0sm1v.length; i++) {
+//         if (arrDay0SM[k].getAttribute("class").includes(arrdate0sm1v[i].slice(0, 2)) && arrdate0sm1v[i].slice(3, 5) == trueM && arrdate0smv[i].slice(6, 10) == trueY) {
+//             arrDay0SM[k].classList.add("VD")
+//         }
+//     }
+// }
+
+// for (let k = 0; k < arrDay0SM.length; k++) {
+//     for (let i = 0; i < arrdate0sm2v.length; i++) {
+//         if (arrDay0SM[k].getAttribute("class").includes(arrdate0sm2v[i].slice(0, 2)) && arrdate0sm2v[i].slice(3, 5) == trueM && arrdate0sm2v[i].slice(6, 10) == trueY) {
+//             arrDay0SM[k].classList.add("VD")
+//         }
+//     }
+// }
+
+//=================================================================Смена 1=========================================
+
+
+
+//1 ночная 
+
+for (let k = 0; k < arrDay1SM.length; k++) {
+    for (let i = 0; i < arrdate1sm1n.length; i++) {
+        if (arrDay1SM[k].getAttribute("class").includes(arrdate1sm1n[i].slice(0, 2)) && arrdate1sm1n[i].slice(3, 5) == trueM && arrdate1sm1n[i].slice(6, 10) == trueY) {
+            arrDay1SM[k].classList.add("ND")
+            arrDay1SM[k].classList.add("N4")
+        }
+    }
+}
+
+//2 ночная  
+
+for (let k = 0; k < arrDay1SM.length; k++) {
+    for (let i = 0; i < arrdate1sm2n.length; i++) {
+        if (arrDay1SM[k].getAttribute("class").includes(arrdate1sm2n[i].slice(0, 2)) && arrdate1sm2n[i].slice(3, 5) == trueM && arrdate1sm2n[i].slice(6, 10) == trueY) {
+            arrDay1SM[k].classList.add("ND")
+            arrDay1SM[k].classList.add("N12")
+        }
+    }
+}
+
+
+//3 ночная  
+
+for (let k = 0; k < arrDay1SM.length; k++) {
+    for (let i = 0; i < arrdate1sm3n.length; i++) {
+        if (arrDay1SM[k].getAttribute("class").includes(arrdate1sm3n[i].slice(0, 2)) && arrdate1sm3n[i].slice(3, 5) == trueM && arrdate1sm3n[i].slice(6, 10) == trueY) {
+            arrDay1SM[k].classList.add("ND")
+            arrDay1SM[k].classList.add("N8")
+        }
+    }
+}
+
+
+//1 выходной 
+
+for (let k = 0; k < arrDay1SM.length; k++) {
+    for (let i = 0; i < arrdate1sm1v.length; i++) {
+        if (arrDay1SM[k].getAttribute("class").includes(arrdate1sm1v[i].slice(0, 2)) && arrdate1sm1v[i].slice(3, 5) == trueM && arrdate1sm1v[i].slice(6, 10) == trueY) {
+            arrDay1SM[k].classList.add("VD")
+        }
+    }
+}
+
+//2 выходной 
+
+for (let k = 0; k < arrDay1SM.length; k++) {
+    for (let i = 0; i < arrdate1sm2v.length; i++) {
+        if (arrDay1SM[k].getAttribute("class").includes(arrdate1sm2v[i].slice(0, 2)) && arrdate1sm2v[i].slice(3, 5) == trueM && arrdate1sm2v[i].slice(6, 10) == trueY) {
+            arrDay1SM[k].classList.add("VD")
+        }
+    }
+}
+
+
+//3 выходной 
+
+for (let k = 0; k < arrDay1SM.length; k++) {
+    for (let i = 0; i < arrdate1sm3v.length; i++) {
+        if (arrDay1SM[k].getAttribute("class").includes(arrdate1sm3v[i].slice(0, 2)) && arrdate1sm3v[i].slice(3, 5) == trueM && arrdate1sm3v[i].slice(6, 10) == trueY) {
+            arrDay1SM[k].classList.add("VD")
+        }
+    }
+}
+
+
+//=================================================================Смена 2=========================================
+
+
+
+//1 ночная 
+
+for (let k = 0; k < arrDay2SM.length; k++) {
+    for (let i = 0; i < arrdate2sm1n.length; i++) {
+        if (arrDay2SM[k].getAttribute("class").includes(arrdate2sm1n[i].slice(0, 2)) && arrdate2sm1n[i].slice(3, 5) == trueM && arrdate2sm1n[i].slice(6, 10) == trueY) {
+            arrDay2SM[k].classList.add("ND")
+            arrDay2SM[k].classList.add("N4")
+        }
+    }
+}
+
+//2 ночная  
+
+for (let k = 0; k < arrDay2SM.length; k++) {
+    for (let i = 0; i < arrdate2sm2n.length; i++) {
+        if (arrDay2SM[k].getAttribute("class").includes(arrdate2sm2n[i].slice(0, 2)) && arrdate2sm2n[i].slice(3, 5) == trueM && arrdate2sm2n[i].slice(6, 10) == trueY) {
+            arrDay2SM[k].classList.add("ND")
+            arrDay2SM[k].classList.add("N12")
+        }
+    }
+}
+
+
+//3 ночная  
+
+for (let k = 0; k < arrDay2SM.length; k++) {
+    for (let i = 0; i < arrdate2sm3n.length; i++) {
+        if (arrDay2SM[k].getAttribute("class").includes(arrdate2sm3n[i].slice(0, 2)) && arrdate2sm3n[i].slice(3, 5) == trueM && arrdate2sm3n[i].slice(6, 10) == trueY) {
+            arrDay2SM[k].classList.add("ND")
+            arrDay2SM[k].classList.add("N8")
+        }
+    }
+}
+
+//1 выходной 
+
+for (let k = 0; k < arrDay2SM.length; k++) {
+    for (let i = 0; i < arrdate2sm1v.length; i++) {
+        if (arrDay2SM[k].getAttribute("class").includes(arrdate2sm1v[i].slice(0, 2)) && arrdate2sm1v[i].slice(3, 5) == trueM && arrdate2sm1v[i].slice(6, 10) == trueY) {
+            arrDay2SM[k].classList.add("VD")
+        }
+    }
+}
+
+//2 выходной 
+
+for (let k = 0; k < arrDay2SM.length; k++) {
+    for (let i = 0; i < arrdate2sm2v.length; i++) {
+        if (arrDay2SM[k].getAttribute("class").includes(arrdate2sm2v[i].slice(0, 2)) && arrdate2sm2v[i].slice(3, 5) == trueM && arrdate2sm2v[i].slice(6, 10) == trueY) {
+            arrDay2SM[k].classList.add("VD")
+        }
+    }
+}
+
+
+//3 выходной 
+
+for (let k = 0; k < arrDay2SM.length; k++) {
+    for (let i = 0; i < arrdate2sm3v.length; i++) {
+        if (arrDay2SM[k].getAttribute("class").includes(arrdate2sm3v[i].slice(0, 2)) && arrdate2sm3v[i].slice(3, 5) == trueM && arrdate2sm3v[i].slice(6, 10) == trueY) {
+            arrDay2SM[k].classList.add("VD")
+        }
+    }
+}
+
+
+//=================================================================Смена 3=========================================
+
+
+
+//1 ночная 
+
+for (let k = 0; k < arrDay3SM.length; k++) {
+    for (let i = 0; i < arrdate3sm1n.length; i++) {
+        if (arrDay3SM[k].getAttribute("class").includes(arrdate3sm1n[i].slice(0, 2)) && arrdate3sm1n[i].slice(3, 5) == trueM && arrdate3sm1n[i].slice(6, 10) == trueY) {
+            arrDay3SM[k].classList.add("ND")
+            arrDay3SM[k].classList.add("N4")
+        }
+    }
+}
+
+//2 ночная  
+
+for (let k = 0; k < arrDay3SM.length; k++) {
+    for (let i = 0; i < arrdate3sm2n.length; i++) {
+        if (arrDay3SM[k].getAttribute("class").includes(arrdate3sm2n[i].slice(0, 2)) && arrdate3sm2n[i].slice(3, 5) == trueM && arrdate3sm2n[i].slice(6, 10) == trueY) {
+            arrDay3SM[k].classList.add("ND")
+            arrDay3SM[k].classList.add("N12")
+        }
+    }
+}
+
+
+//3 ночная  
+
+for (let k = 0; k < arrDay3SM.length; k++) {
+    for (let i = 0; i < arrdate3sm3n.length; i++) {
+        if (arrDay3SM[k].getAttribute("class").includes(arrdate3sm3n[i].slice(0, 2)) && arrdate3sm3n[i].slice(3, 5) == trueM && arrdate3sm3n[i].slice(6, 10) == trueY) {
+            arrDay3SM[k].classList.add("ND")
+            arrDay3SM[k].classList.add("N8")
+        }
+    }
+}
+
+//1 выходной 
+
+for (let k = 0; k < arrDay3SM.length; k++) {
+    for (let i = 0; i < arrdate3sm1v.length; i++) {
+        if (arrDay3SM[k].getAttribute("class").includes(arrdate3sm1v[i].slice(0, 2)) && arrdate3sm1v[i].slice(3, 5) == trueM && arrdate3sm1v[i].slice(6, 10) == trueY) {
+            arrDay3SM[k].classList.add("VD")
+        }
+    }
+}
+
+//2 выходной 
+
+for (let k = 0; k < arrDay3SM.length; k++) {
+    for (let i = 0; i < arrdate3sm2v.length; i++) {
+        if (arrDay3SM[k].getAttribute("class").includes(arrdate3sm2v[i].slice(0, 2)) && arrdate3sm2v[i].slice(3, 5) == trueM && arrdate3sm2v[i].slice(6, 10) == trueY) {
+            arrDay3SM[k].classList.add("VD")
+        }
+    }
+}
+
+
+//3 выходной 
+
+for (let k = 0; k < arrDay3SM.length; k++) {
+    for (let i = 0; i < arrdate3sm3v.length; i++) {
+        if (arrDay3SM[k].getAttribute("class").includes(arrdate3sm3v[i].slice(0, 2)) && arrdate3sm3v[i].slice(3, 5) == trueM && arrdate3sm3v[i].slice(6, 10) == trueY) {
+            arrDay3SM[k].classList.add("VD")
+        }
+    }
+}
+
+
+//=================================================================Смена 4=========================================
+
+
+
+//1 ночная 
+
+for (let k = 0; k < arrDay4SM.length; k++) {
+    for (let i = 0; i < arrdate4sm1n.length; i++) {
+        if (arrDay4SM[k].getAttribute("class").includes(arrdate4sm1n[i].slice(0, 2)) && arrdate4sm1n[i].slice(3, 5) == trueM && arrdate4sm1n[i].slice(6, 10) == trueY) {
+            arrDay4SM[k].classList.add("ND")
+            arrDay4SM[k].classList.add("N4")
+        }
+    }
+}
+
+//2 ночная  
+
+for (let k = 0; k < arrDay4SM.length; k++) {
+    for (let i = 0; i < arrdate4sm2n.length; i++) {
+        if (arrDay4SM[k].getAttribute("class").includes(arrdate4sm2n[i].slice(0, 2)) && arrdate4sm2n[i].slice(3, 5) == trueM && arrdate4sm2n[i].slice(6, 10) == trueY) {
+            arrDay4SM[k].classList.add("ND")
+            arrDay4SM[k].classList.add("N12")
+        }
+    }
+}
+
+
+//3 ночная  
+
+for (let k = 0; k < arrDay4SM.length; k++) {
+    for (let i = 0; i < arrdate4sm3n.length; i++) {
+        if (arrDay4SM[k].getAttribute("class").includes(arrdate4sm3n[i].slice(0, 2)) && arrdate4sm3n[i].slice(3, 5) == trueM && arrdate4sm3n[i].slice(6, 10) == trueY) {
+            arrDay4SM[k].classList.add("ND")
+            arrDay4SM[k].classList.add("N8")
+        }
+    }
+}
+
+//1 выходной 
+
+for (let k = 0; k < arrDay4SM.length; k++) {
+    for (let i = 0; i < arrdate4sm1v.length; i++) {
+        if (arrDay4SM[k].getAttribute("class").includes(arrdate4sm1v[i].slice(0, 2)) && arrdate4sm1v[i].slice(3, 5) == trueM && arrdate4sm1v[i].slice(6, 10) == trueY) {
+            arrDay4SM[k].classList.add("VD")
+        }
+    }
+}
+
+//2 выходной 
+
+for (let k = 0; k < arrDay4SM.length; k++) {
+    for (let i = 0; i < arrdate4sm2v.length; i++) {
+        if (arrDay4SM[k].getAttribute("class").includes(arrdate4sm2v[i].slice(0, 2)) && arrdate4sm2v[i].slice(3, 5) == trueM && arrdate4sm2v[i].slice(6, 10) == trueY) {
+            arrDay4SM[k].classList.add("VD")
+        }
+    }
+}
+
+
+//3 выходной 
+
+for (let k = 0; k < arrDay4SM.length; k++) {
+    for (let i = 0; i < arrdate4sm3v.length; i++) {
+        if (arrDay4SM[k].getAttribute("class").includes(arrdate4sm3v[i].slice(0, 2)) && arrdate4sm3v[i].slice(3, 5) == trueM && arrdate4sm3v[i].slice(6, 10) == trueY) {
+            arrDay4SM[k].classList.add("VD")
+        }
+    }
+}
+
+
+//==============================================================Празники всем сменам=========================================
+
+// let arrDayAll = [];
+// for (let k = 1; k <= 31; k++) {
+//     for (let www of document.querySelectorAll('.day' + k)) {
+//         arrDayAll.push(www)
+//     }
+// }
+
+// for (let k = 0; k < arrDayAll.length; k++) {
+//     for (let i = 0; i < prazdniki.length; i++) {
+//         if (arrDayAll[k].getAttribute("class").includes(prazdniki[i].slice(0, 2)) && prazdniki[i].slice(3, 5) == trueM && prazdniki[i].slice(6, 10) == trueY) {
+//             arrDayAll[k].classList.add("PD")
+//         }
+//     }
+// }
 
 
 
 
 //Окрашивание смен
 
-// for (let i = 0; i <= SMENA0.length; i++) {
-//     let COlORS = document.querySelectorAll('.' + SMENA0[i]);
-//     for (let www of COlORS) {
-//         www.classList.add("color0");
-//     }
-// }
 
-// for (let i = 0; i <= SMENA1.length; i++) {
-//     let COlORS = document.querySelectorAll('.' + SMENA1[i]);
-//     for (let www of COlORS) {
-//         www.classList.add("color1");
-//     }
-// }
-
-// for (let i = 0; i <= SMENA2.length; i++) {
-//     let COlORS = document.querySelectorAll('.' + SMENA2[i]);
-//     for (let www of COlORS) {
-//         www.classList.add("color2");
-//     }
-// }
-
-// for (let i = 0; i <= SMENA3.length; i++) {
-//     let COlORS = document.querySelectorAll('.' + SMENA3[i]);
-//     for (let www of COlORS) {
-//         www.classList.add("color3");
-//     }
-// }
-
-// for (let i = 0; i <= SMENA4.length; i++) {
-//     let COlORS = document.querySelectorAll('.' + SMENA4[i]);
-//     for (let www of COlORS) {
-//         www.classList.add("color4");
-//     }
-// }
 
 for (let i = 1; i <= ABR.length; i++) {
     let X = document.querySelector('.col' + i);
@@ -979,7 +1349,28 @@ function countHour() {
     }
 }
 
+//Подсчет ночных часов
 
+function countNightHour() {
+    for (let k = 1; k <= ABR.length; k++) {
+
+        let sum = 0;
+        // let count = 0;
+        for (let i = 1; i <= 31; i++) {
+            let examination = +(document.querySelector(".col" + k).querySelector(".row" + i).innerHTML);
+            if (isNaN(examination)) {
+                continue;
+            }
+            else if (examination >= 1 && document.querySelector(".col" + k).querySelector(".row" + i).getAttribute("class").includes("ND")) {
+                // count++;
+                sum += examination;
+
+            }
+            document.querySelector(".col" + k).querySelector(".row34").innerHTML = sum;
+            // document.querySelector(".col" + k).querySelector(".row32").innerHTML = count;
+        }
+    }
+}
 
 // Подсчет букв
 
@@ -1032,77 +1423,174 @@ function countWord() {
 
 // Подсчет праздничных дней
 
-function prazdn(x=0,y=0) {
-
+function countPrazHour() {
     for (let k = 1; k <= ABR.length; k++) {
+
         let sum = 0;
-        let sum2 = 0;
-        let examination = +(document.querySelector(".col" + k).querySelector(".row" + x).innerHTML);
-        let examination2 = +(document.querySelector(".col" + k).querySelector(".row" + y).innerHTML);
-        if (examination > 0||examination2 > 0) {
-            sum += examination;
-            sum2 += examination2;
+        // let count = 0;
+        for (let i = 1; i <= 31; i++) {
+            let examination = +(document.querySelector(".col" + k).querySelector(".row" + i).innerHTML);
+            if (isNaN(examination)) {
+                continue;
+            }
+            else if (examination >= 1 && document.querySelector(".col" + k).querySelector(".row" + i).getAttribute("class").includes("PD")) {
+                // count++;
+                sum += examination;
+
+            }
+            document.querySelector(".col" + k).querySelector(".row37").innerHTML = sum;
+            // document.querySelector(".col" + k).querySelector(".row32").innerHTML = count;
         }
-        document.querySelector(".col" + k).querySelector(".row37").innerHTML =(sum+sum2);
     }
 }
 
-// function prazdn2(y) {
+//Подсчет проебаных часов
 
-//     for (let k = 1; k <= ABR.length; k++) {
-//         let sum = 0;
-//         let examination = +(document.querySelector(".col" + k).querySelector(".row" + y).innerHTML);
-//         if (examination > 0&&examination!=="") {
-//             sum += examination;
-//         }
-//         document.querySelector(".col" + k).querySelector(".row37").innerHTML =sum;
-//     }
-// }
+
+
+function countProeb() {
+    for (let k = 1; k <= ABR.length; k++) {
+        let sum = 0
+        let abr = ""
+        for (let i = 1; i <= 31; i++) {
+            // sum = 0
+            let examination = +(document.querySelector(".col" + k).querySelector(".row" + i).innerHTML);
+            let atr = document.querySelector(".col" + k).querySelector(".row" + i)
+            if (isNaN(examination) && atr.getAttribute("class").includes("N12")) {
+
+                sum += 12
+                abr = ABR[k - 1]
+            }
+
+            else if (isNaN(examination) && atr.getAttribute("class").includes("N8")) {
+
+                sum += 8
+                abr = ABR[k - 1]
+            }
+
+            else if (isNaN(examination) && atr.getAttribute("class").includes("N4")) {
+
+                sum += 4
+                abr = ABR[k - 1]
+            }
+
+            else if (isNaN(examination) && (atr.getAttribute("class").includes("N4") == false) && (atr.getAttribute("class").includes("N8") == false) && (atr.getAttribute("class").includes("N12") == false) && (atr.getAttribute("class").includes("VD") == false)) {
+
+                sum += 12
+                abr = ABR[k - 1]
+            }
+            else { continue; }
+
+        }
+        localStorage.setItem(abr + "per" + " " + "proebFact", sum)
+    }
+}
+
+
+function minusPlan() {
+    let sum = 0
+    let abr = ""
+
+    for (let i = 1; i <= 31; i++) {
+
+        let atr = document.querySelector(".zero").querySelector(".row" + i)
+        if (atr.getAttribute("class").includes("VD") || atr.getAttribute("class").includes("PD")) {
+            continue;
+        }
+
+        for (let k = 0; k < SMENA1.length; k++) {
+            if (document.querySelector("." + SMENA1[k])) {
+                if (isNaN(+(document.querySelector("." + SMENA1[k]).querySelector(".day" + i).innerHTML))) {
+                    abr = SMENA1[k]
+                    localStorage.setItem(abr + "per" + " " + "minusPlan" + " " + i, (abr))
+                }
+            }
+        }
+
+        for (let k = 0; k < SMENA2.length; k++) {
+            if (document.querySelector("." + SMENA2[k])) {
+                if (isNaN(+(document.querySelector("." + SMENA2[k]).querySelector(".day" + i).innerHTML))) {
+                    abr = SMENA2[k]
+                    localStorage.setItem(abr + "per" + " " + "minusPlan" + " " + i, (abr))
+                }
+            }
+        }
+
+        for (let k = 0; k < SMENA3.length; k++) {
+            if (document.querySelector("." + SMENA3[k])) {
+                if (isNaN(+(document.querySelector("." + SMENA3[k]).querySelector(".day" + i).innerHTML))) {
+                    abr = SMENA3[k]
+                    localStorage.setItem(abr + "per" + " " + "minusPlan" + " " + i, (abr))
+                }
+            }
+        }
+
+        for (let k = 0; k < SMENA4.length; k++) {
+            if (document.querySelector("." + SMENA4[k])) {
+                if (isNaN(+(document.querySelector("." + SMENA4[k]).querySelector(".day" + i).innerHTML))) {
+                    abr = SMENA4[k]
+                    localStorage.setItem(abr + "per" + " " + "minusPlan" + " " + i, (abr))
+                }
+            }
+        }
+    }
+}
+
+
+let trueMinusPlan = function () {
+    let arrFacK = []
+    for (z = 1; z <= 31; z++) {
+        for (let k = 0; k < ABR.length; k++) {
+            let r = localStorage.getItem(ABR[k] + "per" + " " + "minusPlan" + " " + z)
+            if (r == null) {
+                continue
+            }
+            arrFacK.push(r + "per")
+        }
+    }
+    var counts = {};
+    arrFacK.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+    return counts
+}
+
+
+
+
+function countPraznMinus() {
+    for (let k = 1; k <= ABR.length; k++) {
+        let sum = 0
+        let abr = ""
+        for (let i = 1; i <= 31; i++) {
+            // sum = 0
+            let examination = +(document.querySelector(".col" + k).querySelector(".row" + i).innerHTML);
+            let atr = document.querySelector(".col" + k).querySelector(".row" + i)
+            if (examination > 0 && document.querySelector(".col" + k).querySelector(".row" + i).getAttribute("class").includes("PD")) {
+
+                sum += document.querySelector(".col" + k).querySelector(".row" + i).innerHTML
+                abr = ABR[k - 1]
+            }
+
+        }
+        localStorage.setItem(abr + "per" + " " + "praznMinus", sum)
+    }
+}
+
+
 
 
 //=============================================================================================Декадка===========================================================================
 
-//Среднесписочная численность
 
-// let SREDCHISRAB = document.querySelectorAll('.sredChisRab');
-// for (let www of SREDCHISRAB) {
-//     www.innerHTML = CATRAB.length;
-// }
-
-let SREDCHISITR = document.querySelectorAll('.sredChisITR');
-for (let www of SREDCHISITR) {
-    www.innerHTML = CATITR.length;
-}
-
-let SREDCHISSPEC = document.querySelectorAll('.sredChisSPEC');
-for (let www of SREDCHISSPEC) {
-    www.innerHTML = CATSPEC.length;
-}
-
-
-//Подсчет женщин
-
-let FEMRAB = document.querySelectorAll('.femRab');
-for (let www of FEMRAB) {
-    www.innerHTML = RABSEXFEM.length;
-}
-
-let FEMITR = document.querySelectorAll('.femITR');
-for (let www of FEMITR) {
-    www.innerHTML = ITRSEXFEM.length;
-}
-
-let FEMSPEC = document.querySelectorAll('.femSPEC');
-for (let www of FEMSPEC) {
-    www.innerHTML = SPECSEXFEM.length;
-}
 
 //Подсчет декретниц
 
 let decRab = document.querySelectorAll('.decRab');
 for (let www of decRab) {
+
     www.innerHTML = DECRAB.length;
+
 }
+
 
 let decITR = document.querySelectorAll('.decITR');
 for (let www of decITR) {
@@ -1115,7 +1603,7 @@ for (let www of decSPEC) {
 }
 
 
-// https://www.cyberforum.ru/javascript-beginners/thread2606554.html
+
 
 
 //Подсчет "На работе"
@@ -1190,8 +1678,155 @@ function inWork3() {
     }
 }
 
+//========================Подсчет женщин на работе==========
+
+//Первая декадка
+
+function inWork1FEM() {
+    for (let i = 1; i <= 10; i++) {
+        let dayX = document.querySelectorAll('.day' + i);
+        let ytWorker = 0;
+        let ytITR = 0;
+        let ytSPEC = 0;
+        for (let xxx of dayX) {
+
+            if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("Wopker") && xxx.getAttribute("class").includes("female")) {
+                ytWorker++;
+            } else if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("ITR") && xxx.getAttribute("class").includes("female")) {
+                ytITR++;
+            } else if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("SPEC") && xxx.getAttribute("class").includes("female")) {
+                ytSPEC++;
+            }
 
 
+            document.querySelector('.colDek' + i).querySelector('.femRab').innerHTML = ytWorker;
+            document.querySelector('.colDek' + (i + 10)).querySelector('.femITR').innerHTML = ytITR;
+            document.querySelector('.colDek' + (i + 20)).querySelector('.femSPEC').innerHTML = ytSPEC;
+        }
+    }
+}
+
+//Вторая декадка
+
+function inWork2FEM() {
+    for (let i = 1; i <= 10; i++) {
+        let dayX = document.querySelectorAll('.day' + (i + 10));
+        let ytWorker = 0;
+        let ytITR = 0;
+        let ytSPEC = 0;
+        for (let xxx of dayX) {
+            if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("Wopker") && xxx.getAttribute("class").includes("female")) {
+                ytWorker++;
+            } else if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("ITR") && xxx.getAttribute("class").includes("female")) {
+                ytITR++;
+            } else if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("SPEC") && xxx.getAttribute("class").includes("female")) {
+                ytSPEC++;
+            }
+            document.querySelector('.colDek' + (i + 30)).querySelector('.femRab').innerHTML = ytWorker;
+            document.querySelector('.colDek' + (i + 40)).querySelector('.femITR').innerHTML = ytITR;
+            document.querySelector('.colDek' + (i + 50)).querySelector('.femSPEC').innerHTML = ytSPEC;
+        }
+    }
+}
+
+
+//Третья декадка
+
+function inWork3FEM() {
+    for (let i = 1; i <= 11; i++) {
+        let dayX = document.querySelectorAll('.day' + (i + 20));
+        let ytWorker = 0;
+        let ytITR = 0;
+        let ytSPEC = 0;
+        for (let xxx of dayX) {
+            if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("Wopker") && xxx.getAttribute("class").includes("female")) {
+                ytWorker++;
+            } else if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("ITR") && xxx.getAttribute("class").includes("female")) {
+                ytITR++;
+            } else if (xxx.innerHTML >= 1 && xxx.getAttribute("class").includes("SPEC") && xxx.getAttribute("class").includes("female")) {
+                ytSPEC++;
+            }
+            document.querySelector('.colDek' + (i + 60)).querySelector('.femRab').innerHTML = ytWorker;
+            document.querySelector('.colDek' + (i + 71)).querySelector('.femITR').innerHTML = ytITR;
+            document.querySelector('.colDek' + (i + 82)).querySelector('.femSPEC').innerHTML = ytSPEC;
+        }
+    }
+}
+
+//========================Общесписочный подсчет==========
+
+//Первая декадка
+
+function ObPod1() {
+    for (let i = 1; i <= 10; i++) {
+        let dayX = document.querySelectorAll('.day' + i);
+        let ytWorker = 0;
+        let ytITR = 0;
+        let ytSPEC = 0;
+        for (let xxx of dayX) {
+
+            if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("Wopker")) {
+                ytWorker++;
+            } else if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("ITR")) {
+                ytITR++;
+            } else if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("SPEC")) {
+                ytSPEC++;
+            }
+
+
+            document.querySelector('.colDek' + i).querySelector('.sredChisRab').innerHTML = ytWorker;
+            document.querySelector('.colDek' + (i + 10)).querySelector('.sredChisITR').innerHTML = ytITR;
+            document.querySelector('.colDek' + (i + 20)).querySelector('.sredChisSPEC').innerHTML = ytSPEC;
+        }
+    }
+}
+
+//Вторая декадка
+
+function ObPod2() {
+    for (let i = 1; i <= 10; i++) {
+        let dayX = document.querySelectorAll('.day' + (i + 10));
+        let ytWorker = 0;
+        let ytITR = 0;
+        let ytSPEC = 0;
+        for (let xxx of dayX) {
+            if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("Wopker")) {
+                ytWorker++;
+            } else if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("ITR")) {
+                ytITR++;
+            } else if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("SPEC")) {
+                ytSPEC++;
+            }
+            document.querySelector('.colDek' + (i + 30)).querySelector('.sredChisRab').innerHTML = ytWorker;
+            document.querySelector('.colDek' + (i + 40)).querySelector('.sredChisITR').innerHTML = ytITR;
+            document.querySelector('.colDek' + (i + 50)).querySelector('.sredChisSPEC').innerHTML = ytSPEC;
+        }
+    }
+}
+
+
+//Третья декадка
+
+function ObPod3() {
+    for (let i = 1; i <= 11; i++) {
+        let dayX = document.querySelectorAll('.day' + (i + 20));
+        let ytWorker = 0;
+        let ytITR = 0;
+        let ytSPEC = 0;
+        for (let xxx of dayX) {
+            if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("Wopker")) {
+                ytWorker++;
+            } else if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("ITR")) {
+                ytITR++;
+            } else if (xxx.innerHTML !== "" && xxx.getAttribute("class").includes("SPEC")) {
+                ytSPEC++;
+            }
+            document.querySelector('.colDek' + (i + 60)).querySelector('.sredChisRab').innerHTML = ytWorker;
+            document.querySelector('.colDek' + (i + 71)).querySelector('.sredChisITR').innerHTML = ytITR;
+            document.querySelector('.colDek' + (i + 82)).querySelector('.sredChisSPEC').innerHTML = ytSPEC;
+        }
+    }
+}
 
 //Подсчет отпусков
 
@@ -1764,1738 +2399,672 @@ function inHOUER3() {
     }
 }
 
-//Итоговый подсчет часов
+// =====================================================================================Переработка ============================================================================================
 
-//Работники
+//=======================================================================================1 смена=================================================================================
 
-//Первая декадка
+//Добавление строк
 
-function inHOURRAB1() {
-    
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 10; i++) {
-            if (+(document.querySelector('.colDek' + (i)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i)).querySelector('.rowDek' + (k + 13)).innerHTML) ;
-                t = sum*k;
+for (let k = 1; k <= SMENAF1.length; k++) {
+    let nodet = document.createElement('tr');
+    nodet.innerHTML = SMENAF1[k - 1];
+    nodet.classList.add(SMENA1[k - 1] + "per");
+    nodet.classList.add("colPER1sm" + k);
+
+    for (let i = 1; i <= 5; i++) {
+        let node = document.createElement('td');
+        node.classList.add("rowPER1sm" + i);
+        wrapPer1.append(nodet);
+        nodet.append(node);
+    }
+}
+
+//Устанавливаем план, факт и +/-
+
+
+for (let i = 0; i < plan1SM.length; i++) {
+    for (let k = 1; k <= SMENAF1.length; k++) {
+        if (plan1SM[i].data.slice(0, 2) == trueM && plan1SM[i].data.slice(3, 7) == trueY) {
+            let PLAN = document.querySelector(".colPER1sm" + k).querySelector(".rowPER1sm1")
+            let arrValueTrueMinusPlan = Object.values(trueMinusPlan());
+            let arrItemTrueMinusPlan = Object.getOwnPropertyNames(trueMinusPlan());
+            PLAN.innerHTML = plan1SM[i].plan
+            for (let w = 0; w < arrItemTrueMinusPlan.length; w++) {
+                if (document.querySelector(".colPER1sm" + k).getAttribute("class").includes(arrItemTrueMinusPlan[w])) {
+                    PLAN.innerHTML = plan1SM[i].plan - (arrValueTrueMinusPlan[w] * 8);
+                    localStorage.setItem(SMENA1[k - 1] + "per" + " " + "razn-", PLAN.innerHTML)
+                }
             }
-            
-            document.querySelector('.headRAB1').querySelector('.headDEK' + (k + 18)).innerHTML = t;
         }
     }
 }
 
-//Вторая декадка
 
-function inHOURRAB2() {
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 10; i++) {
-            if (+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek' + (k + 13)).innerHTML);
-                t = sum*k;
+
+
+for (let i = 0; i < plan1SM.length; i++) {
+    for (let n = 0; n < SMENA1.length; n++) {
+        let FACT = document.querySelector("." + SMENA1[n] + "per").querySelector(".rowPER1sm3")
+        FACT.innerHTML = plan1SM[i].fact
+        if (plan1SM[i].data.slice(0, 2) == trueM && plan1SM[i].data.slice(3, 7) == trueY && +(localStorage.getItem(SMENA1[n] + "per" + " " + "proebFact")) > 0) {
+            FACT.innerHTML = plan1SM[i].fact - localStorage.getItem(SMENA1[n] + "per" + " " + "proebFact")
+            localStorage.setItem(SMENA1[n] + "per" + " " + "razn+", plan1SM[i].fact - localStorage.getItem(SMENA1[n] + "per" + " " + "proebFact"))
+        }
+    }
+}
+
+
+
+for (let i = 0; i < SMENA1.length; i++) {
+    let plusMinus = document.querySelector("." + SMENA1[i] + "per").querySelector(".rowPER1sm4")
+    for (let k = 0; k < plan1SM.length; k++) {
+        if (plan1SM[k].data.slice(0, 2) == trueM && plan1SM[k].data.slice(3, 7) == trueY && localStorage.getItem(SMENA1[i] + "per" + " " + "razn+") == 0 && localStorage.getItem(SMENA1[i] + "per" + " " + "razn-") > 0) {
+            console.log(plan1SM[k].fact)
+            console.log(localStorage.getItem(SMENA1[i] + "per" + " " + "razn-"))
+            plusMinus.innerHTML = plan1SM[k].fact - localStorage.getItem(SMENA1[i] + "per" + " " + "razn-")
+        }
+        else if (plan1SM[k].data.slice(0, 2) == trueM && plan1SM[k].data.slice(3, 7) == trueY && localStorage.getItem(SMENA1[i] + "per" + " " + "razn+") > 0 && localStorage.getItem(SMENA1[i] + "per" + " " + "razn-") == 0) {
+            plusMinus.innerHTML = localStorage.getItem(SMENA1[i] + "per" + " " + "razn+") - plan1SM[k].plan
+        }
+        else {
+            plusMinus.innerHTML = localStorage.getItem(SMENA1[i] + "per" + " " + "razn+") - localStorage.getItem(SMENA1[i] + "per" + " " + "razn-")
+        }
+    }
+
+}
+
+
+for (let i = 0; i < SMENA1.length; i++) {
+    for (let k = 0; k < prazdniki(); k++) {
+        let truePererabot = document.querySelector("." + SMENA1[i] + "per").querySelector(".rowPER1sm5")
+        truePererabot.innerHTML = (localStorage.getItem(SMENA1[i] + "per" + " " + "razn+") - localStorage.getItem(SMENA1[i] + "per" + " " + "razn-")) - localStorage.getItem(SMENA1[i] + "per" + " " + "praznMinus")
+
+    }
+}
+
+
+
+//=======================================================================================2 смена=================================================================================
+
+//Добавление строк
+
+for (let k = 1; k <= SMENAF2.length; k++) {
+    let nodet = document.createElement('tr');
+    nodet.innerHTML = SMENAF2[k - 1];
+    nodet.classList.add(SMENA2[k - 1] + "per");
+    nodet.classList.add("colPER2sm" + k);
+
+    for (let i = 1; i <= 5; i++) {
+        let node = document.createElement('td');
+        node.classList.add("rowPER2sm" + i);
+        wrapPer2.append(nodet);
+        nodet.append(node);
+    }
+}
+
+//Устанавливаем план, факт и +/-
+
+for (let i = 0; i < plan2SM.length; i++) {
+    for (let k = 1; k <= SMENAF2.length; k++) {
+        if (plan2SM[i].data.slice(0, 2) == trueM && plan2SM[i].data.slice(3, 7) == trueY) {
+            let PLAN = document.querySelector(".colPER2sm" + k).querySelector(".rowPER2sm1")
+            let arrValueTrueMinusPlan = Object.values(trueMinusPlan());
+            let arrItemTrueMinusPlan = Object.getOwnPropertyNames(trueMinusPlan());
+            PLAN.innerHTML = plan2SM[i].plan
+
+            for (let w = 0; w < arrItemTrueMinusPlan.length; w++) {
+                if (document.querySelector(".colPER2sm" + k).getAttribute("class").includes(arrItemTrueMinusPlan[w])) {
+                    PLAN.innerHTML = plan2SM[i].plan - (arrValueTrueMinusPlan[w] * 8);
+                    localStorage.setItem(SMENA2[k - 1] + "per" + " " + "razn-", PLAN.innerHTML)
+                }
             }
-            document.querySelector('.headRAB2').querySelector('.headDEK' + (k + 18)).innerHTML = t;
         }
     }
 }
 
-//Третья декадка
 
-function inHOURRAB3() {
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 11; i++) {
-            if (+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek' + (k + 13)).innerHTML);
-                t = sum*k;
+for (let i = 0; i < plan2SM.length; i++) {
+    for (let n = 0; n < SMENA2.length; n++) {
+        let FACT = document.querySelector("." + SMENA2[n] + "per").querySelector(".rowPER2sm3")
+        FACT.innerHTML = plan2SM[i].fact
+        if (plan2SM[i].data.slice(0, 2) == trueM && plan2SM[i].data.slice(3, 7) == trueY && +(localStorage.getItem(SMENA2[n] + "per" + " " + "proebFact")) > 0) {
+            FACT.innerHTML = plan2SM[i].fact - localStorage.getItem(SMENA2[n] + "per" + " " + "proebFact")
+            localStorage.setItem(SMENA2[n] + "per" + " " + "razn+", plan2SM[i].fact - localStorage.getItem(SMENA2[n] + "per" + " " + "proebFact"))
+        }
+    }
+}
+
+
+for (let i = 0; i < SMENA2.length; i++) {
+    let plusMinus = document.querySelector("." + SMENA2[i] + "per").querySelector(".rowPER2sm4")
+    for (let k = 0; k < plan2SM.length; k++) {
+        if (plan2SM[k].data.slice(0, 2) == trueM && plan2SM[k].data.slice(3, 7) == trueY && localStorage.getItem(SMENA2[i] + "per" + " " + "razn+") == 0 && localStorage.getItem(SMENA2[i] + "per" + " " + "razn-") > 0) {
+            plusMinus.innerHTML = plan2SM[k].fact - localStorage.getItem(SMENA2[i] + "per" + " " + "razn-")
+        }
+        else if (plan2SM[k].data.slice(0, 2) == trueM && plan2SM[k].data.slice(3, 7) == trueY && localStorage.getItem(SMENA2[i] + "per" + " " + "razn+") > 0 && localStorage.getItem(SMENA2[i] + "per" + " " + "razn-") == 0) {
+            plusMinus.innerHTML = localStorage.getItem(SMENA2[i] + "per" + " " + "razn+") - plan2SM[k].plan
+        }
+        else {
+            plusMinus.innerHTML = localStorage.getItem(SMENA2[i] + "per" + " " + "razn+") - localStorage.getItem(SMENA2[i] + "per" + " " + "razn-")
+        }
+    }
+
+}
+
+for (let i = 0; i < SMENA2.length; i++) {
+    for (let k = 0; k < prazdniki(); k++) {
+        let truePererabot = document.querySelector("." + SMENA2[i] + "per").querySelector(".rowPER2sm5")
+        truePererabot.innerHTML = (localStorage.getItem(SMENA2[i] + "per" + " " + "razn+") - localStorage.getItem(SMENA2[i] + "per" + " " + "razn-")) - localStorage.getItem(SMENA2[i] + "per" + " " + "praznMinus")
+
+    }
+}
+
+//=======================================================================================3 смена=================================================================================
+
+//Добавление строк
+
+for (let k = 1; k <= SMENAF3.length; k++) {
+    let nodet = document.createElement('tr');
+    nodet.innerHTML = SMENAF3[k - 1];
+    nodet.classList.add(SMENA3[k - 1] + "per");
+    nodet.classList.add("colPER3sm" + k);
+
+    for (let i = 1; i <= 5; i++) {
+        let node = document.createElement('td');
+        node.classList.add("rowPER3sm" + i);
+        wrapPer3.append(nodet);
+        nodet.append(node);
+    }
+}
+
+//Устанавливаем план, факт и +/-
+
+for (let i = 0; i < plan3SM.length; i++) {
+    for (let k = 1; k <= SMENAF3.length; k++) {
+        if (plan3SM[i].data.slice(0, 2) == trueM && plan3SM[i].data.slice(3, 7) == trueY) {
+            let PLAN = document.querySelector(".colPER3sm" + k).querySelector(".rowPER3sm1")
+            let arrValueTrueMinusPlan = Object.values(trueMinusPlan());
+            let arrItemTrueMinusPlan = Object.getOwnPropertyNames(trueMinusPlan());
+            PLAN.innerHTML = plan3SM[i].plan
+            for (let w = 0; w < arrItemTrueMinusPlan.length; w++) {
+                if (document.querySelector(".colPER3sm" + k).getAttribute("class").includes(arrItemTrueMinusPlan[w])) {
+                    PLAN.innerHTML = plan3SM[i].plan - (arrValueTrueMinusPlan[w] * 8);
+                    localStorage.setItem(SMENA3[k - 1] + "per" + " " + "razn-", PLAN.innerHTML)
+                }
             }
-            document.querySelector('.headRAB3').querySelector('.headDEK' + (k + 18)).innerHTML = t;
         }
     }
 }
 
-//ИТР
 
-//Первая декадка
+for (let i = 0; i < plan3SM.length; i++) {
+    for (let n = 0; n < SMENA3.length; n++) {
+        let FACT = document.querySelector("." + SMENA3[n] + "per").querySelector(".rowPER3sm3")
+        FACT.innerHTML = plan3SM[i].fact
+        if (plan3SM[i].data.slice(0, 2) == trueM && plan3SM[i].data.slice(3, 7) == trueY && +(localStorage.getItem(SMENA3[n] + "per" + " " + "proebFact")) > 0) {
+            FACT.innerHTML = plan3SM[i].fact - localStorage.getItem(SMENA3[n] + "per" + " " + "proebFact")
+            localStorage.setItem(SMENA3[n] + "per" + " " + "razn+", plan3SM[i].fact - localStorage.getItem(SMENA3[n] + "per" + " " + "proebFact"))
+        }
+    }
+}
 
-function inHOURITR1() {
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 10; i++) {
-            if (+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek' + (k + 13)).innerHTML);
-                t = sum*k;
+for (let i = 0; i < SMENA3.length; i++) {
+    let plusMinus = document.querySelector("." + SMENA3[i] + "per").querySelector(".rowPER3sm4")
+    for (let k = 0; k < plan3SM.length; k++) {
+        if (plan3SM[k].data.slice(0, 2) == trueM && plan3SM[k].data.slice(3, 7) == trueY && localStorage.getItem(SMENA3[i] + "per" + " " + "razn+") == 0 && localStorage.getItem(SMENA3[i] + "per" + " " + "razn-") > 0) {
+            plusMinus.innerHTML = plan3SM[k].fact - localStorage.getItem(SMENA3[i] + "per" + " " + "razn-")
+        }
+        else if (plan3SM[k].data.slice(0, 2) == trueM && plan3SM[k].data.slice(3, 7) == trueY && localStorage.getItem(SMENA3[i] + "per" + " " + "razn+") > 0 && localStorage.getItem(SMENA3[i] + "per" + " " + "razn-") == 0) {
+            plusMinus.innerHTML = localStorage.getItem(SMENA3[i] + "per" + " " + "razn+") - plan3SM[k].plan
+        }
+        else {
+            plusMinus.innerHTML = localStorage.getItem(SMENA3[i] + "per" + " " + "razn+") - localStorage.getItem(SMENA3[i] + "per" + " " + "razn-")
+        }
+    }
+
+}
+
+for (let i = 0; i < SMENA3.length; i++) {
+    for (let k = 0; k < prazdniki(); k++) {
+        let truePererabot = document.querySelector("." + SMENA3[i] + "per").querySelector(".rowPER3sm5")
+        truePererabot.innerHTML = (localStorage.getItem(SMENA3[i] + "per" + " " + "razn+") - localStorage.getItem(SMENA3[i] + "per" + " " + "razn-")) - localStorage.getItem(SMENA3[i] + "per" + " " + "praznMinus")
+
+    }
+}
+
+//=======================================================================================4 смена=================================================================================
+
+//Добавление строк
+
+for (let k = 1; k <= SMENAF4.length; k++) {
+    let nodet = document.createElement('tr');
+    nodet.innerHTML = SMENAF4[k - 1];
+    nodet.classList.add(SMENA4[k - 1] + "per");
+    nodet.classList.add("colPER4sm" + k);
+
+    for (let i = 1; i <= 5; i++) {
+        let node = document.createElement('td');
+        node.classList.add("rowPER4sm" + i);
+        wrapPer4.append(nodet);
+        nodet.append(node);
+    }
+}
+
+//Устанавливаем план, факт и +/-
+
+for (let i = 0; i < plan4SM.length; i++) {
+    for (let k = 1; k <= SMENAF4.length; k++) {
+        if (plan4SM[i].data.slice(0, 2) == trueM && plan4SM[i].data.slice(3, 7) == trueY) {
+            let PLAN = document.querySelector(".colPER4sm" + k).querySelector(".rowPER4sm1")
+            let arrValueTrueMinusPlan = Object.values(trueMinusPlan());
+            let arrItemTrueMinusPlan = Object.getOwnPropertyNames(trueMinusPlan());
+            PLAN.innerHTML = plan4SM[i].plan
+            for (let w = 0; w < arrItemTrueMinusPlan.length; w++) {
+                if (document.querySelector(".colPER4sm" + k).getAttribute("class").includes(arrItemTrueMinusPlan[w])) {
+                    PLAN.innerHTML = plan4SM[i].plan - (arrValueTrueMinusPlan[w] * 8);
+                    localStorage.setItem(SMENA4[k - 1] + "per" + " " + "razn-", PLAN.innerHTML)
+                }
             }
-            document.querySelector('.headITR1').querySelector('.headDEK' + (k + 18)).innerHTML = t;
         }
     }
 }
 
-//Вторая декадка
 
-function inHOURITR2() {
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 10; i++) {
-            if (+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek' + (k + 13)).innerHTML);
-                t = sum*k;
-            }
-            document.querySelector('.headITR2').querySelector('.headDEK' + (k + 18)).innerHTML = t;
+for (let i = 0; i < plan4SM.length; i++) {
+    for (let n = 0; n < SMENA4.length; n++) {
+        let FACT = document.querySelector("." + SMENA4[n] + "per").querySelector(".rowPER4sm3")
+        FACT.innerHTML = plan4SM[i].fact
+        if (plan4SM[i].data.slice(0, 2) == trueM && plan4SM[i].data.slice(3, 7) == trueY && +(localStorage.getItem(SMENA4[n] + "per" + " " + "proebFact")) > 0) {
+            FACT.innerHTML = plan4SM[i].fact - localStorage.getItem(SMENA4[n] + "per" + " " + "proebFact")
+            localStorage.setItem(SMENA4[n] + "per" + " " + "razn+", plan4SM[i].fact - localStorage.getItem(SMENA4[n] + "per" + " " + "proebFact"))
         }
     }
 }
 
-//Третья декадка
 
-function inHOURITR3() {
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 11; i++) {
-            if (+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek' + (k + 13)).innerHTML);
-                t = sum*k;
-            }
-            document.querySelector('.headITR3').querySelector('.headDEK' + (k + 18)).innerHTML = t;
+for (let i = 0; i < SMENA4.length; i++) {
+    let plusMinus = document.querySelector("." + SMENA4[i] + "per").querySelector(".rowPER4sm4")
+    for (let k = 0; k < plan4SM.length; k++) {
+        if (plan4SM[k].data.slice(0, 2) == trueM && plan4SM[k].data.slice(3, 7) == trueY && localStorage.getItem(SMENA4[i] + "per" + " " + "razn+") == 0 && localStorage.getItem(SMENA4[i] + "per" + " " + "razn-") > 0) {
+            plusMinus.innerHTML = plan4SM[k].fact - localStorage.getItem(SMENA4[i] + "per" + " " + "razn-")
         }
-    }
-}
-
-//Специалисты
-
-//Первая декадка
-
-function inHOURSPEC1() {
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 10; i++) {
-            if (+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek' + (k + 13)).innerHTML);
-                t = sum*k;
-            }
-            document.querySelector('.headSPEC1').querySelector('.headDEK' + (k + 18)).innerHTML = t;
-        }
-    }
-}
-
-//Вторая декадка
-
-function inHOURSPEC2() {
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 10; i++) {
-            if (+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek' + (k + 13)).innerHTML);
-                t = sum*k;
-            }
-            document.querySelector('.headSPEC2').querySelector('.headDEK' + (k + 18)).innerHTML = t;
-        }
-    }
-}
-
-//Третья декадка
-
-function inHOURSPEC3() {
-    for (let k = 1; k < 13; k++) {
-        let sum = 0;
-        let t = 0;
-        for (let i = 1; i <= 11; i++) {
-            if (+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek' + (k + 13)).innerHTML) >= 1) {
-                sum+=+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek' + (k + 13)).innerHTML);
-                t = sum*k;
-            }
-            document.querySelector('.headSPEC3').querySelector('.headDEK' + (k + 18)).innerHTML = t;
-        }
-    }
-}
-
-//Итоговый подсчет часов по суткам
-
-//Работники
-
-function inHOURSUTRAB() {
-    for (let k = 0; k <= 2; k++) {
-        let sum = 0;
-        for (let i = 1; i <= 12; i++) {
-            if (+(document.querySelector(".headRAB" + (k + 1)).querySelector('.headDEK' + (i + 18)).innerHTML) >= 1) {
-                sum += +(document.querySelector(".headRAB" + (k + 1)).querySelector('.headDEK' + (i + 18)).innerHTML);
-            }
-            document.querySelector(".headRAB" + (k + 1)).querySelector('.headDEK31').innerHTML = sum;
-        }
-    }
-}
-
-
-
-//ИТР
-
-function inHOURSUTITR() {
-    for (let k = 0; k <= 2; k++) {
-        let sum = 0;
-        for (let i = 1; i <= 12; i++) {
-            if (+(document.querySelector(".headITR" + (k + 1)).querySelector('.headDEK' + (i + 18)).innerHTML) >= 1) {
-                sum += +(document.querySelector(".headITR" + (k + 1)).querySelector('.headDEK' + (i + 18)).innerHTML);
-            }
-            document.querySelector(".headITR" + (k + 1)).querySelector('.headDEK31').innerHTML = sum;
-        }
-    }
-}
-
-
-//Специалисты
-
-function inHOURSUTSPEC() {
-    for (let k = 0; k <= 2; k++) {
-        let sum = 0;
-        for (let i = 1; i <= 12; i++) {
-            if (+(document.querySelector(".headSPEC" + (k + 1)).querySelector('.headDEK' + (i + 18)).innerHTML) >= 1) {
-                sum += +(document.querySelector(".headSPEC" + (k + 1)).querySelector('.headDEK' + (i + 18)).innerHTML);
-            }
-            document.querySelector(".headSPEC" + (k + 1)).querySelector('.headDEK31').innerHTML = sum;
-        }
-    }
-}
-
-
-
-//---------------------------------------------------------------------------Итоговый подсчет отпусков-----------------------------------------------------------------------------
-
-//Работники
-
-//Первая декадка
-
-function inOTPRAB1() {
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headRAB1').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-//Вторая декадка
-
-function inOTPRAB2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headRAB2').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-//Третья декадка
-
-function inOTPRAB3() {
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headRAB3').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-//ИТР
-
-//Первая декадка
-
-function inOTPITR1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headITR1').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inOTPITR2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headITR2').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inOTPITR3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headITR3').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-
-//Специалисты
-
-//Первая декадка
-
-function inOTPSPEC1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headSPEC1').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inOTPSPEC2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headSPEC2').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inOTPSPEC3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek2').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek2').innerHTML);
-        }
-        document.querySelector('.headSPEC3').querySelector('.headDEK7').innerHTML = sum;
-    }
-}
-
-//---------------------------------------------------------------------------Итоговый подсчет 'На работе'-----------------------------------------------------------------------------
-
-//Работники
-
-//Первая декадка
-
-function inWORKRAB1() {
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headRAB1').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-//Вторая декадка
-
-function inWORKRAB2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headRAB2').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-//Третья декадка
-
-function inWORKRAB3() {
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headRAB3').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-//ИТР
-
-//Первая декадка
-
-function inWORKITR1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headITR1').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inWORKITR2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headITR2').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inWORKITR3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headITR3').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-
-//Специалисты
-
-//Первая декадка
-
-function inWORKSPEC1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headSPEC1').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inWORKSPEC2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headSPEC2').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inWORKSPEC3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek1').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek1').innerHTML);
-        }
-        document.querySelector('.headSPEC3').querySelector('.headDEK6').innerHTML = sum;
-    }
-}
-
-//---------------------------------------------------------------------------Итоговый подсчет больничных-----------------------------------------------------------------------------
-
-//Работники
-
-//Первая декадка
-
-function inBOLRAB1() {
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i)).querySelector('.rowDek4').innerHTML);
-        }
-        document.querySelector('.headRAB1').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-//Вторая декадка
-
-function inBOLRAB2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek4').innerHTML);
-        }
-        document.querySelector('.headRAB2').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-//Третья декадка
-
-function inBOLRAB3() {
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek4').innerHTML);
-        }
-        document.querySelector('.headRAB3').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-//ИТР
-
-//Первая декадка
-
-function inBOLITR1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek4').innerHTML);
-        }
-        document.querySelector('.headITR1').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inBOLITR2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek4').innerHTML);
-        }
-        document.querySelector('.headITR2').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inBOLITR3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek4').innerHTML);
-        }
-        document.querySelector('.headITR3').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-
-//Специалисты
-
-//Первая декадка
-
-function inBOLSPEC1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek4').innerHTML);
-        }
-        document.querySelector('.headSPEC1').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inBOLSPEC2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek4').innerHTML) ;
-        }
-        document.querySelector('.headSPEC2').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inBOLSPEC3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek4').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek4').innerHTML);
-        }
-        document.querySelector('.headSPEC3').querySelector('.headDEK9').innerHTML = sum;
-    }
-}
-
-
-
-
-//---------------------------------------------------------------------------Итоговый подсчет прочих неявок-----------------------------------------------------------------------------
-
-//Работники
-
-//Первая декадка
-
-function inPROCHRAB1() {
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i)).querySelector('.rowDek6').innerHTML);
-        }
-        document.querySelector('.headRAB1').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-//Вторая декадка
-
-function inPROCHRAB2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek6').innerHTML);
-        }
-        document.querySelector('.headRAB2').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-//Третья декадка
-
-function inPROCHRAB3() {
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek6').innerHTML);
-        }
-        document.querySelector('.headRAB3').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-//ИТР
-
-//Первая декадка
-
-function inPROCHITR1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek6').innerHTML);
-        }
-        document.querySelector('.headITR1').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inPROCHITR2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek6').innerHTML);
-        }
-        document.querySelector('.headITR2').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inPROCHITR3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek6').innerHTML);
-        }
-        document.querySelector('.headITR3').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-
-//Специалисты
-
-//Первая декадка
-
-function inPROCHSPEC1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek6').innerHTML);
-        }
-        document.querySelector('.headSPEC1').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inPROCHSPEC2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek6').innerHTML) ;
-        }
-        document.querySelector('.headSPEC2').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inPROCHSPEC3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek6').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek6').innerHTML);
-        }
-        document.querySelector('.headSPEC3').querySelector('.headDEK11').innerHTML = sum;
-    }
-}
-
-//---------------------------------------------------------------------------Итоговый разрешения администрации-----------------------------------------------------------------------------
-
-//Работники
-
-//Первая декадка
-
-function inRAZRRAB1() {
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headRAB1').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-//Вторая декадка
-
-function inRAZRRAB2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headRAB2').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-//Третья декадка
-
-function inRAZRRAB3() {
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headRAB3').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-//ИТР
-
-//Первая декадка
-
-function inRAZRITR1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headITR1').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inRAZRITR2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headITR2').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inRAZRITR3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headITR3').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-
-//Специалисты
-
-//Первая декадка
-
-function inRAZRSPEC1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headSPEC1').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inRAZRSPEC2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headSPEC2').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inRAZRSPEC3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek7').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek7').innerHTML);
-        }
-        document.querySelector('.headSPEC3').querySelector('.headDEK12').innerHTML = sum;
-    }
-}
-
-//---------------------------------------------------------------------------Итоговый подсчет прогулов-----------------------------------------------------------------------------
-
-//Работники
-
-//Первая декадка
-
-function inPROGRAB1() {
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i)).querySelector('.rowDek8').innerHTML);
-        }
-        document.querySelector('.headRAB1').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-//Вторая декадка
-
-function inPROGRAB2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek8').innerHTML);
-        }
-        document.querySelector('.headRAB2').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-//Третья декадка
-
-function inPROGRAB3() {
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek8').innerHTML);
-        }
-        document.querySelector('.headRAB3').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-//ИТР
-
-//Первая декадка
-
-function inPROGITR1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek8').innerHTML);
-        }
-        document.querySelector('.headITR1').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inPROGITR2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek8').innerHTML) ;
-        }
-        document.querySelector('.headITR2').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inPROGITR3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek8').innerHTML);
-        }
-        document.querySelector('.headITR3').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-
-//Специалисты
-
-//Первая декадка
-
-function inPROGSPEC1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek8').innerHTML);
-        }
-        document.querySelector('.headSPEC1').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inPROGSPEC2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek8').innerHTML) ;
-        }
-        document.querySelector('.headSPEC2').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inPROGSPEC3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek8').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek8').innerHTML);
-        }
-        document.querySelector('.headSPEC3').querySelector('.headDEK13').innerHTML = sum;
-    }
-}
-
-
-
-//---------------------------------------------------------------------------Итоговый подсчет выходных-----------------------------------------------------------------------------
-
-//Работники
-
-//Первая декадка
-
-function inVIHRAB1() {
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i)).querySelector('.rowDek10').innerHTML);
-        }
-        document.querySelector('.headRAB1').querySelector('.headDEK15').innerHTML = sum;
-    }
-}
-
-//Вторая декадка
-
-function inVIHRAB2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 30)).querySelector('.rowDek10').innerHTML);
-        }
-        document.querySelector('.headRAB2').querySelector('.headDEK15').innerHTML = sum;
-    }
-}
-
-//Третья декадка
-
-function inVIHRAB3() {
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 60)).querySelector('.rowDek10').innerHTML);
+        else if (plan4SM[k].data.slice(0, 2) == trueM && plan4SM[k].data.slice(3, 7) == trueY && localStorage.getItem(SMENA4[i] + "per" + " " + "razn+") > 0 && localStorage.getItem(SMENA4[i] + "per" + " " + "razn-") == 0) {
+            plusMinus.innerHTML = localStorage.getItem(SMENA4[i] + "per" + " " + "razn+") - plan4SM[k].plan
         }
-        document.querySelector('.headRAB3').querySelector('.headDEK15').innerHTML = sum;
-    }
-}
-
-//ИТР
-
-//Первая декадка
-
-function inVIHITR1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 10)).querySelector('.rowDek10').innerHTML);
-        }
-        document.querySelector('.headITR1').querySelector('.headDEK15').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inVIHITR2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 40)).querySelector('.rowDek10').innerHTML);
-        }
-        document.querySelector('.headITR2').querySelector('.headDEK15').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inVIHITR3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 71)).querySelector('.rowDek10').innerHTML);
-        }
-        document.querySelector('.headITR3').querySelector('.headDEK15').innerHTML = sum;
-    }
-}
-
-
-//Специалисты
-
-//Первая декадка
-
-function inVIHSPEC1() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 20)).querySelector('.rowDek10').innerHTML);
-        }
-        document.querySelector('.headSPEC1').querySelector('.headDEK15').innerHTML = sum;
-    }
-}
-
-
-//Вторая декадка
-
-function inVIHSPEC2() {
-
-    let sum = 0;
-    for (let i = 1; i <= 10; i++) {
-        if (+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 50)).querySelector('.rowDek10').innerHTML);
-        }
-        document.querySelector('.headSPEC2').querySelector('.headDEK15').innerHTML = sum;
-    }
-}
-
-
-//Третья декадка
-
-function inVIHSPEC3() {
-
-    let sum = 0;
-    for (let i = 1; i <= 11; i++) {
-        if (+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek10').innerHTML) >= 1) {
-            sum+=+(document.querySelector('.colDek' + (i + 82)).querySelector('.rowDek10').innerHTML);
+        else {
+            plusMinus.innerHTML = localStorage.getItem(SMENA4[i] + "per" + " " + "razn+") - localStorage.getItem(SMENA4[i] + "per" + " " + "razn-")
         }
-        document.querySelector('.headSPEC3').querySelector('.headDEK15').innerHTML = sum;
     }
-}
-
-//---------------------------------------------------------------------------Итоговый подсчет ЖЕНЩИН-----------------------------------------------------------------------------
-
-document.querySelector('.headRAB1').querySelector('.headDEK5').innerHTML = RABSEXFEM.length * 10;
-document.querySelector('.headRAB2').querySelector('.headDEK5').innerHTML = RABSEXFEM.length * 10;
-document.querySelector('.headRAB3').querySelector('.headDEK5').innerHTML = RABSEXFEM.length * 11;
-document.querySelector('.headITR1').querySelector('.headDEK5').innerHTML = ITRSEXFEM.length * 10;
-document.querySelector('.headITR2').querySelector('.headDEK5').innerHTML = ITRSEXFEM.length * 10;
-document.querySelector('.headITR3').querySelector('.headDEK5').innerHTML = ITRSEXFEM.length * 11;
-document.querySelector('.headSPEC1').querySelector('.headDEK5').innerHTML = SPECSEXFEM.length * 10;
-document.querySelector('.headSPEC2').querySelector('.headDEK5').innerHTML = SPECSEXFEM.length * 10;
-document.querySelector('.headSPEC3').querySelector('.headDEK5').innerHTML = SPECSEXFEM.length * 11;
-
-
-//---------------------------------------------------------------------------Итоговый подсчет среднесписочной численности-----------------------------------------------------------------------------
-// document.querySelector('.headRAB1').querySelector('.headDEK4').innerHTML = CATRAB.length * 10;
-// document.querySelector('.headRAB2').querySelector('.headDEK4').innerHTML = CATRAB.length * 10;
-// document.querySelector('.headRAB3').querySelector('.headDEK4').innerHTML = CATRAB.length * 11;
-document.querySelector('.headITR1').querySelector('.headDEK4').innerHTML = CATITR.length * 10;
-document.querySelector('.headITR2').querySelector('.headDEK4').innerHTML = CATITR.length * 10;
-document.querySelector('.headITR3').querySelector('.headDEK4').innerHTML = CATITR.length * 11;
-document.querySelector('.headSPEC1').querySelector('.headDEK4').innerHTML = CATSPEC.length * 10;
-document.querySelector('.headSPEC2').querySelector('.headDEK4').innerHTML = CATSPEC.length * 10;
-document.querySelector('.headSPEC3').querySelector('.headDEK4').innerHTML = CATSPEC.length * 11;
-
-//---------------------------------------------------------------------------Итоговый подсчет декретниц-----------------------------------------------------------------------------
-document.querySelector('.headRAB1').querySelector('.headDEK14').innerHTML = DECRAB.length * 10;
-document.querySelector('.headRAB2').querySelector('.headDEK14').innerHTML = DECRAB.length * 10;
-document.querySelector('.headRAB3').querySelector('.headDEK14').innerHTML = DECRAB.length * 11;
-document.querySelector('.headITR1').querySelector('.headDEK14').innerHTML = DECITR.length * 10;
-document.querySelector('.headITR2').querySelector('.headDEK14').innerHTML = DECITR.length * 10;
-document.querySelector('.headITR3').querySelector('.headDEK14').innerHTML = DECITR.length * 11;
-document.querySelector('.headSPEC1').querySelector('.headDEK14').innerHTML = DECSPEC.length * 10;
-document.querySelector('.headSPEC2').querySelector('.headDEK14').innerHTML = DECSPEC.length * 10;
-document.querySelector('.headSPEC3').querySelector('.headDEK14').innerHTML = DECSPEC.length * 11;
-
-
-//===============================================================================Итоговая таблица=======================================================================================================
-
-//-------------------------------------------------------------------Итоговый подсчет среднесписочной численности-------------------------------------------------------------------------------------------
-
-
-
-document.querySelector('.colITOG1').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG4').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG7').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG10').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK4').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK4').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG2').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG5').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG8').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG11').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK4').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK4').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK4').innerHTML)
-document.querySelector('.colITOG3').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG6').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG9').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK4').innerHTML);
-document.querySelector('.colITOG12').querySelector('.rowITOG2').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK4').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK4').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK4').innerHTML);
-
-//-------------------------------------------------------------------Итоговый подсчет женщин-------------------------------------------------------------------------------------------
-
-document.querySelector('.colITOG1').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG4').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG7').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG10').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK5').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK5').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG2').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG5').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG8').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG11').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK5').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK5').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK5').innerHTML)
-document.querySelector('.colITOG3').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG6').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG9').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK5').innerHTML);
-document.querySelector('.colITOG12').querySelector('.rowITOG3').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK5').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK5').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK5').innerHTML);
-
-//-------------------------------------------------------------------Итоговый подсчет декретниц-------------------------------------------------------------------------------------------
-
-document.querySelector('.colITOG1').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG4').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG7').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG10').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK14').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK14').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG2').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG5').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG8').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG11').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK14').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK14').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK14').innerHTML)
-document.querySelector('.colITOG3').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG6').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG9').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK14').innerHTML);
-document.querySelector('.colITOG12').querySelector('.rowITOG12').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK14').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK14').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK14').innerHTML);
-
-//-------------------------------------------------------------------------------Итоговый подсчет "На работе"-------------------------------------------------------------------------------------------
-
-function inItogTabInWorkRAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK6').innerHTML);
-}
-function inItogTabInWorkRAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK6').innerHTML);
-};
-function inItogTabInWorkRAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK6').innerHTML);
-};
-function inItogTabInWorkRAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK6').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK6').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK6').innerHTML);
-};
-function inItogTabInWorkITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK6').innerHTML);
-}
-function inItogTabInWorkITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK6').innerHTML);
-};
-function inItogTabInWorkITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK6').innerHTML);
-};
-function inItogTabInWorkITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK6').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK6').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK6').innerHTML)
-};
-function inItogTabInWorkSPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK6').innerHTML);
-}
-function inItogTabInWorkSPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK6').innerHTML);
-};
-function inItogTabInWorkSPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK6').innerHTML);
-};
-function inItogTabInWorkSPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG4').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK6').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK6').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK6').innerHTML)
-}
 
-
-//-------------------------------------------------------------------------------Итоговый подсчет отпусков-------------------------------------------------------------------------------------------
-function inItogTabInOTPRAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK7').innerHTML);
-}
-function inItogTabInOTPRAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK7').innerHTML);
-};
-function inItogTabInOTPRAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK7').innerHTML);
-};
-function inItogTabInOTPRAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK7').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK7').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK7').innerHTML);
-};
-function inItogTabInOTPITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK7').innerHTML);
-}
-function inItogTabInOTPITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK7').innerHTML);
-};
-function inItogTabInOTPITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK7').innerHTML);
-};
-function inItogTabInOTPITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK7').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK7').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK7').innerHTML)
-};
-function inItogTabInOTPSPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK7').innerHTML);
-}
-function inItogTabInOTPSPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK7').innerHTML);
-};
-function inItogTabInOTPSPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK7').innerHTML);
-};
-function inItogTabInOTPSPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG5').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK7').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK7').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK7').innerHTML)
-}
-
-
-//-------------------------------------------------------------------------------Итоговый подсчет больничных-------------------------------------------------------------------------------------------
-function inItogTabInBOLRAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK9').innerHTML);
-}
-function inItogTabInBOLRAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK9').innerHTML);
-};
-function inItogTabInBOLRAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK9').innerHTML);
-};
-function inItogTabInBOLRAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK9').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK9').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK9').innerHTML);
-};
-function inItogTabInBOLITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK9').innerHTML);
-}
-function inItogTabInBOLITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK9').innerHTML);
-};
-function inItogTabInBOLITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK9').innerHTML);
-};
-function inItogTabInBOLITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK9').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK9').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK9').innerHTML)
-};
-function inItogTabInBOLSPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK9').innerHTML);
-}
-function inItogTabInBOLSPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK9').innerHTML);
-};
-function inItogTabInBOLSPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK9').innerHTML);
-};
-function inItogTabInBOLSPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG7').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK9').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK9').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK9').innerHTML)
-}
-
-
-//-------------------------------------------------------------------------------Итоговый подсчет прочих неявок-------------------------------------------------------------------------------------------
-function inItogTabInPROCHRAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK11').innerHTML);
-}
-function inItogTabInPROCHRAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK11').innerHTML);
-};
-function inItogTabInPROCHRAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK11').innerHTML);
-};
-function inItogTabInPROCHRAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK11').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK11').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK11').innerHTML);
-};
-function inItogTabInPROCHITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK11').innerHTML);
-}
-function inItogTabInPROCHITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK11').innerHTML);
-};
-function inItogTabInPROCHITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK11').innerHTML);
-};
-function inItogTabInPROCHITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK11').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK11').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK11').innerHTML)
-};
-function inItogTabInPROCHSPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK11').innerHTML);
-}
-function inItogTabInPROCHSPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK11').innerHTML);
-};
-function inItogTabInPROCHSPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK11').innerHTML);
-};
-function inItogTabInPROCHSPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG9').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK11').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK11').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK11').innerHTML)
-}
-
-//-------------------------------------------------------------------------------Итоговый подсчет прочих неявок-------------------------------------------------------------------------------------------
-function inItogTabInRAZRRAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK12').innerHTML);
-}
-function inItogTabInRAZRRAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK12').innerHTML);
-};
-function inItogTabInRAZRRAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK12').innerHTML);
-};
-function inItogTabInRAZRRAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK12').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK12').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK12').innerHTML);
-};
-function inItogTabInRAZRITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK12').innerHTML);
-}
-function inItogTabInRAZRITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK12').innerHTML);
-};
-function inItogTabInRAZRITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK12').innerHTML);
-};
-function inItogTabInRAZRITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK12').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK12').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK12').innerHTML)
-};
-function inItogTabInRAZRSPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK12').innerHTML);
-}
-function inItogTabInRAZRSPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK12').innerHTML);
-};
-function inItogTabInRAZRSPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK12').innerHTML);
-};
-function inItogTabInRAZRSPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG10').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK12').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK12').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK12').innerHTML)
-}
-
-//-------------------------------------------------------------------------------Итоговый подсчет прогулов-------------------------------------------------------------------------------------------
-function inItogTabInPROGRAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK13').innerHTML);
-}
-function inItogTabInPROGRAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK13').innerHTML);
-};
-function inItogTabInPROGRAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK13').innerHTML);
-};
-function inItogTabInPROGRAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK13').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK13').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK13').innerHTML);
-};
-function inItogTabInPROGITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK13').innerHTML);
-}
-function inItogTabInPROGITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK13').innerHTML);
-};
-function inItogTabInPROGITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK13').innerHTML);
-};
-function inItogTabInPROGITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK13').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK13').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK13').innerHTML)
-};
-function inItogTabInPROGSPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK13').innerHTML);
-}
-function inItogTabInPROGSPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK13').innerHTML);
-};
-function inItogTabInPROGSPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK13').innerHTML);
-};
-function inItogTabInPROGSPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG11').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK13').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK13').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK13').innerHTML)
-}
-
-//-------------------------------------------------------------------------------Итоговый подсчет выходных-------------------------------------------------------------------------------------------
-function inItogTabInVIHRAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK15').innerHTML);
-}
-function inItogTabInVIHRAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK15').innerHTML);
-};
-function inItogTabInVIHRAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK15').innerHTML);
-};
-function inItogTabInVIHRAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK15').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK15').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK15').innerHTML);
-};
-function inItogTabInVIHITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK15').innerHTML);
-}
-function inItogTabInVIHITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK15').innerHTML);
-};
-function inItogTabInVIHITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK15').innerHTML);
-};
-function inItogTabInVIHITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK15').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK15').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK15').innerHTML)
-};
-function inItogTabInVIHSPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK15').innerHTML);
-}
-function inItogTabInVIHSPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK15').innerHTML);
-};
-function inItogTabInVIHSPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK15').innerHTML);
-};
-function inItogTabInVIHSPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG13').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK15').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK15').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK15').innerHTML)
-}
-
-//-------------------------------------------------------------------------------Итоговый подсчет по 8 часов-------------------------------------------------------------------------------------------
-function inItogTabInHOUR8RAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK26').innerHTML);
-}
-function inItogTabInHOUR8RAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK26').innerHTML);
-};
-function inItogTabInHOUR8RAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK26').innerHTML);
-};
-function inItogTabInHOUR8RAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK26').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK26').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK26').innerHTML);
-};
-function inItogTabInHOUR8ITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK26').innerHTML);
-}
-function inItogTabInHOUR8ITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK26').innerHTML);
-};
-function inItogTabInHOUR8ITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK26').innerHTML);
-};
-function inItogTabInHOUR8ITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK26').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK26').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK26').innerHTML)
-};
-function inItogTabInHOUR8SPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK26').innerHTML);
-}
-function inItogTabInHOUR8SPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK26').innerHTML);
-};
-function inItogTabInHOUR8SPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK26').innerHTML);
-};
-function inItogTabInHOUR8SPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG17').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK26').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK26').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK26').innerHTML)
-}
-
-//-------------------------------------------------------------------------------Итоговый подсчет по 7 часов-------------------------------------------------------------------------------------------
-function inItogTabInHOUR7RAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK25').innerHTML);
-}
-function inItogTabInHOUR7RAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK25').innerHTML);
-};
-function inItogTabInHOUR7RAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK25').innerHTML);
-};
-function inItogTabInHOUR7RAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK25').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK25').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK25').innerHTML);
-};
-function inItogTabInHOUR7ITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK25').innerHTML);
-}
-function inItogTabInHOUR7ITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK25').innerHTML);
-};
-function inItogTabInHOUR7ITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK25').innerHTML);
-};
-function inItogTabInHOUR7ITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK25').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK25').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK25').innerHTML)
-};
-function inItogTabInHOUR7SPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK25').innerHTML);
-}
-function inItogTabInHOUR7SPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK25').innerHTML);
-};
-function inItogTabInHOUR7SPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK25').innerHTML);
-};
-function inItogTabInHOUR7SPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG18').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK25').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK25').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK25').innerHTML)
-}
-
-//-------------------------------------------------------------------------------Итоговый подсчет по 6 часов-------------------------------------------------------------------------------------------
-function inItogTabInHOUR6RAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK24').innerHTML);
-}
-function inItogTabInHOUR6RAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK24').innerHTML);
-};
-function inItogTabInHOUR6RAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK24').innerHTML);
-};
-function inItogTabInHOUR6RAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK24').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK24').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK24').innerHTML);
-};
-function inItogTabInHOUR6ITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK24').innerHTML);
-}
-function inItogTabInHOUR6ITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK24').innerHTML);
-};
-function inItogTabInHOUR6ITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK24').innerHTML);
-};
-function inItogTabInHOUR6ITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK24').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK24').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK24').innerHTML)
-};
-function inItogTabInHOUR6SPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK24').innerHTML);
-}
-function inItogTabInHOUR6SPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK24').innerHTML);
-};
-function inItogTabInHOUR6SPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK24').innerHTML);
-};
-function inItogTabInHOUR6SPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG19').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK24').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK24').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK24').innerHTML)
-}
-
-//-------------------------------------------------------------------------------Итоговый подсчет по 4 часов-------------------------------------------------------------------------------------------
-function inItogTabInHOUR4RAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK22').innerHTML);
 }
-function inItogTabInHOUR4RAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK22').innerHTML);
-};
-function inItogTabInHOUR4RAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK22').innerHTML);
-};
-function inItogTabInHOUR4RAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK22').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK22').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK22').innerHTML);
-};
-function inItogTabInHOUR4ITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK22').innerHTML);
-}
-function inItogTabInHOUR4ITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK22').innerHTML);
-};
-function inItogTabInHOUR4ITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK22').innerHTML);
-};
-function inItogTabInHOUR4ITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK22').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK22').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK22').innerHTML)
-};
-function inItogTabInHOUR4SPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK22').innerHTML);
-}
-function inItogTabInHOUR4SPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK22').innerHTML);
-};
-function inItogTabInHOUR4SPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK22').innerHTML);
-};
-function inItogTabInHOUR4SPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG20').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK22').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK22').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK22').innerHTML)
-}
-
-//-------------------------------------------------------------------------------Итоговый подсчет по 10 часов-------------------------------------------------------------------------------------------
-function inItogTabInHOUR10RAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK28').innerHTML);
-}
-function inItogTabInHOUR10RAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK28').innerHTML);
-};
-function inItogTabInHOUR10RAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK28').innerHTML);
-};
-function inItogTabInHOUR10RAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK28').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK28').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK28').innerHTML);
-};
-function inItogTabInHOUR10ITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK28').innerHTML);
-}
-function inItogTabInHOUR10ITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK28').innerHTML);
-};
-function inItogTabInHOUR10ITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK28').innerHTML);
-};
-function inItogTabInHOUR10ITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK28').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK28').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK28').innerHTML)
-};
-function inItogTabInHOUR10SPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK28').innerHTML);
-}
-function inItogTabInHOUR10SPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK28').innerHTML);
-};
-function inItogTabInHOUR10SPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK28').innerHTML);
-};
-function inItogTabInHOUR10SPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG21').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK28').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK28').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK28').innerHTML)
-}
 
-//-------------------------------------------------------------------------------Итоговый подсчет по 12 часов-------------------------------------------------------------------------------------------
-function inItogTabInHOUR12RAB1() {
-    document.querySelector('.colITOG1').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK30').innerHTML);
-}
-function inItogTabInHOUR12RAB2() {
-    document.querySelector('.colITOG4').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headRAB2').querySelector('.headDEK30').innerHTML);
-};
-function inItogTabInHOUR12RAB3() {
-    document.querySelector('.colITOG7').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headRAB3').querySelector('.headDEK30').innerHTML);
-};
-function inItogTabInHOUR12RAB() {
-    document.querySelector('.colITOG10').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headRAB1').querySelector('.headDEK30').innerHTML) + (+document.querySelector('.headRAB2').querySelector('.headDEK30').innerHTML) + (+document.querySelector('.headRAB3').querySelector('.headDEK30').innerHTML);
-};
-function inItogTabInHOUR12ITR1() {
-    document.querySelector('.colITOG2').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK30').innerHTML);
-}
-function inItogTabInHOUR12ITR2() {
-    document.querySelector('.colITOG5').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headITR2').querySelector('.headDEK30').innerHTML);
-};
-function inItogTabInHOUR12ITR3() {
-    document.querySelector('.colITOG8').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headITR3').querySelector('.headDEK30').innerHTML);
-};
-function inItogTabInHOUR12ITR() {
-    document.querySelector('.colITOG11').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headITR1').querySelector('.headDEK30').innerHTML) + (+document.querySelector('.headITR2').querySelector('.headDEK30').innerHTML) + (+document.querySelector('.headITR3').querySelector('.headDEK30').innerHTML)
-};
-function inItogTabInHOUR12SPEC1() {
-    document.querySelector('.colITOG3').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK30').innerHTML);
-}
-function inItogTabInHOUR12SPEC2() {
-    document.querySelector('.colITOG6').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headSPEC2').querySelector('.headDEK30').innerHTML);
-};
-function inItogTabInHOUR12SPEC3() {
-    document.querySelector('.colITOG9').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headSPEC3').querySelector('.headDEK30').innerHTML);
-};
-function inItogTabInHOUR12SPEC() {
-    document.querySelector('.colITOG12').querySelector('.rowITOG22').innerHTML = (+document.querySelector('.headSPEC1').querySelector('.headDEK30').innerHTML) + (+document.querySelector('.headSPEC2').querySelector('.headDEK30').innerHTML) + (+document.querySelector('.headSPEC3').querySelector('.headDEK30').innerHTML)
-}
+for (let i = 0; i < SMENA4.length; i++) {
+    for (let k = 0; k < prazdniki(); k++) {
+        let truePererabot = document.querySelector("." + SMENA4[i] + "per").querySelector(".rowPER4sm5")
+        truePererabot.innerHTML = (localStorage.getItem(SMENA4[i] + "per" + " " + "razn+") - localStorage.getItem(SMENA4[i] + "per" + " " + "razn-")) - localStorage.getItem(SMENA4[i] + "per" + " " + "praznMinus")
 
-//-------------------------------------------------------------------------------Итоговый подсчет ВСЕХ ЧАСОВ -------------------------------------------------------------------------------------------
-
-function inItogTabInHOURALL() {
-    for (let k = 0; k < 12; k++) {
-        let sum = 0;
-        for (let i = 0; i < 6; i++) {
-            if (+(document.querySelector('.colITOG' + (k + 1)).querySelector('.rowITOG' + (i + 17)).innerHTML) >= 1) {
-                sum += +(document.querySelector('.colITOG' + (k + 1)).querySelector('.rowITOG' + (i + 17)).innerHTML);
-            }
-            document.querySelector('.colITOG' + (k + 1)).querySelector('.rowITOG23').innerHTML = sum;
-        }
     }
-}
-
-//--------------------------------------------------------------------------------Подсчет средней численности (СП) -------------------------------------------------------------------------------------
-
-function inItogTabInSP() {
-    document.querySelector('.spRAB').innerHTML = +(document.querySelector('.colITOG10').querySelector('.rowITOG2').innerHTML) / +(document.querySelector('.colvoDAY').innerHTML);
-    document.querySelector('.spITR').innerHTML = +(document.querySelector('.colITOG11').querySelector('.rowITOG2').innerHTML) / +(document.querySelector('.colvoDAY').innerHTML);
-    document.querySelector('.spSPEC').innerHTML = +(document.querySelector('.colITOG12').querySelector('.rowITOG2').innerHTML) / +(document.querySelector('.colvoDAY').innerHTML);
 }
 
 //================================================================================ Настройка localStorage =======================================================================
 
 document.querySelector('.storageTab').addEventListener('click', function () {
-    for (let i=0; i<arrID.length; i++){
-        let exInner = document.querySelector('#r'+i).innerHTML;
-        localStorage.setItem("a"+i, exInner)
-        
+    for (let i = 0; i < arrID.length; i++) {
+        let exInner = document.querySelector('#r' + i).innerHTML;
+        localStorage.setItem("a" + i, exInner)
+       
+
     }
+
+}
+
+)
+
+
+document.querySelector('.onloadTab').addEventListener('click', function r(e) {
+    for (let i = 0; i < arrID.length; i++) {
+        if (localStorage.getItem('a' + i) !== "") {
+            document.querySelector('#r' + i).innerHTML = localStorage.getItem('a' + i);
+        }
+    }
+})
+
+document.querySelector('.clearTab').addEventListener('click', function () {
+    let exsParol = prompt('Введите пароль');
+    if (exsParol==parolOCH){
+        
     
+    
+        
+    
+
+
+    for (let i = 0; i < arrID.length; i++) {
+        document.querySelector('#r' + i).innerHTML = '';
+        window.location.reload()
+    }
+
+
+    for (let i = 1; i <= 31; i++) {
+        for (let k = 1; k <= ABR.length; k++) {
+            localStorage.setItem(ABR[k] + "per" + " " + "minusPlan" + " " + i, " ")
+            localStorage.setItem(ABR[k] + "per" + " " + "proebFact", " ")
+            localStorage.setItem(ABR[k] + "per" + " " + "razn+", 0)
+            localStorage.setItem(ABR[k] + "per" + " " + "razn-", 0)
+            localStorage.setItem(ABR[k] + "per" + " " + "praznMinus", 0)
+            localStorage.setItem(arrAllSM[k] + "prazdnik", 0)
+
+        }
+    }
+}
+else{
+    alert("Неверный пароль")
+}
 })
 
 
-document.querySelector('.onloadTab').addEventListener('click', function (e) {
-        for (let i=0; i<arrID.length; i++){
-             if (localStorage.getItem('a'+i) !==""){
-        document.querySelector('#r'+i).innerHTML = localStorage.getItem('a'+i);
+for (let i = 0; i < plan1SM.length; i++) {
+    for (let n = 0; n < SMENA1.length; n++) {
+        if (plan1SM[i].data.slice(0, 2) == trueM && plan1SM[i].data.slice(3, 7) == trueY && document.querySelector("." + SMENA1[n] + "per").querySelector("." + "rowPER1sm4").innerHTML == 0) {
+            document.querySelector("." + SMENA1[n] + "per").querySelector("." + "rowPER1sm4").innerHTML = (plan1SM[i].fact - localStorage.getItem(SMENA1[n] + "per" + " " + "razn+")) - (plan1SM[i].plan - localStorage.getItem(SMENA1[n] + "per" + " " + "razn-"))
+            console.log(plan1SM[i].plan)
+            document.querySelector("." + SMENA1[n] + "per").querySelector("." + "rowPER1sm5").innerHTML = plan1SM[i].fact - plan1SM[i].plan - localStorage.getItem(SMENA1[n] + "per" + " " + "praznMinus")
+        }
     }
-        }
-    })
+}
 
-    document.querySelector('.clearTab').addEventListener('click', function () {
-        for (let i=0; i<arrID.length; i++){
-        document.querySelector('#r'+i).innerHTML = localStorage.clear();  
-        document.querySelector('#r'+i).innerHTML = '';
+
+
+for (let i = 0; i < plan1SM.length; i++) {
+    for (let n = 0; n < SMENA1.length; n++) {
+        if (plan1SM[i].data.slice(0, 2) == trueM && plan1SM[i].data.slice(3, 7) == trueY && document.querySelector("." + SMENA1[n] + "per").querySelector("." + "rowPER1sm4").innerHTML == 0) {
+            document.querySelector("." + SMENA1[n] + "per").querySelector("." + "rowPER1sm4").innerHTML = plan1SM[i].fact - plan1SM[i].plan
+            document.querySelector("." + SMENA1[n] + "per").querySelector("." + "rowPER1sm5").innerHTML = plan1SM[i].fact - plan1SM[i].plan - localStorage.getItem(SMENA1[n] + "per" + " " + "praznMinus")
         }
-    })
+    }
+}
+
+for (let i = 0; i < plan2SM.length; i++) {
+    for (let n = 0; n < SMENA2.length; n++) {
+        if (plan2SM[i].data.slice(0, 2) == trueM && plan2SM[i].data.slice(3, 7) == trueY && document.querySelector("." + SMENA2[n] + "per").querySelector("." + "rowPER2sm4").innerHTML == 0) {
+            document.querySelector("." + SMENA2[n] + "per").querySelector("." + "rowPER2sm4").innerHTML = plan2SM[i].fact - plan2SM[i].plan
+            document.querySelector("." + SMENA2[n] + "per").querySelector("." + "rowPER2sm5").innerHTML = plan2SM[i].fact - plan2SM[i].plan - localStorage.getItem(SMENA2[n] + "per" + " " + "praznMinus")
+        }
+    }
+}
+
+
+for (let i = 0; i < plan3SM.length; i++) {
+    for (let n = 0; n < SMENA3.length; n++) {
+        if (plan3SM[i].data.slice(0, 2) == trueM && plan3SM[i].data.slice(3, 7) == trueY && document.querySelector("." + SMENA3[n] + "per").querySelector("." + "rowPER3sm4").innerHTML == 0) {
+            document.querySelector("." + SMENA3[n] + "per").querySelector("." + "rowPER3sm4").innerHTML = plan3SM[i].fact - plan3SM[i].plan
+            document.querySelector("." + SMENA3[n] + "per").querySelector("." + "rowPER3sm5").innerHTML = plan3SM[i].fact - plan3SM[i].plan - localStorage.getItem(SMENA3[n] + "per" + " " + "praznMinus")
+        }
+    }
+}
+
+console.log(plan3SM)
+
+for (let i = 0; i < plan4SM.length; i++) {
+    for (let n = 0; n < SMENA4.length; n++) {
+        if (plan4SM[i].data.slice(0, 2) == trueM && plan4SM[i].data.slice(3, 7) == trueY && document.querySelector("." + SMENA4[n] + "per").querySelector("." + "rowPER4sm4").innerHTML == 0) {
+            document.querySelector("." + SMENA4[n] + "per").querySelector("." + "rowPER4sm4").innerHTML = plan4SM[i].fact - plan4SM[i].plan
+            document.querySelector("." + SMENA4[n] + "per").querySelector("." + "rowPER4sm5").innerHTML = plan4SM[i].fact - plan4SM[i].plan - localStorage.getItem(SMENA4[n] + "per" + " " + "praznMinus")
+        }
+    }
+}
+
+
+//=========================Переключения==================================
+
+
+document.querySelector(".boss").classList.add("vkl");
+
+document.querySelector(".poktab").addEventListener('click', function () {
+    document.querySelector(".boss").classList.add("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+})
+document.querySelector(".pokDec1").addEventListener('click', function () {
+    document.querySelector(".wrapDec1").classList.add("vkl");
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+})
+document.querySelector(".pokDec2").addEventListener('click', function () {
+    document.querySelector(".wrapDec2").classList.add("vkl");
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+})
+document.querySelector(".pokDec3").addEventListener('click', function () {
+    document.querySelector(".wrapDec3").classList.add("vkl");
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+})
+
+document.querySelector(".pokPer1").addEventListener('click', function () {
+    document.querySelector(".wrapPer1").classList.add("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+})
+
+document.querySelector(".pokPer2").addEventListener('click', function () {
+    document.querySelector(".wrapPer2").classList.add("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+})
+
+document.querySelector(".pokPer3").addEventListener('click', function () {
+    document.querySelector(".wrapPer3").classList.add("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+})
+
+document.querySelector(".pokPer4").addEventListener('click', function () {
+    document.querySelector(".wrapPer4").classList.add("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+
+
+})
+
+document.querySelector(".nastroy").addEventListener('click', function () {
+    
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    document.querySelector(".asdPraz").classList.remove("vkl");
+    document.querySelector(".asdPlan").classList.remove("vkl");
+    
+    let exsParol = prompt('Введите пароль');
+    if (exsParol==parolNastr){
+        document.querySelector(".asd").classList.add("vkl");
+        document.querySelector(".nastroyPraz").classList.add("vkl");
+    }
+    else{
+        alert("Неверный пароль")
+        document.querySelector(".boss").classList.add("vkl");
+    }
+
+})
+document.querySelector(".nastroyPraz").addEventListener('click', function () {
+    document.querySelector(".asdPraz").classList.add("vkl");
+    document.querySelector(".asdPlan").classList.add("vkl");
+    document.querySelector(".asd").classList.remove("vkl");
+    document.querySelector(".boss").classList.remove("vkl");
+    document.querySelector(".wrapDec1").classList.remove("vkl");
+    document.querySelector(".wrapDec2").classList.remove("vkl");
+    document.querySelector(".wrapDec3").classList.remove("vkl");
+    document.querySelector(".nastroyPraz").classList.remove("vkl");
+    document.querySelector(".wrapPer1").classList.remove("vkl");
+    document.querySelector(".wrapPer2").classList.remove("vkl");
+    document.querySelector(".wrapPer3").classList.remove("vkl");
+    document.querySelector(".wrapPer4").classList.remove("vkl");
+    // document.querySelector(".asdPraz").classList.remove("vkl");
+    // document.querySelector(".asdPlan").classList.remove("vkl");
+})
+
+
+//=======================================Настройки штата===================================================
+
+document.querySelector('.saveNastr').addEventListener('click', function () {
+    for (let i = 1; i <= 60; i++) {
+        localStorage.setItem("nastrCOUNT" + i, document.querySelector('.nastrCOUNT' + i).innerHTML)
+        localStorage.setItem("nastrABR" + i, document.querySelector('.nastrABR' + i).innerHTML)
+        localStorage.setItem("nastrFIRSTNAME" + i, document.querySelector('.nastrFIRSTNAME' + i).innerHTML)
+        localStorage.setItem("nastrCATEGORY" + i, document.querySelector('.nastrCATEGORY' + i).innerHTML)
+        localStorage.setItem("nastrPROF" + i, document.querySelector('.nastrPROF' + i).innerHTML)
+        localStorage.setItem("nastrSEX" + i, document.querySelector('.nastrSEX' + i).innerHTML)
+        localStorage.setItem("nastrMODE" + i, document.querySelector('.nastrMODE' + i).innerHTML)
+        localStorage.setItem("nastrDECRET" + i, document.querySelector('.nastrDECRET' + i).innerHTML)
+
+    }
+})
+
+function onNastr() {
+    for (let i = 1; i <= 60; i++) {
+        document.querySelector('.nastrCOUNT' + i).innerHTML = localStorage.getItem("nastrCOUNT" + i);
+        document.querySelector('.nastrABR' + i).innerHTML = localStorage.getItem("nastrABR" + i);
+        document.querySelector('.nastrFIRSTNAME' + i).innerHTML = localStorage.getItem("nastrFIRSTNAME" + i);
+        document.querySelector('.nastrCATEGORY' + i).innerHTML = localStorage.getItem("nastrCATEGORY" + i);
+        document.querySelector('.nastrPROF' + i).innerHTML = localStorage.getItem("nastrPROF" + i);
+        document.querySelector('.nastrSEX' + i).innerHTML = localStorage.getItem("nastrSEX" + i);
+        document.querySelector('.nastrMODE' + i).innerHTML = localStorage.getItem("nastrMODE" + i);
+        document.querySelector('.nastrDECRET' + i).innerHTML = localStorage.getItem("nastrDECRET" + i);
+    }
+}
+onNastr()
+
+//=======================================Настройки праздников===================================================
+
+document.querySelector('.saveNastrPraz').addEventListener('click', function () {
+    for (let i = 1; i <= 4; i++) {
+        localStorage.setItem("nastrCOUNTPraz" + i, document.querySelector('.nastrCOUNTPraz' + i).innerHTML)
+        localStorage.setItem("nastrDatPraz" + i, document.querySelector('.nastrDatPraz' + i).innerHTML)
+
+    }
+})
+
+function onNastrPraz() {
+    for (let i = 1; i <= 4; i++) {
+        document.querySelector('.nastrCOUNTPraz' + i).innerHTML = localStorage.getItem("nastrCOUNTPraz" + i);
+        document.querySelector('.nastrDatPraz' + i).innerHTML = localStorage.getItem("nastrDatPraz" + i);
+
+    }
+}
+onNastrPraz()
+
+//=======================================Настройки плана===================================================
+
+document.querySelector('.saveNastrPlan').addEventListener('click', function () {
+    for (let i = 1; i <= 12; i++) {
+        localStorage.setItem("nastrCOUNTPlan" + i, document.querySelector('.nastrCOUNTPlan' + i).innerHTML)
+        localStorage.setItem("nastrSm1Plan" + i, document.querySelector('.nastrSm1Plan' + i).innerHTML)
+        localStorage.setItem("nastrSm2Plan" + i, document.querySelector('.nastrSm2Plan' + i).innerHTML)
+        localStorage.setItem("nastrSm3Plan" + i, document.querySelector('.nastrSm3Plan' + i).innerHTML)
+        localStorage.setItem("nastrSm4Plan" + i, document.querySelector('.nastrSm4Plan' + i).innerHTML)
+
+    }
+})
+
+function onNastrPlan() {
+    for (let i = 1; i <= 12; i++) {
+        document.querySelector('.nastrCOUNTPlan' + i).innerHTML = localStorage.getItem("nastrCOUNTPlan" + i);
+        document.querySelector('.nastrSm1Plan' + i).innerHTML = localStorage.getItem("nastrSm1Plan" + i);
+        document.querySelector('.nastrSm2Plan' + i).innerHTML = localStorage.getItem("nastrSm2Plan" + i);
+        document.querySelector('.nastrSm3Plan' + i).innerHTML = localStorage.getItem("nastrSm3Plan" + i);
+        document.querySelector('.nastrSm4Plan' + i).innerHTML = localStorage.getItem("nastrSm4Plan" + i);
+
+    }
+}
+onNastrPlan()
